@@ -7,6 +7,9 @@ const app = express();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+else {
+  app.use(express.static("client/public"));
+}
 
 app.get("/api/events", function (req, res) {
   res.json({
@@ -25,7 +28,14 @@ app.get("/api/dashboard", function (req, res) {
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  if (process.env.NODE_ENV === "production") {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  }
+  else {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  }
+
+
 });
 
 app.listen(PORT, function () {

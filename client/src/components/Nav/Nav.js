@@ -11,6 +11,7 @@ export const Nav = () => (
     <div className="navbar-nav">
       <a className="nav-item nav-link active" href="/">Home <span className="sr-only">(current)</span></a>
       <a className="nav-item nav-link" href="/login">Login</a>
+      <a className="nav-item nav-link" href="/addevent">Events</a>
     </div>
   </div>
 </nav>
