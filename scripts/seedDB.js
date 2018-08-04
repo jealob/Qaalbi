@@ -5,10 +5,10 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/QuaalbiDB"
 );
 
-const bookSeed = [
+const UserSeed = [
   {
     title: "The Dead Zone",
     author: "Stephen King",
@@ -123,9 +123,9 @@ const bookSeed = [
   }
 ];
 
-db.Book
+db.User
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.User.collection.insertMany(UserSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
