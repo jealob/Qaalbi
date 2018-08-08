@@ -12,7 +12,6 @@ import {Carousel, About, Services} from "../../components/WelcomePage";
          return (  
              <div>
              <Jumbotron/>
-             <p>Hellos</p>
              <Carousel/>
              <About/>
              <Services/>
