@@ -7,24 +7,20 @@ import Eventform from "./Components/Eventform";
 
 const AddEvent = () => {
     return (
-
-        <div className="container text-center">
-            <h1 className="display-4"> Whether its a day of planning or full service planning QAALBI EVENTS strive to make your special day magical</h1>
-            <Eventform/>
-        </div>
-    )
-        render() 
-        
-        return (
+        <div>
             <div>
                 <div className="container text-center">
-                    <Jumbotron>Planner</Jumbotron>
-                    {this.state.events.hello}
-                    {/* <p><Link to="/About"> About</Link></p> */}
-    
+                    <Jumbotron>Qaalbi Services</Jumbotron>
+
                 </div>
             </div>
-    );
+
+            <div className="container text-center">
+                <h4>Whether its a day of planning or full service planning QAALBI EVENTS will strive to make your special day magical</h4>
+                <Eventform />
+            </div>
+        </div>
+    )
 };
 
 export default AddEvent;
