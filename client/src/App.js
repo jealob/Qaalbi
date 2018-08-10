@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
 import Itinerary from "./pages/Itinerary";
-import Welcome from "./pages/Welcome";
 
 const App = () => (
   <Router>
@@ -17,7 +16,7 @@ const App = () => (
         <Route exact path="/addevent" component={AddEvent} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/itinerary" component={Itinerary}/>
-        <Route exact path="/welcome" component={Welcome}/>
+        
       </Switch>
     </div>
   </Router>
