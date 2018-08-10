@@ -5,7 +5,6 @@ import Jumbotron from "../../components/Jumbotron";
 const Login = () => {
     return (
         <div className="container text-center">
-            <Jumbotron>Login</Jumbotron>
         </div>
     )
 }
