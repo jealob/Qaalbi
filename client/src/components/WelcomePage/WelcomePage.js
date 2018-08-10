@@ -29,20 +29,7 @@ export class Carousel extends React.PureComponent {
   autoplay = () => {
     this.setState({ autoplay: !this.state.autoplay });
   };
-  _changeIcon = () => {
-    let { leftIcon, rightIcon } = this.state;
-    if (leftIcon && rightIcon) {
-      this.setState({
-        leftIcon: undefined,
-        rightIcon: undefined
-      });
-    } else {
-      this.setState({
-        leftIcon: <span className="fa fa-glass" />,
-        rightIcon: <span className="fa fa-music" />
-      });
-    }
-  };
+
   render() {
 
     let { leftIcon, rightIcon } = this.state;

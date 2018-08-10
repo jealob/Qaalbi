@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import { Input, FormBtn } from "../../components/Form";
+import {Carousel, About, Services} from "../../components/WelcomePage";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
 
 
 export default class Home extends Component {
@@ -27,13 +27,21 @@ export default class Home extends Component {
         
         return (
             <div>
-                <div className="container text-center">
-                    <Jumbotron>Home Page</Jumbotron>
-                    {this.state.events.hello}
-                    {/* <p><Link to="/About"> About</Link></p> */}
-
-                </div>
+            <Carousel/>
+            <About/>
+            <Services/>
             </div>
         )
     }
 }
+
+
+
+
+
+
+
+
+  
+
+  

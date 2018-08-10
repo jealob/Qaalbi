@@ -6,21 +6,18 @@ import Login from "./pages/Login";
 import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
 import Itinerary from "./pages/Itinerary";
-import Welcome from "./pages/Welcome";
 
 const App = () => (
   <Router>
     <div>
-      <Nav/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/addevent" component={AddEvent} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/itinerary" component={Itinerary}/>
-        <Route exact path="/welcome" component={Welcome}/>
+        
       </Switch>
-      <Footer />
     </div>
   </Router>
 );

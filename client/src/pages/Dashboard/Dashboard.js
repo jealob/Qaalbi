@@ -30,7 +30,6 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <div className="container text-center">
-                    <Jumbotron>Profile Page</Jumbotron>
                     {this.state.events.hello}
                     {/* <p><Link to="/About"> About</Link></p> */}
 
