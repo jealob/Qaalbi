@@ -11,7 +11,6 @@ import Welcome from "./pages/Welcome";
 const App = () => (
   <Router>
     <div>
-      <Nav/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -20,7 +19,6 @@ const App = () => (
         <Route exact path="/itinerary" component={Itinerary}/>
         <Route exact path="/welcome" component={Welcome}/>
       </Switch>
-      <Footer />
     </div>
   </Router>
 );

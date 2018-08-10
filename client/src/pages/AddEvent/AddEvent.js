@@ -5,7 +5,6 @@ import Jumbotron from "../../components/Jumbotron";
 const AddEvent = () => {
     return (
         <div className="container text-center">
-           <Jumbotron>Add Event form Page</Jumbotron>
             
         </div>
     )
