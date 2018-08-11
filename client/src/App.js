@@ -18,7 +18,8 @@ const App = () => (
       </Switch>
     </div>
   </Router>
-  <Chart />
-);
+
+); 
 
 export default App;
+
