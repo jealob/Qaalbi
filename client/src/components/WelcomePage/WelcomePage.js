@@ -84,9 +84,9 @@ export class Carousel extends React.PureComponent {
  );
 
   export const About = () => (
-    <div className="container fpy-3">
+    <div className="container py-3">
   <h2 className="text-center"id="titles">About Us</h2>
-<div className="alert alert-light  mt-5" role="alert">
+<div className="alert alert-light mt-3" role="alert">
   <p>We provide a multitude of services ranging from Day-of to Full Service Event Coordination. Your coordinator will collaborate with you to produce an unforgettable event that will be tailored to you & your vision on your joyous occasion. During a complimentary initial consultation, you will have the opportunity to look through our portfolios, learn more about our services and ask any questions you may have. Once we determine what services are needed through this consultation, a proposal will be created and customized especially for you to best fit your needs. QAALBI IS ALL ABOUT CREATING AN UNFORGETTABLE EXPERIENCE FOR EACH INDIVIDUAL CLIENT. </p>
   <hr/>
  </div>
@@ -95,10 +95,11 @@ export class Carousel extends React.PureComponent {
 
   export const Instagram = () => (
     <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+    
 
   );
   
-  export const Services = props => (
+  export const Services = () => (
 
 <div>
 <div className="container">
