@@ -1,4 +1,4 @@
-import history from './history';
+import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 
@@ -39,11 +39,11 @@ export default class Auth {
   setSession(authResult) {
     // Set the time that the access token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    console.log(authResult.expiresIn)
+    //console.log(authResult.expiresIn)
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-    console.log(expiresAt)
+    //console.log(expiresAt)
     // navigate to the home route
     history.replace('/dashboard');
   }

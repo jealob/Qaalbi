@@ -26,7 +26,7 @@ class Nav extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/home">Qaalbi Events</a>
+              <a href="#">Qaalbi Events</a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"

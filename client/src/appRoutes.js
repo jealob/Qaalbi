@@ -1,14 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from './components/Nav';
-import Callback from './Callback/Callback';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
 import Auth from './Auth/Auth';
-import history from './Auth/history';
+import history from './history';
 
 
 
@@ -25,15 +24,11 @@ export const appRoutes = () => {
   return (
   <Router history={history}>
     <div>
-      =
-      <Switch>
-       <Route path="/" render={(props) => <Nav auth={auth} {...props} />} />
-        <Route exact path="/home" component={Home} />
+        <Route path="/" render={(props) => <Nav auth={auth} {...props} />} />
+        <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/addevent" component={AddEvent} />
         <Route exact path="/dashboard" component={Dashboard} />
-      </Switch>
-     <Footer/>
     </div>
   </Router>
 );
