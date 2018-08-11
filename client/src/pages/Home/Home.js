@@ -28,7 +28,6 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="container text-center">
-                    <Jumbotron>Home Page</Jumbotron>
                     {this.state.events.hello}
                     {/* <p><Link to="/About"> About</Link></p> */}
 
