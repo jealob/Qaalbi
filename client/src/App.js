@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {Nav, Footer} from "./components/Nav";
+import { Nav, Footer } from "./components/Nav";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
-
+import { Chart } from "./components/Chart";
 
 const App = () => (
   <Router>
@@ -18,6 +18,7 @@ const App = () => (
       </Switch>
     </div>
   </Router>
+  <Chart />
 );
 
 export default App;
