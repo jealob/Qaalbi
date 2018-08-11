@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import { Input, FormBtn } from "../../components/Form";
-import {Carousel, About, Services, Instagram, Header} from "../../components/WelcomePage";
+import {Carousel, About, Services, Instafeed, Header} from "../../components/WelcomePage";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 
 
 export default class Home extends Component {
@@ -24,13 +25,15 @@ export default class Home extends Component {
             });           
     }
     render() {
+        const instafeedTarget = 'instafeed';
         
         return (
             <div>
                 <Header/>
                 <Carousel/>
                 <About/>
-                <Instagram/>
+                {/* <Instafeed id={instafeedTarget}/> */}
+   
                 <Services/>
             </div>
         )

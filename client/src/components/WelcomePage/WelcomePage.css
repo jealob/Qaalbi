@@ -33,13 +33,19 @@
   font: bold;
   color: #fff;
 }
-
+/*Titels*/
 #titles{
 font-family:'Tangerine', serif;
 font-size: 55px;
 text-shadow: 4px 4px 4px #aaa;
 }
 
+/*Background Image*/
+.hdr {
+background-image: url("../../images/full-bloom.png")
+
+
+}
 
 
 

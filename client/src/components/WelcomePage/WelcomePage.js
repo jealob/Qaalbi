@@ -3,6 +3,8 @@ import './WelcomePage.css';
 import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+import "react-instafeed";
+
 
 
 export class Carousel extends React.PureComponent {
@@ -36,7 +38,7 @@ export class Carousel extends React.PureComponent {
       <div className="container-fluid">
      
         <div className="row">
-          <div className="col-md-12" style={{ marginTop: 0 }}>
+          <div className="col" style={{ marginTop: 0 }}>
             <React_Bootstrap_Carousel
               animation={true}
               autoplay={this.state.autoplay}
@@ -47,7 +49,7 @@ export class Carousel extends React.PureComponent {
               ref={r => (this.slider = r)}
               version={4}
             >
-              <div style={{ height: 500 }}>
+              <div class="hdr" style={{ height: 500 }}>
                 <img
                   style={{ width: "100%", height: "80%" }}
                   src={require("../../images/g1.jpg")} alt="pic1"
@@ -59,7 +61,7 @@ export class Carousel extends React.PureComponent {
                   src={require("../../images/g2.jpg")} alt="pic2"
                 />
               </div>
-              <div style={{ height: 300 }}>
+              <div style={{ height: 500 }}>
               <img
                   style={{ width: "100%", height: "100%" }}
                   src={require("../../images/g3.jpg")} alt="pic3"
@@ -74,6 +76,7 @@ export class Carousel extends React.PureComponent {
   }
 }
  export const Header = () => (
+   <div className="hdr"> 
    <div className="container-fluid">
   <div className="text-center banner">
   <img className="logo" src={require("../../images/logo.jpg")} alt="logo"/>
@@ -81,9 +84,11 @@ export class Carousel extends React.PureComponent {
 <a className="btn btn-dark btn-xl text-uppercase " id="getStrt" href="">Get Started</a>
 </div>
 </div>
+</div>
  );
 
   export const About = () => (
+    <div className="hdr"> 
     <div className="container py-3">
   <h2 className="text-center"id="titles">About Us</h2>
 <div className="alert alert-light mt-3" role="alert">
@@ -91,17 +96,33 @@ export class Carousel extends React.PureComponent {
   <hr/>
  </div>
     </div>
+    </div>
   );
 
-  export const Instagram = () => (
-    <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+  // export const Instafeed = (props) => (
     
-
-  );
+  //   <div>
+  //   <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+  //   <div />
+  //   <div>
+  //     limit='5'
+  //     ref='instafeed'
+  //     resolution='standard_resolution'
+  //     sortBy='most-recent'
+  //     target={instafeedTarget}
+  //     template=''
+  //     userId='5583030622'
+  //     clientId='clientIdInstagramApiString'
+  //     accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'
+  //   />
+  // </div>
+  // </div> 
+ 
+  // );
   
   export const Services = () => (
 
-<div>
+<div className="hdr"> 
 <div className="container">
 <h2 className="text-center mb-3" id="titles">Services</h2>
 <div className="row">
