@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+.banner {
+  height: 250px;
+  width: 100%;
+  bottom: -60px;
+  background-color: black;
+ 
+}
+.logo {
+  position: absolute;
+  left: 43%;
+  top: -10px;
+ 
+}
+
+.subtext {
+  position: relative;
+  top: 120px;
+  font-size: 25px;
+  font: bold;
+   font-family: "Cormorant", serif;
+  color: #f2d7d7;
+  
+}
+
+#getStrt {
+  position: relative;
+  top: 115px;
+  font-size: 18px;
+  font: bold;
+  color: #fff;
+}
+
+#titles{
+font-family:'Tangerine', serif;
+font-size: 55px;
+text-shadow: 4px 4px 4px #aaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 980px) {
+    #places-input {
+        width: 150px;
+    }
+  }
+  
+  /* width less than 768px  */
+  @media screen and (max-width: 768px) {
+    #places-input {
+        width: 300px;
+    }
+  }
+  
+  /* width less than 640px  */
+  @media screen and (max-width: 640px) {
+    #places-input {
+        width: 300px;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Input, FormBtn } from "../../components/Form";
-import {Carousel, About, Services} from "../../components/WelcomePage";
+import {Carousel, About, Services, Instagram, Header} from "../../components/WelcomePage";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -27,9 +27,11 @@ export default class Home extends Component {
         
         return (
             <div>
-            <Carousel/>
-            <About/>
-            <Services/>
+                <Header/>
+                <Carousel/>
+                <About/>
+                <Instagram/>
+                <Services/>
             </div>
         )
     }
