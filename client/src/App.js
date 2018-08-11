@@ -5,11 +5,12 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
-import { Chart } from "./components/Chart";
+import Chart from "./components/Chart";
 
 const App = () => (
   <Router>
     <div>
+      <Chart />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -19,7 +20,7 @@ const App = () => (
     </div>
   </Router>
 
-); 
+);
 
 export default App;
 
