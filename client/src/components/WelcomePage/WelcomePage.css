@@ -71,26 +71,3 @@ background-image: url("../../images/full-bloom.png")
 
 
 
-/* 
-
-
-
-@media screen and (max-width: 980px) {
-    #places-input {
-        width: 150px;
-    }
-  }
-  
-  /* width less than 768px  */
-  @media screen and (max-width: 768px) {
-    #places-input {
-        width: 300px;
-    }
-  }
-  
-  /* width less than 640px  */
-  @media screen and (max-width: 640px) {
-    #places-input {
-        width: 300px;
-    }
-} */
