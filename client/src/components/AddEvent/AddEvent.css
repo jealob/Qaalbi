@@ -1,0 +1,21 @@
+form {
+  background: #f7f7f9;
+}
+
+.header-text {
+  margin: 8%;
+  font-size: 25px;
+  font: bold;
+  color: white;
+}
+.btn {
+  align-content: center;
+}
+
+.required-field { 
+  color: red;
+}
+
+label {
+  font-weight: bold;
+}
