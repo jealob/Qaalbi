@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from './components/Nav';
 import Home from "./pages/Home";
@@ -8,6 +8,7 @@ import AddEvent from "./pages/AddEvent";
 import Dashboard from "./pages/Dashboard";
 import Auth from './Auth/Auth';
 import history from './history';
+import Callback from './pages/Callback/Callback';
 
 
 
@@ -29,6 +30,10 @@ export const appRoutes = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/addevent" component={AddEvent} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route path="/callback" render={(props) => {
+            handleAuthentication(props);
+            return <Callback {...props} /> 
+          }}/>
     </div>
   </Router>
 );

@@ -14,6 +14,10 @@ export default class Dashboard extends Component {
         }
     }
 
+    login() {
+        this.props.auth.login();
+      }
+
     componentDidMount() {
         axios.get('/api/dashboard')
             .then((response) => {
@@ -26,15 +30,43 @@ export default class Dashboard extends Component {
             
     }
     render() {
+        const  { isAuthenticated } = this.props.auth;
         console.log(this.state.events);
         return (
             <div>
                 <div className="container text-center">
-                    {this.state.events.hello}
-                    {/* <p><Link to="/About"> About</Link></p> */}
+                  {
+          isAuthenticated() && (
+            
+              <h4>
+               Welcome to Dash board !
+               {this.state.events.hello}
+            {/* <p><Link to="/About"> About</Link></p> */}
+              </h4>
+            )
+        }
+        {
+          !isAuthenticated() && (
+              <h4>
+                404 Error {' '}
+                <a
+                  style={{ cursor: 'pointer' }}
+                  onClick={this.login.bind(this)}
+                >
+                  Log In
+                </a>
+                {' '}to continue.
+              </h4>
+            )
+        }
+                    
 
                 </div>
             </div>
         )
     }
 }
+
+
+
+
