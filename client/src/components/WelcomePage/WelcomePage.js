@@ -3,7 +3,6 @@ import './WelcomePage.css';
 // import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
 //  import "bootstrap/dist/css/bootstrap.css";
 //  import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-// import "react-instafeed";
 
 
 
