@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     background: #5133a4;
     min-height: 70px;
     position: fixed;
@@ -9,22 +9,5 @@
     font-size: calc(10px + 14 * (100vw - 320px)/ 800);
     z-index: 99;
     white-space: nowrap;
-}
+} */
 
-.footer {
-    background:#6956af;
-    height: 100px;
-    position: relative;
-    color:#ffffff;
-    overflow: auto;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #5138a1;
-    padding: 8px;
-    font-weight: 600;
-}

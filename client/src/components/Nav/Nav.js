@@ -1,27 +1,71 @@
-import React from "react";
+import React, { Component } from "react";
+import { Navbar, Button } from 'react-bootstrap';
 import "./Nav.css";
 
-export const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="/">Qaalbi Events</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div className="navbar-nav">
-      <a className="nav-item nav-link active" href="/">Home <span className="sr-only">(current)</span></a>
-      <a className="nav-item nav-link" href="/login">Login</a>
-    </div>
-  </div>
-</nav>
-);
 
-export const Footer = () => {
-  return (
-      <footer className="footer">
-          <div className="bottom">
-              &copy; Qaalbi Events - Built in React
+class Nav extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
+  render() {
+    const { isAuthenticated } = this.props.auth;
+
+
+    return  (
+
+      <div>
+        <Navbar fluid>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">Qaalbi Events</a>
+            </Navbar.Brand>
+            <Button
+              bsStyle="primary"
+              className="btn-margin"
+              onClick={this.goTo.bind(this, 'home')}
+            >
+              Home
+            </Button>
+            {
+              !isAuthenticated() && (
+                  <Button
+                    id="qsLoginBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    id="qsLogoutBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+
+                )
+            }
+          </Navbar.Header>
+        </Navbar>
       </div>
-      </footer >
-  )
+    );
+  }
 }
+
+export default Nav;
+
