@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import { Input, FormBtn } from "../../components/Form";
-import {Carousel, About, Services, Instafeed, Header} from "../../components/WelcomePage";
+import {Carousel, About, Services, Header, InstaFeedTitle} from "../../components/WelcomePage";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Instafeed from 'react-instafeed';
 
 
 
@@ -32,8 +33,25 @@ export default class Home extends Component {
                 <Header/>
                 <Carousel/>
                 <About/>
-                {/* <Instafeed id={instafeedTarget}/> */}
-   
+                <div id={instafeedTarget} class="hdr">
+                <InstaFeedTitle/>
+      <Instafeed
+             limit='7'
+             ref='instafeed'
+             resolution='thumbnail'
+             sortBy='most-recent'
+             target={instafeedTarget}
+             template={
+                 `<a href='{{link}}' target='_blank' class='instafeed__item'>
+                  <img class='pics' src='{{image}}' />
+                 </a>`
+            }
+             userId='5583030622'
+             clientId='clientIdInstagramApiString'
+             accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'
+      />
+    </div>
+                
                 <Services/>
             </div>
         )

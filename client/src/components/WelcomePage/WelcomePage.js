@@ -1,80 +1,43 @@
 import React from "react";
 import './WelcomePage.css';
-import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
-import "bootstrap/dist/css/bootstrap.css";
-import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-import "react-instafeed";
+// import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
+//  import "bootstrap/dist/css/bootstrap.css";
+//  import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+// import "react-instafeed";
 
 
 
 export class Carousel extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      autoplay: true
-    };
-  }
-  onSelect = (active, direction) => {
-    console.log(`active=${active} && direction=${direction}`);
-  };
-  slideNext = () => {
-    this.slider.slideNext();
-  };
-  slidePrev = () => {
-    this.slider.slidePrev();
-  };
-  goToSlide = () => {
-    this.slider.goToSlide(4);
-  };
-  autoplay = () => {
-    this.setState({ autoplay: !this.state.autoplay });
-  };
 
   render() {
    
-
-    let { leftIcon, rightIcon } = this.state;
     return (
-      <div className="container-fluid">
-     
-        <div className="row">
-          <div className="col" style={{ marginTop: 0 }}>
-            <React_Bootstrap_Carousel
-              animation={true}
-              autoplay={this.state.autoplay}
-              slideshowSpeed={3000}
-              leftIcon={leftIcon}
-              rightIcon={rightIcon}
-              onSelect={this.onSelect}
-              ref={r => (this.slider = r)}
-              version={4}
-            >
-              <div class="hdr" style={{ height: 500 }}>
-                <img
-                  style={{ width: "100%", height: "80%" }}
-                  src={require("../../images/g1.jpg")} alt="pic1"
-                />
-              </div>
-              <div style={{ height: 500 }}>
-              <img
-                  style={{ width: "100%", height: "100%" }}
-                  src={require("../../images/g2.jpg")} alt="pic2"
-                />
-              </div>
-              <div style={{ height: 500 }}>
-              <img
-                  style={{ width: "100%", height: "100%" }}
-                  src={require("../../images/g3.jpg")} alt="pic3"
-                />
-              </div>
-              
-            </React_Bootstrap_Carousel>
-          </div>
-        </div>
-      </div>
+  <div id="carouselExampleControls" ClassName="carousel slide" data-ride="carousel">
+  <div ClassName="carousel-inner">
+    <div ClassName="carousel-item active">
+      <img ClassName="d-block w-100" src={require("../../images/g1.jpg")} alt="pic1" alt="First slide"/>
+    </div>
+    <div ClassName="carousel-item">
+      <img ClassName="d-block w-100" src={require("../../images/g2.jpg")} alt="pic2" alt="Second slide"/>
+    </div>
+    <div ClassName="carousel-item">
+      <img ClassName="d-block w-100" src={require("../../images/g3.jpg")} alt="pic3" alt="Third slide"/>
+    </div>
+  </div>
+  <a ClassName="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span ClassName="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span ClassName="sr-only">Previous</span>
+  </a>
+  <a ClassName="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span ClassName="carousel-control-next-icon" aria-hidden="true"></span>
+    <span ClassName="sr-only">Next</span>
+  </a>
+</div>
     );
   }
 }
+
+
  export const Header = () => (
    <div className="hdr"> 
    <div className="container-fluid">
@@ -99,26 +62,15 @@ export class Carousel extends React.PureComponent {
     </div>
   );
 
-  // export const Instafeed = (props) => (
+  export const InstaFeedTitle = () => (
     
-  //   <div>
-  //   <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
-  //   <div />
-  //   <div>
-  //     limit='5'
-  //     ref='instafeed'
-  //     resolution='standard_resolution'
-  //     sortBy='most-recent'
-  //     target={instafeedTarget}
-  //     template=''
-  //     userId='5583030622'
-  //     clientId='clientIdInstagramApiString'
-  //     accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'
-  //   />
-  // </div>
-  // </div> 
+    <div>
+    <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+    <div />
+     
+  </div> 
  
-  // );
+  );
   
   export const Services = () => (
 
@@ -130,7 +82,7 @@ export class Carousel extends React.PureComponent {
   <img className="card-img-top" src={require("../../images/g3.jpg")} alt=""/>
   
   <div className="card-body ml-3 mr-3 rounded planning-column">
-     <h5 class="text-center card-title pt-2 list-group-item active">Day-Of-Planning</h5>
+     <h5 className="text-center card-title pt-2 list-group-item active">Day-Of-Planning</h5>
     <div className="card-text"> 
       <ul className="list-group">
           <li className="list-group-item">One Face-To-Face</li>
@@ -152,7 +104,7 @@ export class Carousel extends React.PureComponent {
 <div className="card" style={{width:350}}>
   <img className="card-img-top" src={require("../../images/g2.jpg")} alt="pic1"/>
   <div className="card-body mr-3 ml-3  planning-column">
-     <h5 class="text-center card-title pt-2 list-group-item active">Month-of-Planning</h5>
+     <h5 className="text-center card-title pt-2 list-group-item active">Month-of-Planning</h5>
     <div className="card-text"> 
     <ul className="list-group">
       <li className="list-group-item">Three Face-To-Face Meetings</li>
@@ -175,7 +127,7 @@ export class Carousel extends React.PureComponent {
 <div className="card" style={{width:350}}>
   <img className="card-img-top" src={require("../../images/g1.jpg")} alt="My Awesome Image"/>
   <div className="card-body mr-3 ml-3 planning-column">
-     <h5 class="text-center card-title pt-2 list-group-item active">Full-Service-Planning</h5>
+     <h5 className="text-center card-title pt-2 list-group-item active">Full-Service-Planning</h5>
     <div className="card-text"> 
     <ul className="list-group">
       <li className="list-group-item">Three Face-To-Face Meetings</li>
