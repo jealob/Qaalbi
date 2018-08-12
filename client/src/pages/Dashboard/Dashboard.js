@@ -31,6 +31,7 @@ export default class Dashboard extends Component {
     }
     render() {
         const  { isAuthenticated } = this.props.auth;
+        console.log(isAuthenticated);
         console.log(this.state.events);
         return (
             <div>

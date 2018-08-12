@@ -43,6 +43,7 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    // https://kratos7.auth0.com/.well-known/jwks.json
     //console.log(expiresAt)
     // navigate to the home route
     history.replace('/dashboard');

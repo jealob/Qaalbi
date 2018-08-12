@@ -30,6 +30,7 @@ export const appRoutes = () => {
         <Route exact path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />}  />
         <Route exact path="/login" component={Login} />
         <Route exact path="/addevent" component={AddEvent} />
+     
         <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 
