@@ -27,9 +27,9 @@ export const appRoutes = () => {
     <div>
         <Route path="/" render={(props) => <Nav auth={auth} {...props} />} />
         <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+        <Route exact path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />}  />
         <Route exact path="/login" component={Login} />
         <Route exact path="/addevent" component={AddEvent} />
-        <Route exact path="/dashboard" component={Dashboard} />
         <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 
