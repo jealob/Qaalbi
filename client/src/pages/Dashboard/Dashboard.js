@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
         console.log(this.state.events);
         return (
             <div>
-                <div className="container-fluid" style={{ background: 'pink' }}>
+                <div className="container-fluid" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
                             <div className="row" >
@@ -47,7 +47,7 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                         ) : (
-                                <div className="border rounded py-5" style={{ background: 'pink'}}>
+                                <div className="py-5" style={{ background: 'pink'}}>
                                     <Jumbotron >
                                         <h4>You are not logged in {' '}</h4>
                                         <h5>

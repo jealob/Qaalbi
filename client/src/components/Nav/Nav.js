@@ -66,8 +66,8 @@ export class Nav extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav text-uppercase ml-auto">
-                  <li>
-                    <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                    <li>
+                      <a className="nav-link js-scroll-trigger" href="home">Home</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="dashboard">Dashboard</a>
@@ -98,15 +98,9 @@ export class Nav extends Component {
 
 export const Footer = () => {
   return (
-    <div>
-      <div className="text-center" id="social">
-      </div>
       <footer className="pt-4 main-page-footer">
-        <div>
-          Copyright &copy; 2018
-    </div>
+        Copyright &copy; 2018
       </footer>
-    </div>
   )
 }
 
