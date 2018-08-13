@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import { Carousel, About, Services } from "../../components/WelcomePage";
+import { Carousel, About, Services, InstagramFeed } from "../../components/WelcomePage";
 
-class Welcome extends Component {
+export default class Welcome extends Component {
     state = {
 
     }
     render() {
+
         return (
             <div>
                 <Jumbotron />
                 <Carousel />
                 <About />
+                <InstagramFeed />
                 <Services />
             </div>
         );
     }
 }
 
-export default Welcome;

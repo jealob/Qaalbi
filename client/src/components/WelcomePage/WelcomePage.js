@@ -1,35 +1,57 @@
 import React from "react";
 import './WelcomePage.css';
+import Instafeed from 'react-instafeed';
 // import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
 //  import "bootstrap/dist/css/bootstrap.css";
 //  import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 
 
 
+
 export class Carousel extends React.PureComponent {
-
   render() {
-
     return (
-      <div id="carouselExampleControls" ClassName="carousel slide" data-ride="carousel">
-        <div ClassName="carousel-inner">
-          <div ClassName="carousel-item active">
-            <img ClassName="d-block w-100" src={require("../../images/g1.jpg")} alt="pic1" alt="First slide" />
+      // <div id="carouselExampleControls" ClassName="carousel slide" data-ride="carousel">
+      //   <div ClassName="carousel-inner">
+      //     <div ClassName="carousel-item active">
+      //       <img ClassName="d-block w-100" src={require("../../images/g1.jpg")} alt="pic1" alt="First slide" />
+      //     </div>
+      //     <div ClassName="carousel-item">
+      //       <img ClassName="d-block w-100" src={require("../../images/g2.jpg")} alt="pic2" alt="Second slide" />
+      //     </div>
+      //     <div ClassName="carousel-item">
+      //       <img ClassName="d-block w-100" src={require("../../images/g3.jpg")} alt="pic3" alt="Third slide" />
+      //     </div>
+      //   </div>
+      //   <a ClassName="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      //     <span ClassName="carousel-control-prev-icon" aria-hidden="true"></span>
+      //     <span ClassName="sr-only">Previous</span>
+      //   </a>
+      //   <a ClassName="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      //     <span ClassName="carousel-control-next-icon" aria-hidden="true"></span>
+      //     <span ClassName="sr-only">Next</span>
+      //   </a>
+      // </div>
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src={require("../../images/g1.jpg")} alt="First slide" />
           </div>
-          <div ClassName="carousel-item">
-            <img ClassName="d-block w-100" src={require("../../images/g2.jpg")} alt="pic2" alt="Second slide" />
+          <div class="carousel-item">
+            <img class="d-block w-100" src={require("../../images/g2.jpg")} alt="Second slide" />
           </div>
-          <div ClassName="carousel-item">
-            <img ClassName="d-block w-100" src={require("../../images/g3.jpg")} alt="pic3" alt="Third slide" />
+          <div class="carousel-item">
+            <img class="d-block w-100" src={require("../../images/g3.jpg")} alt="Third slide" />
           </div>
         </div>
-        <a ClassName="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span ClassName="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span ClassName="sr-only">Previous</span>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
         </a>
-        <a ClassName="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span ClassName="carousel-control-next-icon" aria-hidden="true"></span>
-          <span ClassName="sr-only">Next</span>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     );
@@ -61,15 +83,29 @@ export const About = () => (
   </div>
 );
 
-export const InstaFeedTitle = () => (
-
-  <div>
-    <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
-    <div />
-
-  </div>
-
-);
+export class InstagramFeed extends React.PureComponent {
+  render() {
+    const instafeedTarget = 'instafeed'
+    return (
+      <div>
+        <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+        <div id={instafeedTarget}>
+          <Instafeed
+            limit='5'
+            ref='instafeed'
+            resolution='standard_resolution'
+            sortBy='most-recent'
+            target={instafeedTarget}
+            template=''
+            userId='5583030622'
+            clientId='5583030622'
+            accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'
+          />
+        </div>
+      </div>
+    )
+  }
+};
 
 export const Services = () => (
 
