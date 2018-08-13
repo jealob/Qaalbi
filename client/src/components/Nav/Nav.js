@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import "./Nav.css";
 
-
 export class Nav extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      events: []
+    }
+  }
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -98,8 +105,8 @@ export class Nav extends Component {
 
 export const Footer = () => {
   return (
-      <footer className="pt-4 main-page-footer">
-        Copyright &copy; 2018
+    <footer className="pt-4 main-page-footer">
+      Copyright &copy; 2018
       </footer>
   )
 }

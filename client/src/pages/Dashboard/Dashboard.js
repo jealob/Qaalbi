@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import AddEvent from "../../components/AddEvent";
-import { Footer } from "../../components/Nav";
+import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
 
@@ -34,7 +34,8 @@ export default class Dashboard extends Component {
         console.log(this.state.events);
         return (
             <div>
-                <div className="container-fluid" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                <Nav auth = {this.props.auth}/>
+                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
                             <div className="row" >
@@ -47,11 +48,11 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                         ) : (
-                                <div className="py-5" style={{ background: 'pink'}}>
+                                <div className="py-5" style={{ background: 'pink' }}>
                                     <Jumbotron >
                                         <h4>You are not logged in {' '}</h4>
                                         <h5>
-                                            <button  className=" btn btn-success"style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
+                                            <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
                                             {' '}to contine.
                                         </h5>
                                     </Jumbotron>

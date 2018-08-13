@@ -24,8 +24,8 @@ export const App = () => {
     return (
         <div>
             <Router history={history}>
-                <div >
-                    <Route path="/" render={(props) => <Nav auth={auth} {...props} />} />
+                <div>
+                    <Route path="/" render={(props) => <Home auth={auth} {...props} />} />
                     <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/addevent" component={AddEvent} />
