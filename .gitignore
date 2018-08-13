@@ -5,4 +5,4 @@ node_modules
 yarn-error.log
 
 #For root Directory yarn.lock
-/yarn.lock
+/package-lock.json
