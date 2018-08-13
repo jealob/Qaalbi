@@ -1,2 +1,8 @@
+#For node_modules
 node_modules
 
+#For yarn.error
+yarn-error.log
+
+#For root Directory yarn.lock
+/yarn.lock
