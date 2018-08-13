@@ -3,8 +3,8 @@ import React from "react";
 const Jumbotron = (props) => (
   <div className="jumbotron jumbotron-fluid">
   <div className="container">
-    <h1 className="display-4">Qaalbi Events</h1>
-    <p className="lead">{props.children}</p>
+    <h1 className="display-4 text-center">Qaalbi Events</h1>
+    <p className="lead text-center">{props.children}</p>
   </div>
 </div>
 );
