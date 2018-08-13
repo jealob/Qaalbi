@@ -3,18 +3,18 @@ import "./AddEvent.css";
 
 const AddEvent = (props) => {
   return (
-    <nothing>
+    <div>
       <form className="border rounded px-2">
       <h2> Contact Us Today! </h2>
         <div className="form-row">
           <div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <label for="name">Name
+            <label htmlFor="name">Name
                                 <span className="required-field"> *</span>
             </label>
             <input type="text" className="required form-control" id="name" placeholder="Mary Smith"></input>
           </div>
           <div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <label for="email">Email
+            <label htmlFor="email">Email
                                 <span className="required-field"> *</span>
             </label>
             <input type="email" className="form-control" id="email" placeholder="someone@email.com"></input>
@@ -22,19 +22,19 @@ const AddEvent = (props) => {
         </div>
         <div className="form-row">
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="phone">Phone
+            <label htmlFor="phone">Phone
                                 <span className="required-field"> *</span>
             </label>
             <input type="" className="form-control" id="phone" placeholder="123-456-7890"></input>
           </div>
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="eventDate">Event Date
+            <label htmlFor="eventDate">Event Date
                                 <span className="required-field"> *</span>
             </label>
             <input type="date" className="form-control" id="eventDate"></input>
           </div>
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="preferredContact">Method of Contact</label>
+            <label htmlFor="preferredContact">Method of Contact</label>
             <select id="preferredContact" className="form-control">
               <option selected>Please Select</option>
               <option>Phone</option>
@@ -45,18 +45,18 @@ const AddEvent = (props) => {
         </div>
         <div className="form-row">
           <div className="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <label for="eventLoc">Event Location</label>
+            <label htmlFor="eventLoc">Event Location</label>
             <input type="text" className="form-control" id="eventLoc" placeholder="1234 Main St"></input>
           </div>
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="find">Find Address</label>
+            <label htmlFor="find">Find Address</label>
             <br></br>
             <button type="button" className="btn btn-secondary" id="search">Search</button>
           </div>
         </div>
         <div className="form-row">
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="eventType">Event Type</label>
+            <label htmlFor="eventType">Event Type</label>
             <select id="eventType" className="form-control">
               <option selected>Please Select</option>
               <option>Wedding</option>
@@ -68,7 +68,7 @@ const AddEvent = (props) => {
             </select>
           </div>
           <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <label for="serviceType">Service Type</label>
+            <label htmlFor="serviceType">Service Type</label>
             <select id="serviceType" className="form-control">
               <option selected>Please Select</option>
               <option>Basic</option>
@@ -79,7 +79,7 @@ const AddEvent = (props) => {
         </div>
         <div className="form-row">
           <div className="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <label for="message">Message</label>
+            <label htmlFor="message">Message</label>
             <textarea type="text" className="form-control" id="message" name="message" placeholder="Addtional message you want us to know"
               rows="4" cols="60"></textarea>
           </div>
@@ -90,7 +90,7 @@ const AddEvent = (props) => {
           </div>
         </div>
       </form>
-    </nothing>
+    </div>
   );
 };
 export default AddEvent;

@@ -17,8 +17,7 @@ export class Nav extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-
-
+    console.log(this.props)
     return (
 
       <div>
@@ -47,7 +46,7 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLoginBtn" bsStyle="primary" className="btn-margin" onClick={this.login.bind(this)}>
+                    <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
                       Log In
                       </button>
                   </ul>
@@ -67,7 +66,12 @@ export class Nav extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav text-uppercase ml-auto">
+                  <li>
                     <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="dashboard">Dashboard</a>
+                    </li>
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#events">Events</a>
                       <span className="sr-only">(current)</span>
@@ -76,12 +80,9 @@ export class Nav extends Component {
                       <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#expensecalculator">Expense Calculator</a>
-                    </li>
-                    <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLogoutBtn" bsStyle="primary" className="btn-margin" onClick={this.logout.bind(this)}>
+                    <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
                       Log Out
                   </button>
                   </ul>
