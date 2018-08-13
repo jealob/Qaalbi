@@ -1,1 +1,1 @@
-export { Carousel, About, Services} from "./WelcomePage";
+export { Carousel, About, Services, InstaFeedTitle, Header} from "./WelcomePage";

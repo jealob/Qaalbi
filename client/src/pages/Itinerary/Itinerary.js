@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 // import axios from "axios";
 // import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.css';
-import Jumbotron from "../../components/Jumbotron";
-import Map from "../../components/Map";
+// import 'bootstrap/dist/css/bootstrap.css';
+// import Jumbotron from "../../components/Jumbotron";
+// import Map from "../../components/Map";
 
 const Itinerary = () => {
     return (
         <div>
-           <Jumbotron>Add Event form Page</Jumbotron>
+           {/* <Jumbotron>Add Event form Page</Jumbotron> */}
            <div className="col-sm-3">
         <p>
          <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1">

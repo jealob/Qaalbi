@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+
+.banner {
+  height: 250px;
+  width: 100%;
+  bottom: -60px;
+  background-color: black;
+  border-bottom: 3px solid #f2d7d7;
+ 
+}
+.logo {
+  position: absolute;
+  left: 43%;
+  top: -10px;
+ 
+}
+
+.subtext {
+  position: relative;
+  top: 120px;
+  font-size: 25px;
+  font: bold;
+   font-family: "Cormorant", serif;
+  color: #f2d7d7;
+  
+}
+
+#getStrt {
+  position: relative;
+  top: 115px;
+  font-size: 18px;
+  font: bold;
+  color: #fff;
+}
+/*Titels*/
+#titles{
+font-family:'Tangerine', serif;
+font-size: 55px;
+text-shadow: 4px 4px 4px #aaa;
+}
+
+/*Background Image*/
+.hdr {
+background-image: url("../../images/full-bloom.png")
+
+}
+/*Instagram Images control*/
+.pics {
+ display: inline;
+ border: 3px solid #f2d7d7;
+ margin: 25px;
+
+}
+
+.list-group {
+  font-family: "Cormorant", serif;
+
+}
+.list-group-item {
+  color: rgb(0, 0, 0);
+
+}
+ 
+
+
+
+
+
+
+
+
+
