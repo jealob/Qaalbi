@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import { Navbar, Button } from 'react-bootstrap';
 import "./Nav.css";
 
+export class Nav extends Component {
+  constructor(props) {
+    super(props);
 
-class Nav extends Component {
+    this.state = {
+      events: []
+    }
+  }
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -18,54 +24,90 @@ class Nav extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-
-
-    return  (
+    console.log(this.props)
+    return (
 
       <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Qaalbi Events</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button>
-            {
-              !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-
-                )
-            }
-          </Navbar.Header>
-        </Navbar>
+        {
+          !isAuthenticated() && (
+            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+              <div className="container">
+                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul className="navbar-nav text-uppercase ml-auto">
+                    <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#events">Events</a>
+                      <span className="sr-only">(current)</span>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#expensecalculator">Expense Calculator</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
+                    </li>
+                    <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
+                      Log In
+                      </button>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          )
+        }
+        {
+          isAuthenticated() && (
+            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+              <div className="container">
+                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul className="navbar-nav text-uppercase ml-auto">
+                    <li>
+                      <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="dashboard">Dashboard</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#events">Events</a>
+                      <span className="sr-only">(current)</span>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
+                    </li>
+                    <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
+                      Log Out
+                  </button>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          )
+        }
       </div>
     );
   }
 }
 
-export default Nav;
+export const Footer = () => {
+  return (
+    <footer className="pt-4 main-page-footer">
+      Copyright &copy; 2018
+      </footer>
+  )
+}
 

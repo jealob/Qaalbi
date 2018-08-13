@@ -1,10 +1,9 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import { appRoutes } from './appRoutes';
+import { App } from './App';
 
-const app = appRoutes();
+const app = App();
 
 ReactDOM.render(
   app,
