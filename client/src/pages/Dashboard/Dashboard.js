@@ -33,22 +33,16 @@ export default class Dashboard extends Component {
         console.log(this.state.events);
         return (
             <div>
-                <div className="container-fluid main-container">
+                <div className="container-fluid">
                     {
                         isAuthenticated() && (
-                            <div className="row">
-                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 profile">
-                                    <div className="container">
-                                        <Profile />
-                                    </div>
+                            <div className="row main-container" style={{ background: 'pink' }}>
+                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
+                                    <Profile />
                                 </div>
-                                <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 ml-5 py-4">
-                                    <div className="container pt-4">
-                                        <AddEvent id="events" />
-                                    </div>
-                                    <div className="container pt-4">
-                                        <AddEvent id="todolist" />
-                                    </div>
+                                <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
+                                    <AddEvent id="events" />
+                                    <AddEvent id="todolist" />
                                 </div>
                             </div>
                         )
