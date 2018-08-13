@@ -33,7 +33,7 @@ class Home extends Component {
                                         <h4>You are not logged in {' '}</h4>
                                         <h5>
                                             <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
-                                            {' '}to contine.
+                                            {' '}to continue.
                                 </h5>
                                     </Jumbotron>
                                 </div>
