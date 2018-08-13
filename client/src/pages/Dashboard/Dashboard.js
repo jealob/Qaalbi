@@ -29,8 +29,11 @@ export default class Dashboard extends Component {
             });
             
     }
+
+    
     render() {
         const  { isAuthenticated } = this.props.auth;
+        // let userData = JSON.parse(localStorage.getItem('userData'));
         console.log(isAuthenticated);
         console.log(this.state.events);
         return (
@@ -40,7 +43,8 @@ export default class Dashboard extends Component {
           isAuthenticated() && (
             
               <h4>
-               Welcome to Dash board !
+               Welcome to Dash board Mr.  !
+               {/* {userData.given_name+" "+userData.family_name+" "} */}
                {this.state.events.hello}
             {/* <p><Link to="/About"> About</Link></p> */}
               </h4>
