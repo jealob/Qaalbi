@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 // import { Input, FormBtn } from "../../components/Form";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
-
 
 class Home extends Component {
     // constructor(props) {
