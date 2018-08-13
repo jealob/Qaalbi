@@ -32,7 +32,7 @@ export class Nav extends Component {
           !isAuthenticated() && (
             <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
               <div className="container">
-                <a className="navbar-brand" href="index.html">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="home">QAALBI EVENTS</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -66,7 +66,7 @@ export class Nav extends Component {
           isAuthenticated() && (
             <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
               <div className="container">
-                <a className="navbar-brand" href="index.html">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="home">QAALBI EVENTS</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
