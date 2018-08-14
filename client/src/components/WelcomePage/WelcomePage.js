@@ -125,7 +125,7 @@ export const Services = () => (
       <h2 className="text-center mb-3" id="titles">Services</h2>
       <div className="row">
         <div className="card" style={{ width: 350 }}>
-          <img className="card-img-top" src={require("../../images/g3.jpg")} alt="" />
+          <img className="card-img-top" src={require("../../images/g3.jpg")} alt="image1" />
 
           <div className="card-body ml-3 mr-3 rounded planning-column">
             <h5 className="text-center card-title pt-2 list-group-item active">Day-Of-Planning</h5>
@@ -148,7 +148,7 @@ export const Services = () => (
           </div>
         </div>
         <div className="card" style={{ width: 350 }}>
-          <img className="card-img-top" src={require("../../images/g2.jpg")} alt="pic1" />
+          <img className="card-img-top" src={require("../../images/g2.jpg")} alt="image2" />
           <div className="card-body mr-3 ml-3  planning-column">
             <h5 className="text-center card-title pt-2 list-group-item active">Month-of-Planning</h5>
             <div className="card-text">
@@ -171,7 +171,7 @@ export const Services = () => (
         </div>
 
         <div className="card" style={{ width: 350 }}>
-          <img className="card-img-top" src={require("../../images/g1.jpg")} alt="My Awesome Image" />
+          <img className="card-img-top" src={require("../../images/g1.jpg")} alt="image3" />
           <div className="card-body mr-3 ml-3 planning-column">
             <h5 className="text-center card-title pt-2 list-group-item active">Full-Service-Planning</h5>
             <div className="card-text">
