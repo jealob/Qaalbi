@@ -88,15 +88,26 @@ export class InstagramFeed extends React.PureComponent {
     const instafeedTarget = 'instafeed'
     return (
       <div>
-        <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
+        <h2 className="text-center hdr" id="titles">View Our Instagram Feed</h2>
         <div id={instafeedTarget}>
           <Instafeed
-            limit='5'
+            limit='16'
             ref='instafeed'
-            resolution='standard_resolution'
+            resolution='thumbnail'
             sortBy='most-recent'
             target={instafeedTarget}
-            template=''
+            template={
+            
+          `
+          <div class='insta'>
+            <a href='{{link}}' target='_blank' class='instafeed__item  '>
+            
+            <img class='instafeed__item__background pics' src='{{image}}' />  
+             
+            </a>
+          </div>
+          `
+        }
             userId='5583030622'
             clientId='5583030622'
             accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'

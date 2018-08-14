@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import { Carousel, About, Services, InstagramFeed } from "../../components/WelcomePage";
+import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
 
 export default class Welcome extends Component {
     state = {
@@ -10,7 +10,7 @@ export default class Welcome extends Component {
 
         return (
             <div>
-                <Jumbotron />
+                <Header />
                 <Carousel />
                 <About />
                 <InstagramFeed />
