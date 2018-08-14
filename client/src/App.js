@@ -19,7 +19,7 @@ const handleAuthentication = ({ location }) => {
 }
 
 export const App = () => {
-
+//
   return (
     <div>
       <Router history={history}>
