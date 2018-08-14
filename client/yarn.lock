@@ -3214,6 +3214,10 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
+instafeed.js@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/instafeed.js/-/instafeed.js-1.4.1.tgz#c29d7914563c11722b36cd921a91de2521f9cdaa"
+
 internal-ip@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-2.0.3.tgz#ed3cf9b671ac7ff23037bfacad42eb439cd9546c"
@@ -5238,6 +5242,13 @@ react-dom@^16.0.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-instafeed@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-instafeed/-/react-instafeed-0.4.0.tgz#09520f40932200081cbed7790972f4f377645bec"
+  dependencies:
+    instafeed.js "1.4.1"
+    prop-types "^15.6.0"
 
 react-is@^16.3.2:
   version "16.4.2"
