@@ -4,6 +4,7 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
+import ExpenseCalculator from "../../components/ExpenseCalculator";
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -46,7 +47,7 @@ export default class Dashboard extends Component {
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                     <AddEvent id="events" />
-                                    <AddEvent id="todolist" />
+                                    <ExpenseCalculator id="expensecalculator" />
                                 </div>
                             </div>
                         ) : (

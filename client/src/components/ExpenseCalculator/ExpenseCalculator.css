@@ -1,0 +1,54 @@
+form {
+    border: 1px solid black;
+}
+/* input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */
+
+#submit_button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form{
+	width:400px;
+	margin:0 auto;
+	text-align:left;
+	margin-top:8px;
+	padding:5px;
+	background:#fff;
+    font-family:AvenirLTStd, Arial, Helvetica, sans-serif;
+	font-size:13px;    
+    line-height:16px;
+}
+legend{
+	font-size:16px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000;
+	font-weight:bold;
+	font-style:italic;
+    padding-bottom:10px;
+}
+#wrap label{
+	display:block;
+	font-size:12px;
+	color:#000;
+    font-weight:bold;
+}
+#totalPrice
+{
+    padding:10px;
+    font-weight:bold;
+    background-color:#ff0;
+}
