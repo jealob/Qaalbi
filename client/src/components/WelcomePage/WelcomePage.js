@@ -86,6 +86,23 @@ export const About = () => (
 export class InstagramFeed extends React.PureComponent {
   render() {
     const instafeedTarget = 'instafeed'
+    // function nextPage() {
+    //   currentPage += 1;
+    //   loadList();
+    // }
+    // function previousPage() {
+    //   currentPage -= 1;
+    //   loadList();
+    // }
+    // function firstPage() {
+    //   currentPage = 1;
+    //   loadList();
+    // }
+    // function lastPage() {
+    //   currentPage = numberOfPages;
+    //   loadList();
+    // }
+
     return (
       <div>
         <h2 className="text-center hdr" id="titles">View Our Instagram Feed</h2>
@@ -96,22 +113,18 @@ export class InstagramFeed extends React.PureComponent {
             resolution='thumbnail'
             sortBy='most-recent'
             target={instafeedTarget}
-            template={
-            
-          `
-          <div class='insta'>
-            <a href='{{link}}' target='_blank' class='instafeed__item  '>
-            
-            <img class='instafeed__item__background pics' src='{{image}}' />  
-             
-            </a>
-          </div>
-          `
-        }
+            template={ `
+            <div class='insta'>
+              <a href='{{link}}' target='_blank' class='instafeed__item  '>
+              
+              <img class='instafeed__item__background pics' src='{{image}}' />  
+               
+              </a>
+            </div>
+            `}
             userId='5583030622'
             clientId='5583030622'
-            accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'
-          />
+            accessToken='5583030622.ba4c844.186ef35d5451485b80e09eff337e69b6'/>
         </div>
       </div>
     )
