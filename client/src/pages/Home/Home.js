@@ -20,13 +20,13 @@ class Home extends Component {
         const { isAuthenticated } = this.props.auth;
         return (
             <div>
-                <Nav auth = {this.props.auth}/>
+                <Nav auth={this.props.auth} />
                 <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
-                            <h4>
-                                You are logged in!
-                            </h4>
+                            <Jumbotron >
+                                <h4>You are logged in!</h4>
+                            </Jumbotron>
                         ) : (
                                 <div className="py-5" style={{ background: 'pink' }}>
                                     <Jumbotron >
