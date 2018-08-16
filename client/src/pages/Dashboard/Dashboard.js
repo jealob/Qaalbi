@@ -4,29 +4,48 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
+import nJwt from 'njwt';
+//import token from "../../Auth/token";
 
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            events: []
+            events: [],
+            //userData: 
         }
+    }
+
+    saveUserData() {
+
+        let token = localStorage.getItem('id_token');
+            console.log("called token");
+            
+           
+    
+   
     }
 
     login() {
         this.props.auth.login();
     }
 
+   
+    
     componentDidMount() {
-        API.getSavedUsers()
-            .then((response) => {
-                this.setState({ events: response.data });
+        this.saveUserData();
+        console.log(localStorage.getItem('id_token'))
+       // token();
+        //console.log(userData)
+        // API.getSavedUsers()
+        //     .then((response) => {
+        //         this.setState({ events: response.data });
 
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
 
     }
 

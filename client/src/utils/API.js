@@ -11,7 +11,7 @@ export default {
     },
     // Saves a user to the database
     saveUser: function(userData) {
-      return axios.post("/api/users/login", userData);
+      return axios.post("/api/users", userData);
     },
     // Gets user metadata from Auth0
     getUserMetadata : function () {

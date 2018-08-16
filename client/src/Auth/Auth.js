@@ -1,9 +1,6 @@
 import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
-import nJwt from 'njwt';
-import axios from 'axios';
-import API from "../utils/API";
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -40,6 +37,7 @@ export default class Auth {
   }
 
   retrieveToken(callback) {
+    console.log("retrieving Token")
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         callback(authResult.idToken)
@@ -58,7 +56,7 @@ export default class Auth {
     // https://kratos7.auth0.com/.well-known/jwks.json
     //console.log(expiresAt)
     // navigate to the home route
-    console.log(authResult.idToken)
+    //console.log(authResult.idToken)
     history.replace('/dashboard');
   }
 

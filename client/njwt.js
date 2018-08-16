@@ -1,3 +1,4 @@
+var jwt = require('jsonwebtoken');
 var nJwt = require('njwt');
 var axios = require('axios');
 
@@ -9,21 +10,26 @@ axios.get('https://kratos7.auth0.com/.well-known/jwks.json')
      var key = response.data.keys[0].x5c[0];
      var alg = response.data.keys[0].alg;
      //console.log(alg);
-
-     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5EUTVOREl6TTBFeFJqSXhPVEJCUlVNME4wTTVPRUU1TkVKRE9FRTRRakZFTXpVMFEwUTJNZyJ9.eyJodHRwczovL2V4YW1wbGUuY29tL3JvbGVzIjpbInVzZXIiXSwiZ2l2ZW5fbmFtZSI6IkRhdmlkIiwiZmFtaWx5X25hbWUiOiJqb2huIiwibmlja25hbWUiOiJva2tvaGgiLCJuYW1lIjoiRGF2aWQgam9obiIsInBpY3R1cmUiOiJodHRwczovL2xoNC5nb29nbGV1c2VyY29udGVudC5jb20vLXBUZ29YRy14ZTFjL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBbm5ZN3BzOE9aVndDeDQ3Q1BaREY2WlNlanFOV2xpcHcvbW8vcGhvdG8uanBnIiwiZ2VuZGVyIjoibWFsZSIsImxvY2FsZSI6ImZyIiwidXBkYXRlZF9hdCI6IjIwMTgtMDgtMTJUMjE6Mjg6MjUuODYxWiIsImlzcyI6Imh0dHBzOi8va3JhdG9zNy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDc0NDQ4MTEyNjY2MTA0NzI0MDQiLCJhdWQiOiJNSGFJcFJFZDdHWjFVRDRxbndnSkVORG5DcmFXV3NMNyIsImlhdCI6MTUzNDEwOTMwOCwiZXhwIjoxNTM0MTQ1MzA4LCJhdF9oYXNoIjoiejVkdVRYdWVTYmZjZGUyQnAtajJuZyIsIm5vbmNlIjoic3pVN0l5cERiNF9aajV0RDFEMzlnQUl2eV9Yd0NyLVEifQ.QrcWTFeM9fIYw1bs0BWdcfDCBwiKxAK0HSSI-TBZ85oF_KaTyCP4HCa4aRP1_WpbqlqU42rW4CpO-QcKoPYg1Fls_-g2An-zRibWMeULX1bQUaOaV0L1JNhYrjoWmyhFqQvfmF_BegegpqnazM10kJLGtPvzI7Ll2mIVrTHtTpfn0HbMHczi-4rrxzxHPHKS_ppdaGv6p2_LgnV_csYUX7uigdjBUi9V4IWwzvz51YInoNJsFyad_3UXwq8wh5ei2QjrYJz7u83rI5qG0JpYCYxkmmipXI6zTfJ8sW3D9K9-ngBPGRah18pkUBYqnxvab12G89dIlu1t3LXx7MOHgQ";
-     
-    nJwt.verify(token,key,alg,function(err,verifiedJwt){
+ let certificate = [
+  '-----BEGIN CERTIFICATE-----',
+   key,
+   '-----END CERTIFICATE-----'
+ ].join('\n')
+     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik5EUTVOREl6TTBFeFJqSXhPVEJCUlVNME4wTTVPRUU1TkVKRE9FRTRRakZFTXpVMFEwUTJNZyJ9.eyJodHRwczovL2V4YW1wbGUuY29tL3JvbGVzIjpbInVzZXIiXSwiZ2l2ZW5fbmFtZSI6IkphbWVzIiwiZmFtaWx5X25hbWUiOiJEZWFuIiwibmlja25hbWUiOiJrcmF0b3MudGhlbWFzdGVyIiwibmFtZSI6IkphbWVzIERlYW4iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy0zXzZ4R0dlUHFmNC9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBQS9BQW5uWTdvd1JwUWh2QlRIT25DYUVxVDNzT1dkbFo1VEV3L21vL3Bob3RvLmpwZyIsImxvY2FsZSI6ImZyIiwidXBkYXRlZF9hdCI6IjIwMTgtMDgtMTZUMDE6MTE6NTYuODIxWiIsImVtYWlsIjoia3JhdG9zLnRoZW1hc3RlckBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9rcmF0b3M3LmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwOTU4ODkyNzk2MjcyMjc4NTkxOSIsImF1ZCI6Ik1IYUlwUkVkN0daMVVENHFud2dKRU5EbkNyYVdXc0w3IiwiaWF0IjoxNTM0MzgxOTE3LCJleHAiOjE1MzQ0MTc5MTcsImF0X2hhc2giOiJSdy0tcEZKRjI2aElJRTc2a3c0ZFRRIiwibm9uY2UiOiJHSDBmWUFZemdibW93UklOb1JFWW5SYmVpMEZCdUZKNiJ9.oXTfono4hYrVAGO18B-6PiuVPe-hLGV9Mdr1fw8IEI5StHr4flj5iXVov3szGdf5Qurt9bbS0Cv6eibiy34eqME-G41CVUVs55UzgQ8hXgvsIfN3MEIUY8R2iANIZcmiBwoooExtC6IjgBxHBsKA8t1ucv32_AscBQs7rcn7m-DImeQSR9SsLYE5ud8iayyIpLdhgdspXUntbVaXiLn8oriZh5euveZrShRW9shSFbXkBubnRmQGJCmIgMoK4pq64pTkjiW_hb96LNZqoASXcj6AY4G88eQQufjak1qlRKrs3htJuU2e7DDQL9d8t2MwyU0wGiK-fI4M4xlxlO0FSA";
+     //var decoded = jwt.decode(token);
+     //console.log(decoded)
+     nJwt.verify(token, certificate, alg,function(err,verifiedJwt){
         if(err){
 
           if (err.message === 'Jwt is expired') {
-          console.log(err.message.parsedBody)
+          console.log(err)
          }
           else {
            console.log(err)
          }
            // add .given_name if u want to see the given name 
         }else{
-          console.log(verifiedJwt.parsedBody); // Will contain the header and body
+          console.log(verifiedJwt.body); // Will contain the header and body
         }
 
        
