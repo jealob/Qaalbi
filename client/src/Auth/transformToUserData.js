@@ -2,7 +2,7 @@ import API from '../utils/API'
 import nJwt from 'njwt';
 
 
-const savingUserDataFromToken = (token) => 
+const transformToUserData = (token,callback) => 
      {
    
       API.getUserMetadata()
@@ -23,12 +23,12 @@ const savingUserDataFromToken = (token) =>
            
             if (err.message === 'Jwt is expired') {
               //console.log(err.message.parsedBody)
-            user.firstName = verifiedJwt.parsedBody.given_name;
-            user.lastName = verifiedJwt.parsedBody.family_name;
-            user.picture =verifiedJwt.parsedBody.picture;
-            user.email = verifiedJwt.parsedBody.email;
+            user.firstName = err.parsedBody.given_name;
+            user.lastName = err.parsedBody.family_name;
+            user.picture =err.parsedBody.picture;
+            user.email = err.parsedBody.email;
             console.log(user);
-            API.saveUser(user);
+            callback(user);
              }
               else {
                console.log(err)
@@ -43,7 +43,7 @@ const savingUserDataFromToken = (token) =>
             user.email = verifiedJwt.body.email;
             user.online = true;
             console.log(user);
-            API.saveUser(user);
+            callback(user);
           }
         });
   
@@ -56,4 +56,4 @@ const savingUserDataFromToken = (token) =>
 
      
 
-export default savingUserDataFromToken;
+export default transformToUserData;

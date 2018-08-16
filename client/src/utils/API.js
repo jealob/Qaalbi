@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {  
     // Gets all users
-    getSavedUsers: function(email) {
+    getSavedUser: function(email) {
       return axios.get("/api/users/" + email);
     },
     // Deletes the user with the given id
@@ -10,8 +10,8 @@ export default {
       return axios.delete("/api/users/" + email);
     },
     // Saves a user to the database
-    saveUser: function(userData) {
-      return axios.post("/api/users", userData);
+    saveUser: function(email,userData) {
+      return axios.post("/api/users/" + email, userData);
     },
     // Gets user metadata from Auth0
     getUserMetadata : function () {
