@@ -9,25 +9,20 @@ var UserSchema = new Schema({
   // `username` must be of type String
   // `username` will trim leading and trailing whitespace before it's saved
   // `username` is a required field and throws a custom error message if not supplied
-  username: {
+  firstName: {
     type: String,
     trim: true,
-    required: "Username is Required"
+    
   },
-  // `password` must be of type String
-  // `password` will trim leading and trailing whitespace before it's saved
-  // `password` is a required field and throws a custom error message if not supplied
-  // `password` uses a custom validation function to only accept values 6 characters or more
-  password: {
+  lastName: {
     type: String,
     trim: true,
-    required: "Password is Required",
-    validate: [
-      function(input) {
-        return input.length >= 6;
-      },
-      "Password should be longer."
-    ]
+    
+  },
+  picture: {
+    type: String,
+    trim: true,
+   
   },
   // `email` must be of type String
   // `email` must be unique
@@ -36,13 +31,57 @@ var UserSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    
+  },
+
+  online: {
+  type: Boolean,
+  default: false
   },
   // `date` must be of type Date. The default value is the current date
   userCreated: {
     type: Date,
     default: Date.now
+  },
+
+  //The Following Schema part will be in another js file in the furur ! (Saad futur Project lol)
+  eventType: {
+    type: String,
+    trim: true,
+  },
+  beauty: {
+    type: String,
+    trim: true,
+  },
+  entertainment: {
+    type: String,
+    trim: true,
+  },
+  flowersAndDecors: {
+    type: String,
+    trim: true,
+  },
+  giftsAndFavors: {
+    type: String,
+    trim: true,
+  },
+  photoAndVideos: {
+    type: String,
+    trim: true,
+  },
+  venue: {
+    type: String,
+    trim: true,
+  },
+  catering: {
+    type: String,
+    trim: true,
+  },
+  rentals: {
+    type: String,
+    trim: true,
   }
+  
 });
 
 // This creates our model from the above schema, using mongoose's model method

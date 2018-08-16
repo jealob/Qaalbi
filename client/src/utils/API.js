@@ -11,6 +11,10 @@ export default {
     },
     // Saves a user to the database
     saveUser: function(userData) {
-      return axios.post("/api/users/login", userData);
+      return axios.post("/api/users", userData);
+    },
+    // Gets user metadata from Auth0
+    getUserMetadata : function () {
+      return axios.get('https://kratos7.auth0.com/.well-known/jwks.json');
     }
   };

@@ -4,29 +4,38 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
+import savingUserDataFromToken from '../../Auth/savingUserDataFromToken';
+//import token from "../../Auth/token";
 
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            events: []
+            events: [],
+            //userData: 
         }
+    }
+
+    savingUserDataFromToken() {
+
+        let token = localStorage.getItem('id_token');
+        savingUserDataFromToken(token)
+            
+           
+    
+   
     }
 
     login() {
         this.props.auth.login();
     }
 
+   
+    
     componentDidMount() {
-        API.getSavedUsers()
-            .then((response) => {
-                this.setState({ events: response.data });
-
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        this.savingUserDataFromToken();
+       
 
     }
 
