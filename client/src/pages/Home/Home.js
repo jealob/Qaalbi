@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Input, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
@@ -10,21 +10,21 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
-            events:[]
+            events: []
         }
     }
 
     componentDidMount() {
         axios.get('/api/events')
             .then((response) => {
-                this.setState({ events: response.data });      
+                this.setState({ events: response.data });
             })
             .catch((error) => {
                 console.log(error);
-            });           
+            });
     }
     render() {
-        
+
         return (
             <div>
                 <div className="container text-center">

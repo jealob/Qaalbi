@@ -8,11 +8,11 @@ const options = [
     { value: 'Bridal Shower', label: 'Bridal Shower' },
     { value: 'Wedding', label: 'Wedding' },
     { value: 'Other', label: 'Other' },
-  ]
+]
 
 export default class Chart extends React.Component {
     componentDidMount() {
-        
+
     }
     render() {
         const data = [
@@ -31,15 +31,14 @@ export default class Chart extends React.Component {
         return (
             <div>
                 <Select options={options} />
-                <Select options={options} />
-                <BarChart width={600} height={300} data={data}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="amt" fill="#8884d8" />
-            </BarChart></div>
+                <BarChart width={1200} height={800} data={data}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="amt" fill="#8884d8" />
+                </BarChart></div>
         );
     }
 }
