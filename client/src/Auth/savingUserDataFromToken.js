@@ -1,10 +1,8 @@
-import Auth from './Auth';
 import API from '../utils/API'
 import nJwt from 'njwt';
 
-const auth = new Auth();
 
-const token = (token) => 
+const savingUserDataFromToken = (token) => 
      {
    
       API.getUserMetadata()
@@ -58,4 +56,4 @@ const token = (token) =>
 
      
 
-export default token;
+export default savingUserDataFromToken;
