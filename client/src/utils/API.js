@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {  
     // Gets all users
-    getSavedUsers: function(email) {
+    getUserData: function(email) {
       return axios.get("/api/users/" + email);
     },
     // Deletes the user with the given id

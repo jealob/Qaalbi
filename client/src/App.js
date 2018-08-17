@@ -28,7 +28,7 @@ export const App = () => {
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
             <Route exact path="/home" render={(props) => <Home auth={auth} {...props} />} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/addevent" component={AddEvent} />
+            <Route exact path="/addevent" render={(props) => <AddEvent auth={auth} {...props} />} />
             <Route exact path="/welcome" component={Welcome} />
             <Route exact path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />} />
             <Route path="/callback" render={(props) => {
