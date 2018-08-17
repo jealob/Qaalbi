@@ -385,7 +385,7 @@ const AddEvent = (props) => {
             rows="4" cols="60"></textarea>
         </div>
         <div className="form-group col">
-          <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#warningModal" id="submit">Submit</button>
+          <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#warningModal" id="submit">Save</button>
         </div>
       </div>   {/* End Message */}
     </form>

@@ -11,38 +11,47 @@ export default class Dashboard extends Component {
         super(props);
 
         this.state = {
-            events: [],
-            //userData: 
+            userData: [],
+            eventData: []
         }
     }
 
     getUserData() {
-        
-
+        API.getUserData(this.state.UserData[id])
+        .then(res => console(res.data))
+        .catch(err => console.log(err));
     }
 
     login() {
         this.props.auth.login();
     }
 
-   
-    
+    handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = event.target;
+
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
+    };
+
     componentDidMount() {
         this.getUserData();
     }
 
-    
+
     render() {
         const { isAuthenticated } = this.props.auth;
         // console.log(this.state.events);
         return (
             <div>
-                <Nav auth = {this.props.auth}/>
+                <Nav auth={this.props.auth} />
                 <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
                             <div className="row" >
-                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat'}}>
+                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
                                     <Profile />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
