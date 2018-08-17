@@ -17,7 +17,7 @@ export default class Dashboard extends Component {
     }
 
     getUserData() {
-        API.getUserData(this.state.UserData[id])
+        API.getUserData(this.state.UserData)
         .then(res => console(res.data))
         .catch(err => console.log(err));
     }
