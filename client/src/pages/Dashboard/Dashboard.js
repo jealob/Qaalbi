@@ -4,7 +4,7 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
-import savingUserDataFromToken from '../../Auth/savingUserDataFromToken';
+import loginData from '../../Auth/loginData';
 //import token from "../../Auth/token";
 
 export default class Dashboard extends Component {
@@ -17,14 +17,9 @@ export default class Dashboard extends Component {
         }
     }
 
-    savingUserDataFromToken() {
-
+    saveLoginData() {
         let token = localStorage.getItem('id_token');
-        savingUserDataFromToken(token)
-            
-           
-    
-   
+        loginData(token)
     }
 
     login() {
@@ -34,9 +29,7 @@ export default class Dashboard extends Component {
    
     
     componentDidMount() {
-        this.savingUserDataFromToken();
-       
-
+        this.saveLoginData();
     }
 
     
@@ -55,7 +48,6 @@ export default class Dashboard extends Component {
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                     <AddEvent id="events" />
-                                    <AddEvent id="todolist" />
                                 </div>
                             </div>
                         ) : (

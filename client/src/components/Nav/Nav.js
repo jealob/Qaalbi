@@ -24,7 +24,7 @@ export class Nav extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-    console.log(this.props)
+    // console.log(this.props)
     return (
 
       <div>
@@ -80,7 +80,7 @@ export class Nav extends Component {
                       <a className="nav-link js-scroll-trigger" href="dashboard">Dashboard</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#events">Events</a>
+                      <a className="nav-link js-scroll-trigger" href="addevent">Events</a>
                       <span className="sr-only">(current)</span>
                     </li>
                     <li className="nav-item">
