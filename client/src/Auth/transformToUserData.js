@@ -6,8 +6,7 @@ const transformToUserData = (token,callback) =>
      {
    
       API.getUserMetadata()
-      .then(function (response) {
-          console.log("get userMetadata.then");
+      .then(function (response) { 
        let key = response.data.keys[0].x5c[0];
        let certificate = [
           '-----BEGIN CERTIFICATE-----',
@@ -15,7 +14,6 @@ const transformToUserData = (token,callback) =>
            '-----END CERTIFICATE-----'
          ].join('\n')
        let alg = response.data.keys[0].alg;
-       //console.log(token,key,alg)
        nJwt.verify(token,certificate,alg,function(err,verifiedJwt){
   
         let user = {};
@@ -27,7 +25,7 @@ const transformToUserData = (token,callback) =>
             user.lastName = err.parsedBody.family_name;
             user.picture =err.parsedBody.picture;
             user.email = err.parsedBody.email;
-            console.log(user);
+            
             callback(user);
              }
               else {
@@ -42,7 +40,7 @@ const transformToUserData = (token,callback) =>
             user.picture =verifiedJwt.body.picture;
             user.email = verifiedJwt.body.email;
             user.online = true;
-            console.log(user);
+            
             callback(user);
           }
         });

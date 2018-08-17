@@ -12,45 +12,76 @@ export default class Dashboard extends Component {
         super(props);
 
         this.state = {
+            id: "",
             events: [],
             userData: null,
         }
     }
 
-    savingUserData() {
-        let token = localStorage.getItem('id_token');
-         transformToUserData(token, function(user){
-             console.log(user)
+    savingUserData = (token) => {
+        
+         transformToUserData(token, (user) => {
             API.saveUser(user.email,user);
-            // this.getSavedUser(user.email);
-        });
-        
-        
-        
-        
+            API.getSavedUser(user.email).then(res => {
+               
+                this.setState({ userData : res.data })
+                
+            }) 
+        });   
     }
+       
 
-    getSavedUser(email) {
-       API.getSavedUser(email).then(res => this.setState({ userData : res.data }))
-    }
+        
+    
+
+    // getSavedUser = (token) => {
+
+    //     transformToUserData(token, (user) => {
+    //         API.getSavedUser(user.email).then(res => {
+               
+    //             this.setState({ userData : res.data })
+                
+    //         }) 
+    //     });   
+    // }
+
+    // setUser = (token) => {
+    //     transformToUserData(token, (user) => {
+    //         this.setState({ userData : user })
+    //     })
+    // }
 
     login() {
         this.props.auth.login();
     }
 
-   
+  
+
+//    componentWillMount() {
+//     let token = localStorage.getItem('id_token');
+//     this.savingUserData(token);
+//    this.setUser(token);
+//     // console.log("userData state"+this.state.userData);
+//     // console.log("token state"+this.state.token);
+
+//    }
     
     componentDidMount() {
-        this.savingUserData();
-        console.log("userData state"+this.state.userData);
+        let token = localStorage.getItem('id_token');
+        this.savingUserData(token);
+        // console.log("token state"+this.state.token);
+        
        
 
     }
 
+    componentDidUpdate() {
+        console.log(this.state.userData);
+    }
     
     render() {
         const { isAuthenticated } = this.props.auth;
-        console.log(this.state.events);
+       // console.log(this.state.events);
         return (
             <div>
                 <Nav auth = {this.props.auth}/>
@@ -59,7 +90,9 @@ export default class Dashboard extends Component {
                         isAuthenticated() ? (
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
-                                    <Profile />
+                                    <Profile
+                                   firstName={this.state.userData.firstName}
+                                     />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                     <AddEvent id="events" />
