@@ -11,8 +11,8 @@ export default class Welcome extends Component {
                 <Header />
                 <Carousel />
                 <About />
-                <InstagramFeed />
                 <Services />
+                <InstagramFeed />
             </div>
         );
     }
