@@ -2,11 +2,12 @@ import API from '../utils/API'
 import nJwt from 'njwt';
 
 
-const transformToUserData = (token,callback) => 
+const loginData = (token) => 
      {
    
       API.getUserMetadata()
-      .then(function (response) { 
+      .then(function (response) {
+          console.log("get userMetadata.then");
        let key = response.data.keys[0].x5c[0];
        let certificate = [
           '-----BEGIN CERTIFICATE-----',
@@ -14,6 +15,7 @@ const transformToUserData = (token,callback) =>
            '-----END CERTIFICATE-----'
          ].join('\n')
        let alg = response.data.keys[0].alg;
+       //console.log(token,key,alg)
        nJwt.verify(token,certificate,alg,function(err,verifiedJwt){
   
         let user = {};
@@ -21,12 +23,12 @@ const transformToUserData = (token,callback) =>
            
             if (err.message === 'Jwt is expired') {
               //console.log(err.message.parsedBody)
-            user.firstName = err.parsedBody.given_name;
-            user.lastName = err.parsedBody.family_name;
-            user.picture =err.parsedBody.picture;
-            user.email = err.parsedBody.email;
-            
-            callback(user);
+            user.firstName = verifiedJwt.parsedBody.given_name;
+            user.lastName = verifiedJwt.parsedBody.family_name;
+            user.picture =verifiedJwt.parsedBody.picture;
+            user.email = verifiedJwt.parsedBody.email;
+            console.log(user);
+            API.saveUser(user);
              }
               else {
                console.log(err)
@@ -40,8 +42,8 @@ const transformToUserData = (token,callback) =>
             user.picture =verifiedJwt.body.picture;
             user.email = verifiedJwt.body.email;
             user.online = true;
-            
-            callback(user);
+            console.log(user);
+            API.saveUser(user);
           }
         });
   
@@ -54,4 +56,4 @@ const transformToUserData = (token,callback) =>
 
      
 
-export default transformToUserData;
+export default loginData;
