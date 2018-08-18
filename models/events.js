@@ -31,7 +31,7 @@ email: {
   
 },
 phone: {
-  type: String,
+  type: Number,
   trim: true,
   
 },
