@@ -2,6 +2,7 @@ import React from "react";
 import "./AddEvent.css";
 
 const AddEvent = (props) => {
+
   return (
     <form className="border rounded px-2 mb-4">
       <h2> Add Event</h2>

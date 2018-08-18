@@ -11,7 +11,6 @@ export default class Dashboard extends Component {
         super(props);
 
         this.state = {
-            userData: [],
             name:'',
             email:'',
             phone:'',
@@ -43,11 +42,20 @@ export default class Dashboard extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
+        let eventData = []
+        eventData.push(this.state);
+        this.saveEvent(eventData)
       };
 
+    saveEvent = eventData => {
+        API.saveEvent(eventData)
+    }
+
+    getAllEvents= () => {
+        API.getAllEvents().then(res => console.log(res))
+    }
     componentDidMount() {
-       
+        this.getAllEvents();
     }
 
 
@@ -73,8 +81,7 @@ export default class Dashboard extends Component {
                                      hairService={this.state.hairService}
                                      makeupService={this.state.makeupService}
                                      manicurePedicure={this.state.manicurePedicure}
-                                     start_year={this.state.start_year}
-                                     end_year={this.state.end_year}
+                                     
                                     />
                                 
                            

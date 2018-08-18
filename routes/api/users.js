@@ -7,14 +7,17 @@ router.route("/:email")
   .post(usersController.findByEmailAndUpsert);
 
 // Matches with "/api/users/:id"
-router
-  .route("/:id")
+router.route("/:id")
   .get(usersController.findById)
   .put(usersController.update)
   .delete(usersController.remove);
 
-// router
-//   .route("/test")
-//   .get(usersController.test);
+//Events routes
+router.route("/events")
+.get(usersController.findAllEvents)
+.post(usersController.createEvent);
+
+
+
 
 module.exports = router;
