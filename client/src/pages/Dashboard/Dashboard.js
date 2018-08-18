@@ -12,9 +12,43 @@ export default class Dashboard extends Component {
         super(props);
 
         this.state = {
+            id: "",
             events: [],
-            //userData: 
+            userData: null,
         }
+    }
+
+    savingUserData = (token) => {
+        
+        loginData(token, (user) => {
+            API.saveUser(user.email,user);
+            API.getUserData(user.email).then(res => {
+               
+                this.setState({ userData : res.data })
+                
+            }) 
+        });   
+    }
+       
+
+        
+    
+
+    // getSavedUser = (token) => {
+
+    //     loginData(token, (user) => {
+    //         API.getUserData(user.email).then(res => {
+               
+    //             this.setState({ userData : res.data })
+                
+    //         }) 
+    //     });   
+    // }
+
+    setUser = (token) => {
+        loginData(token, (user) => {
+            this.setState({ userData : user })
+        })
     }
 
     saveLoginData() {
@@ -26,15 +60,35 @@ export default class Dashboard extends Component {
         this.props.auth.login();
     }
 
-   
+  
+
+   componentWillMount() {
+    let token = localStorage.getItem('id_token');
+    this.savingUserData(token);
+   this.setUser(token);
+   //this.saveLoginData();
+    // console.log("userData state"+this.state.userData);
+    // console.log("token state"+this.state.token);
+
+   }
     
     componentDidMount() {
-        this.saveLoginData();
+        // let token = localStorage.getItem('id_token');
+        // this.savingUserData(token);
+        // console.log("token state"+this.state.token);
+        console.log(this.state.userData);
+        //this.saveLoginData();
+       
+
     }
- 
+
+    componentDidUpdate() {
+        console.log(this.state.userData);
+    }
+    
     render() {
         const { isAuthenticated } = this.props.auth;
-        console.log(this.state.events);
+       // console.log(this.state.events);
         return (
             <div>
                 <Nav auth = {this.props.auth}/>
@@ -43,7 +97,9 @@ export default class Dashboard extends Component {
                         isAuthenticated() ? (
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
-                                    <Profile />
+                                    <Profile
+                                  
+                                     />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                     <AddEvent id="events" />
