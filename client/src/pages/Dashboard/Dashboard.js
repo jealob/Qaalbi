@@ -83,12 +83,16 @@ export default class Dashboard extends Component {
     }
 
     componentDidUpdate() {
-        console.log(this.state.userData);
+        if(this.state.userData){
+            console.log(this.state.userData);
+            
+        }
     }
     
     render() {
         const { isAuthenticated } = this.props.auth;
        // console.log(this.state.events);
+       if(this.state.userData){
         return (
             <div>
                 <Nav auth = {this.props.auth}/>
@@ -98,7 +102,7 @@ export default class Dashboard extends Component {
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
                                     <Profile
-                                  
+                                  userData = {this.state.userData}
                                      />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
@@ -122,7 +126,10 @@ export default class Dashboard extends Component {
             </div>
 
         )
+    } else {
+       return <div>Loading..</div>
     }
+}
 }
 
 
