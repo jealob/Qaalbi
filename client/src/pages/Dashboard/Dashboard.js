@@ -5,7 +5,7 @@ import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
 import loginData from '../../Auth/loginData';
-//import token from "../../Auth/token";
+import Callback from "../Callback/Callback";
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -29,69 +29,23 @@ export default class Dashboard extends Component {
             }) 
         });   
     }
-       
-
-        
     
-
-    // getSavedUser = (token) => {
-
-    //     loginData(token, (user) => {
-    //         API.getUserData(user.email).then(res => {
-               
-    //             this.setState({ userData : res.data })
-                
-    //         }) 
-    //     });   
-    // }
-
-    setUser = (token) => {
-        loginData(token, (user) => {
-            this.setState({ userData : user })
-        })
-    }
-
-    saveLoginData() {
-        let token = localStorage.getItem('id_token');
-        loginData(token)
-    }
-
     login() {
         this.props.auth.login();
     }
 
-  
 
-   componentWillMount() {
-    let token = localStorage.getItem('id_token');
-    this.savingUserData(token);
-   this.setUser(token);
-   //this.saveLoginData();
-    // console.log("userData state"+this.state.userData);
-    // console.log("token state"+this.state.token);
-
-   }
     
     componentDidMount() {
-        // let token = localStorage.getItem('id_token');
-        // this.savingUserData(token);
-        // console.log("token state"+this.state.token);
-        console.log(this.state.userData);
-        //this.saveLoginData();
-       
-
+        let token = localStorage.getItem('id_token');
+        this.savingUserData(token);
     }
 
-    componentDidUpdate() {
-        if(this.state.userData){
-            console.log(this.state.userData);
-            
-        }
-    }
+  
     
     render() {
         const { isAuthenticated } = this.props.auth;
-       // console.log(this.state.events);
+   
        if(this.state.userData){
         return (
             <div>
@@ -127,7 +81,7 @@ export default class Dashboard extends Component {
 
         )
     } else {
-       return <div>Loading..</div>
+       return <Callback />
     }
 }
 }
