@@ -21,30 +21,28 @@ class Home extends Component {
         return (
             <div>
                 <Nav auth={this.props.auth} />
-                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
                             <div>
-                <Header />
-                <Carousel />
-                <About />
-                <Services />
-                <InstagramFeed />
-            </div>
+                                <Header />
+                                <Carousel />
+                                <About />
+                                <Services />
+                                <InstagramFeed />
+                            </div>
                         ) : (
-                            <div>
-                            <Header />
-                            <Carousel />
-                            <About />
-                            <Services />
-                            <InstagramFeed />
-                        </div>
+                                <div>
+                                    <Header />
+                                    <Carousel />
+                                    <About />
+                                    <Services />
+                                    <InstagramFeed />
+                                </div>
                             )
                     }
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
-
+                
         );
     }
 }
