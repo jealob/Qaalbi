@@ -19,44 +19,44 @@ export default class Dashboard extends Component {
     }
 
     savingUserData = (token) => {
-        
+
         loginData(token, (user) => {
-            API.saveUser(user.email,user);
-            API.getUserData(user.email).then(res => {               
-                this.setState({ userData : res.data })
-                
-            }) 
-        });   
+            API.saveUser(user.email, user);
+            API.getUserData(user.email).then(res => {
+                this.setState({ userData: res.data })
+
+            })
+        });
     }
-    
+
     login() {
         this.props.auth.login();
     }
 
 
-    
+
     componentDidMount() {
         let token = localStorage.getItem('id_token');
         this.savingUserData(token);
     }
 
-  
-    
+
+
     render() {
         const { isAuthenticated } = this.props.auth;
-   
-       if(this.state.userData){
+
+        //    if(this.state.userData){
         return (
             <div>
-                <Nav auth = {this.props.auth}/>
+                <Nav auth={this.props.auth} />
                 <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
                     {
                         isAuthenticated() ? (
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
                                     <Profile
-                                  userData = {this.state.userData}
-                                     />
+                                        userData={this.state.userData}
+                                    />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                     <AddEvent id="events" />
@@ -79,10 +79,10 @@ export default class Dashboard extends Component {
             </div>
 
         )
-    } else {
-       return <Callback />
+        // } else {
+        //    return <Callback />
+        // }
     }
-}
 }
 
 
