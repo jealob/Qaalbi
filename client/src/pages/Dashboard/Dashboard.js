@@ -45,49 +45,49 @@ export default class Dashboard extends Component {
     render() {
         const { isAuthenticated } = this.props.auth;
 
-        //    if(this.state.userData){
-        return (
-            <div>
-                <Nav auth={this.props.auth} />
-                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
-                    {
-                        isAuthenticated() ? (
-                            <div className="row" >
-                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
-                                    <Profile
-                                        userData={this.state.userData}
-                                    />
+        if (this.state.userData) {
+            return (
+                <div>
+                    <Nav auth={this.props.auth} />
+                    <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                        {
+                            isAuthenticated() ? (
+                                <div className="row" >
+                                    <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
+                                        <Profile
+                                            userData={this.state.userData}
+                                        />
+                                    </div>
+                                    <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
+                                        <AddEvent
+                                            handleInputChange={this.handleInputChange}
+                                            handleFormSubmit={this.handleFormSubmit}
+                                            q={this.state.q}
+                                            start_year={this.state.start_year}
+                                            end_year={this.state.end_year}
+                                            id="events" />
+                                    </div>
                                 </div>
-                                <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
-                                    <AddEvent 
-                                    handleInputChange={this.handleInputChange}
-                                    handleFormSubmit={this.handleFormSubmit}
-                                    q={this.state.q}
-                                    start_year={this.state.start_year}
-                                    end_year={this.state.end_year}
-                                    id="events" />
-                                </div>
-                            </div>
-                        ) : (
-                                <div className="py-5" style={{ background: 'pink' }}>
-                                    <Jumbotron >
-                                        <h4>You are not logged in {' '}</h4>
-                                        <h5>
-                                            <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
-                                            {' '}to continue.
+                            ) : (
+                                    <div className="py-5" style={{ background: 'pink' }}>
+                                        <Jumbotron >
+                                            <h4>You are not logged in {' '}</h4>
+                                            <h5>
+                                                <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
+                                                {' '}to continue.
                                         </h5>
-                                    </Jumbotron>
-                                </div>
-                            )
-                    }
+                                        </Jumbotron>
+                                    </div>
+                                )
+                        }
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
 
-        )
-        // } else {
-        //    return <Callback />
-        // }
+            )
+        } else {
+            return <Callback />
+        }
     }
 }
 
