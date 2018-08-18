@@ -10,8 +10,8 @@ export default {
       return axios.delete("/api/users/" + email);
     },
     // Saves a user to the database
-    saveUser: function(userData) {
-      return axios.post("/api/users", userData);
+    saveUser: function(email,userData) {
+      return axios.post("/api/users/" + email, userData);
     },
     // Gets user metadata from Auth0
     getUserMetadata : function () {

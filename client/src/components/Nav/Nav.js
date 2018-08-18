@@ -24,7 +24,10 @@ export class Nav extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+<<<<<<< HEAD
+=======
     // console.log(this.props)
+>>>>>>> 42ccfe3ba8c17fb9093b7bd491a3633621bc3acc
     return (
 
       <div>

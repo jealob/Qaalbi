@@ -36,15 +36,6 @@ export default class Auth {
     });
   }
 
-  retrieveToken(callback) {
-    console.log("retrieving Token")
-    this.auth0.parseHash((err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        callback(authResult.idToken)
-        
-      }
-    });
-  }
 
   setSession(authResult) {
     // Set the time that the access token will expire at
