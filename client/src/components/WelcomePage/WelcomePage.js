@@ -11,38 +11,18 @@ import Instafeed from 'react-instafeed';
 export class Carousel extends React.PureComponent {
   render() {
     return (
-      // <div id="carouselExampleControls" ClassName="carousel slide" data-ride="carousel">
-      //   <div ClassName="carousel-inner">
-      //     <div ClassName="carousel-item active">
-      //       <img ClassName="d-block w-100" src={require("../../images/g1.jpg")} alt="pic1" alt="First slide" />
-      //     </div>
-      //     <div ClassName="carousel-item">
-      //       <img ClassName="d-block w-100" src={require("../../images/g2.jpg")} alt="pic2" alt="Second slide" />
-      //     </div>
-      //     <div ClassName="carousel-item">
-      //       <img ClassName="d-block w-100" src={require("../../images/g3.jpg")} alt="pic3" alt="Third slide" />
-      //     </div>
-      //   </div>
-      //   <a ClassName="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      //     <span ClassName="carousel-control-prev-icon" aria-hidden="true"></span>
-      //     <span ClassName="sr-only">Previous</span>
-      //   </a>
-      //   <a ClassName="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      //     <span ClassName="carousel-control-next-icon" aria-hidden="true"></span>
-      //     <span ClassName="sr-only">Next</span>
-      //   </a>
-      // </div>
+ 
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src={require("../../images/g1.jpg")} alt="First slide" />
+            <img class="mx-auto" src={require("../../images/g1.jpg")} alt="First slide" />
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src={require("../../images/g2.jpg")} alt="Second slide" />
+            <img class="mx-auto" src={require("../../images/g2.jpg")} alt="Second slide" />
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src={require("../../images/g3.jpg")} alt="Third slide" />
+            <img class="mx-auto" src={require("../../images/g3.jpg")} alt="Third slide" />
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -60,19 +40,16 @@ export class Carousel extends React.PureComponent {
 
 
 export const Header = () => (
-  <div className="hdr">
-    <div className="container-fluid">
       <div className="text-center banner">
-        <img className="logo" src={require("../../images/logo.jpg")} alt="logo" />
+      <div className="nameplate">
+      <img className="logo" src={require("../../images/logo.jpg")} alt="logo" />
         <p className="subtext ">Here to serve all your needs</p>
         <a className="btn btn-dark btn-xl text-uppercase " id="getStrt" href="">Get Started</a>
-      </div>
     </div>
-  </div>
+    </div>
 );
 
 export const About = () => (
-  <div className="hdr">
     <div className="container py-3">
       <h2 className="text-center" id="titles">About Us</h2>
       <div className="alert alert-light mt-3" role="alert">
@@ -80,32 +57,14 @@ export const About = () => (
         <hr />
       </div>
     </div>
-  </div>
 );
 
 export class InstagramFeed extends React.PureComponent {
   render() {
     const instafeedTarget = 'instafeed'
-    // function nextPage() {
-    //   currentPage += 1;
-    //   loadList();
-    // }
-    // function previousPage() {
-    //   currentPage -= 1;
-    //   loadList();
-    // }
-    // function firstPage() {
-    //   currentPage = 1;
-    //   loadList();
-    // }
-    // function lastPage() {
-    //   currentPage = numberOfPages;
-    //   loadList();
-    // }
-
     return (
       <div>
-        <h2 className="text-center hdr" id="titles">View Our Instagram Feed</h2>
+        <h2 className="text-center" id="titles">View Our Instagram Feed</h2>
         <div id={instafeedTarget}>
           <Instafeed
             limit='16'
@@ -133,7 +92,7 @@ export class InstagramFeed extends React.PureComponent {
 
 export const Services = () => (
 
-  <div className="hdr">
+ 
     <div className="container">
       <h2 className="text-center mb-3" id="titles">Services</h2>
       <div className="row">
@@ -186,8 +145,9 @@ export const Services = () => (
         <div className="card" style={{ width: 350 }}>
           <img className="card-img-top" src={require("../../images/g1.jpg")} alt="image3" />
           <div className="card-body mr-3 ml-3 planning-column">
-            <h5 className="text-center card-title pt-2 list-group-item active">Full-Service-Planning</h5>
-            <div className="card-text">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Full-Service-Planning</button>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
               <ul className="list-group">
                 <li className="list-group-item">Three Face-To-Face Meetings</li>
                 <li className="list-group-item">Meeting The Month Of </li>
@@ -206,11 +166,52 @@ export const Services = () => (
           </div>
         </div>
       </div>
+      </div>
     </div>
-  </div>
-
-
-
-
 );
 
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
