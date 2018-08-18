@@ -96,13 +96,13 @@ export default class Dashboard extends Component {
                                             <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
                                             {' '}to continue.
                                         </h5>
-                                    </Jumbotron>
-                                </div>
-                            )
-                    }
+                                        </Jumbotron>
+                                    </div>
+                                )
+                        }
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
 
         )
         } else {
