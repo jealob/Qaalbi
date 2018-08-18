@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import AddEvent from "../../components/AddEvent";
+import AddEvent from "../AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
@@ -60,7 +60,13 @@ export default class Dashboard extends Component {
                                      />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
-                                    <AddEvent id="events" />
+                                    <AddEvent 
+                                    handleInputChange={this.handleInputChange}
+                                    handleFormSubmit={this.handleFormSubmit}
+                                    q={this.state.q}
+                                    start_year={this.state.start_year}
+                                    end_year={this.state.end_year}
+                                    id="events" />
                                 </div>
                             </div>
                         ) : (
