@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {  
     // Gets all users
-    getSavedUsers: function(email) {
+    getUserData: function(email) {
       return axios.get("/api/users/" + email);
     },
     // Deletes the user with the given id
@@ -11,6 +11,10 @@ export default {
     },
     // Saves a user to the database
     saveUser: function(userData) {
-      return axios.post("/api/users/login", userData);
+      return axios.post("/api/users", userData);
+    },
+    // Gets user metadata from Auth0
+    getUserMetadata : function () {
+      return axios.get('https://kratos7.auth0.com/.well-known/jwks.json');
     }
   };
