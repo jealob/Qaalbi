@@ -22,8 +22,7 @@ export default class Dashboard extends Component {
         
         loginData(token, (user) => {
             API.saveUser(user.email,user);
-            API.getUserData(user.email).then(res => {
-               
+            API.getUserData(user.email).then(res => {               
                 this.setState({ userData : res.data })
                 
             }) 
@@ -98,7 +97,7 @@ export default class Dashboard extends Component {
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
                                     <Profile
-                                  
+                                    profileData={this.state.userData}
                                      />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
