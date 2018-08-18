@@ -11,6 +11,8 @@ export default class Dashboard extends Component {
         super(props);
 
         this.state = {
+            userData:[],
+            eventData: [],
             name:'',
             email:'',
             phone:'',
@@ -22,7 +24,9 @@ export default class Dashboard extends Component {
         }
     }
 
-
+    login() {
+        this.props.auth.login();
+    }
 
    
 
@@ -42,35 +46,44 @@ export default class Dashboard extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        let eventData = []
-        eventData.push(this.state);
-        this.saveEvent(eventData)
+        API.saveEvent({
+            name:this.state.name,
+            email:this.state.email,
+            phone:this.state.phone,
+            eventDate:this.state.eventData,
+            contactOptions:this.state.contactOptions,
+            hairService:this.state.hairService,
+            makeupService:this.state.makeupService,
+            manicurePedicure:this.state.manicurePedicure
+        })
       };
 
-    saveEvent = eventData => {
-        API.saveEvent(eventData)
-    }
 
     getAllEvents= () => {
         API.getAllEvents().then(res => console.log(res))
     }
+
+    getUser
     componentDidMount() {
         this.getAllEvents();
     }
 
-
     render() {
-       
-        // console.log(this.state.events);
+        const { isAuthenticated } = this.props.auth;
+
+          // if(this.state.userData){
         return (
-           
-              
-                   
-                
-                 <div>
-                          
-                               
-                                    <AddEvent id="events" 
+            <div>
+                <Nav auth={this.props.auth} />
+                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                    {
+                        isAuthenticated() ? (
+                            <div className="row" >
+                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
+                                    {/* <Profile/> */}
+                                </div>
+                                <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
+                                <AddEvent id="events" 
                                      handleInputChange={this.handleInputChange}
                                      handleFormSubmit={this.handleFormSubmit}
                                      name={this.state.name}
@@ -83,18 +96,28 @@ export default class Dashboard extends Component {
                                      manicurePedicure={this.state.manicurePedicure}
                                      
                                     />
-                                
-                           
-                        
-                   
-               
-              </div>
-            
+                                </div>
+                            </div>
+                        ) : (
+                                <div className="py-5" style={{ background: 'pink' }}>
+                                    <Jumbotron >
+                                        <h4>You are not logged in {' '}</h4>
+                                        <h5>
+                                            <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
+                                            {' '}to continue.
+                                        </h5>
+                                    </Jumbotron>
+                                </div>
+                            )
+                    }
+                </div>
+                <Footer />
+            </div>
 
-        
-    
-    
-    );
+        )
+        // } else {
+        //    return <Callback />
+        // }
     }
 
 }
