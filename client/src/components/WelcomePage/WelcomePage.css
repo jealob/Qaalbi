@@ -1,104 +1,135 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant");
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
 @import url("https://fonts.googleapis.com/css?family=Lily+Script+One");
+@import url("https://fonts.googleapis.com/css?family=Martel");
+@import url("https://fonts.googleapis.com/css?family=Bad+Script");
 
-
-body{
+body {
   background-image: url("../../images/full-bloom.png");
 }
 
-
-.nameplate{
-display: inline-block;
-position: relative;
-top:25%;
-background-color: rgb(0, 0, 0);
-background-position: center; 
-height: 50%;
-width: 50%;
-margin: 0 auto;
-border: 32px solid black;
-border-image: url("../../images/border.jpg") 12% round;
-border-image-width: 30px;    
-border-image-slice: 170;
-
+/*Header*/
+.nameplate {
+  display: inline-block;
+  position: relative;
+  top: 25%;
+  background-color: rgba(0, 0, 0, 0.986);
+  background-position: center;
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  border: 32px solid black;
+  border-image: url("../../images/border.jpg") 12% round;
+  border-image-width: 30px;
+  border-image-slice: 170;
 }
+
 
 .banner {
   height: 100vh;
   width: 100%;
   background-image: url("../../images/henna.jpg");
-  background-repeat:no-repeat;
-  background-position: center; 
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   opacity: 0.75;
-  
- 
 }
 .logo {
   position: absolute;
   left: 38%;
   top: 10px;
- 
 }
 
 .subtext {
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: 49%;
-  left: 10%;
+  left: 27%;
   margin: 0 auto;
-  font-size: 35px;
+  font-size: 30px;
   font-family: "Lily Script One", serif;
-  color: #f2d7d7;
-  
+  color: #fd6767;
 }
 
 #getStrt {
   display: inline-block;
-  position: relative;
-  top:75%;
-  right: 27%;
+  position: absolute;
+  top: 75%;
+  left: 43%;
   font-size: 13px;
   font: bold;
-  color: #f2d7d7;
+  color: #fd6767;
+  background-color: transparent;
 }
+
 /*Titles*/
-#titles{
-font-family:'Tangerine', serif;
-font-size: 55px;
-text-shadow: 4px 4px 4px #aaa;
+#titles {
+  font-family: "Tangerine", serif;
+  font-size: 55px;
+  text-shadow: 4px 4px 4px #aaa;
 }
+
+/*About Us*/
+#abt {
+display: block;
+position: relative;
+top: 25%;
+background-color: rgb(0, 0, 0);
+background-position: center;
+width: 100%;
+margin: 0 auto;
+padding: 30px;
+border: 20px solid rgb(5, 4, 4);
+color: #fd6767;
+border-image: url("../../images/border.jpg") 12% round;
+border-image-width: 30px;
+border-image-slice: 150;
+font-size: 24px;
+word-spacing: 9px;
+line-height: 40px;
+text-shadow: .5px 1px rgb(255, 255, 255);
+font-family: 'Bad+Script', cursive;
+}
+
 
 /*Instagram Images control*/
 .pics {
- display: inline;
- border: 3px solid #f2d7d7;
- margin: 10px;
-
+  display: inline;
+  border: 3px solid #f2d7d7;
+  margin: 10px;
 }
 
-.list-group {
-  font-family: "Cormorant", serif;
-
+/*Card Top of ul*/
+.card-img-top {
+  width: 50%;
+  border: 10px solid black;
+  border-image: url("../../images/border.jpg") 12% round;
+  border-image-width: 20px;
+  border-image-slice: 190;
 }
+
 .list-group-item {
-  color: rgb(0, 0, 0);
-
+  color: #fd6767;
+  text-shadow: 1px 1px rgb(190, 186, 186);
+  font-size: 20px;
+  font-family: "Martel", serif;
 }
- 
-.insta{
+
+.insta {
   display: inline;
 }
 
-.h{
 
-  width: 50%;
-   
 
-  
+
+/*Carousel-inner*/
+
+.carousel-inner img{
+  display: inline-block;
+  width: 350px;
+  height:350px;
+  margin: auto;
 }
-
 
 /* .pagination a {
   color: black;
@@ -116,6 +147,3 @@ text-shadow: 4px 4px 4px #aaa;
 .pagination a:hover:not(.active) {
   background-color: #ddd;
 } */
-
-
-
