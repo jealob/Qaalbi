@@ -47,19 +47,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  //eventsController starts here :
-  findAllEvents: function (req, res) {
-    db.Events
-      .find({})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  }, 
-  createEvent: function (req, res) {
-    db.Events
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+ 
 };
 
 // .then(function(dbEvents) {

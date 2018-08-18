@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
 
+
 //Matches with "/api/users"
 router.route("/:email")
   .get(usersController.findByEmail)
@@ -12,10 +13,7 @@ router.route("/:id")
   .put(usersController.update)
   .delete(usersController.remove);
 
-//Events routes
-router.route("/events")
-.get(usersController.findAllEvents)
-.post(usersController.createEvent);
+
 
 
 

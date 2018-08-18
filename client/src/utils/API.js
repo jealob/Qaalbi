@@ -19,11 +19,11 @@ export default {
     },
     // Gets all events
     getAllEvents: function() {
-      return axios.get("/api/users/events");
+      return axios.get("/api/events");
     },
    // Saves an event to the database
     saveEvent: function(eventData) {
-    return axios.post("/api/users/events", eventData);
+    return axios.post("/api/events", eventData);
   },
   
   };
