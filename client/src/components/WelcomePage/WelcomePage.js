@@ -14,6 +14,7 @@ export class Carousel extends React.PureComponent {
  
 <div className="container mt-5 mb-5">
 <div className="row">
+<div className="col">
       <div id="carouselExampleControls" className="carousel slide " data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -35,6 +36,11 @@ export class Carousel extends React.PureComponent {
           <span className="sr-only">Next</span>
         </a>
       </div>
+      </div>
+      <div className="col">
+      
+      </div>
+
       
     </div>
   </div>
