@@ -44,43 +44,17 @@ var UserSchema = new Schema({
     default: Date.now
   },
 
-  //The Following Schema part will be in another js file in the furur ! (Saad futur Project lol)
-  eventType: {
-    type: String,
-    trim: true,
-  },
-  beauty: {
-    type: String,
-    trim: true,
-  },
-  entertainment: {
-    type: String,
-    trim: true,
-  },
-  flowersAndDecors: {
-    type: String,
-    trim: true,
-  },
-  giftsAndFavors: {
-    type: String,
-    trim: true,
-  },
-  photoAndVideos: {
-    type: String,
-    trim: true,
-  },
-  venue: {
-    type: String,
-    trim: true,
-  },
-  catering: {
-    type: String,
-    trim: true,
-  },
-  rentals: {
-    type: String,
-    trim: true,
-  }
+  // `events` is an array that stores ObjectIds
+  // The ref property links these ObjectIds to the Events model
+  // This allows us to populate the User with any associated Events
+  // events: [
+  //   {
+  //     // Store ObjectIds in the array
+  //     type: Schema.Types.ObjectId,
+  //     // The ObjectIds will refer to the ids in the Note model
+  //     ref: "Events"
+  //   }
+  // ]
   
 });
 

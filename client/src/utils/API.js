@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {  
-    // Gets all users
+    // Gets a user
     getUserData: function(email) {
       return axios.get("/api/users/" + email);
     },
@@ -16,5 +16,16 @@ export default {
     // Gets user metadata from Auth0
     getUserMetadata : function () {
       return axios.get('https://kratos7.auth0.com/.well-known/jwks.json');
-    }
+    },
+    // Gets all events
+    getAllEvents: function() {
+      return axios.get("/api/events");
+    },
+   // Saves an event to the database
+    saveEvent: function(eventData) {
+    return axios.post("/api/events", eventData);
+  },
+  
   };
+
+ 

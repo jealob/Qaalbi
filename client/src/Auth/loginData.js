@@ -7,7 +7,7 @@ const loginData = (token,callback) =>
    
       API.getUserMetadata()
       .then(function (response) {
-          console.log("get userMetadata.then");
+     
        let key = response.data.keys[0].x5c[0];
        let certificate = [
           '-----BEGIN CERTIFICATE-----',
@@ -15,18 +15,18 @@ const loginData = (token,callback) =>
            '-----END CERTIFICATE-----'
          ].join('\n')
        let alg = response.data.keys[0].alg;
-       //console.log(token,key,alg)
+      
        nJwt.verify(token,certificate,alg,function(err,verifiedJwt){
   
         let user = {};
           if(err){
            
             if (err.message === 'Jwt is expired') {
-              //console.log(err.message.parsedBody)
-            user.firstName = verifiedJwt.parsedBody.given_name;
-            user.lastName = verifiedJwt.parsedBody.family_name;
-            user.picture =verifiedJwt.parsedBody.picture;
-            user.email = verifiedJwt.parsedBody.email;
+             
+            user.firstName = err.parsedBody.given_name;
+            user.lastName = err.parsedBody.family_name;
+            user.picture =err.parsedBody.picture;
+            user.email = err.parsedBody.email;
             
             callback(user);
              }
@@ -42,7 +42,7 @@ const loginData = (token,callback) =>
             user.picture =verifiedJwt.body.picture;
             user.email = verifiedJwt.body.email;
             user.online = true;
-            console.log(user);
+          
             callback(user);(user);
           }
         });
