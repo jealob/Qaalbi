@@ -12,9 +12,10 @@ export class Carousel extends React.PureComponent {
   render() {
     return (
  
-<div className="container mt-5 mb-5">
-<div className="row">
-<div className="col-6">
+<div className="container-fluid mt-3 mb-5 about">
+<h2 className="text-center" id="titles">About Us</h2>
+<div className="row" >
+  <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
       <div id="carouselExampleControls" className="carousel slide " data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -37,8 +38,8 @@ export class Carousel extends React.PureComponent {
         </a>
       </div>
       </div>
-      <div className="col-6">
-      <h2 className="text-center" id="titles">About Us</h2>
+      <div className=" col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+     
       <div id="abt" className="" role="alert">
         <p className="text-center">We provide a multitude of services ranging from Day-of to Full Service Event Coordination. Your coordinator will collaborate with you to produce an unforgettable event that will be tailored to you & your vision on your joyous occasion. During a complimentary initial consultation, you will have the opportunity to look through our portfolios, learn more about our services and ask any questions you may have. Once we determine what services are needed through this consultation, a proposal will be created and customized especially for you to best fit your needs. QAALBI IS ALL ABOUT CREATING AN UNFORGETTABLE EXPERIENCE FOR EACH INDIVIDUAL CLIENT. </p>
       </div>
@@ -69,8 +70,8 @@ export class InstagramFeed extends React.PureComponent {
   render() {
     const instafeedTarget = 'instafeed'
     return (
-      <div>
-        <h2 className="text-center mb-5" id="titles">View Our Instagram Feed</h2>
+      <div className="text-center mb-5">
+        <h2 id="titles">View Our Instagram Feed</h2>
         <div id={instafeedTarget}>
           <Instafeed
             limit='16'
