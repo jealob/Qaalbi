@@ -20,9 +20,9 @@ export default class Dashboard extends Component {
 
     savingUserData = (token) => {
         
-         transformToUserData(token, (user) => {
+        loginData(token, (user) => {
             API.saveUser(user.email,user);
-            API.getSavedUser(user.email).then(res => {
+            API.getUserData(user.email).then(res => {
                
                 this.setState({ userData : res.data })
                 
@@ -36,8 +36,8 @@ export default class Dashboard extends Component {
 
     // getSavedUser = (token) => {
 
-    //     transformToUserData(token, (user) => {
-    //         API.getSavedUser(user.email).then(res => {
+    //     loginData(token, (user) => {
+    //         API.getUserData(user.email).then(res => {
                
     //             this.setState({ userData : res.data })
                 
@@ -45,11 +45,11 @@ export default class Dashboard extends Component {
     //     });   
     // }
 
-    // setUser = (token) => {
-    //     transformToUserData(token, (user) => {
-    //         this.setState({ userData : user })
-    //     })
-    // }
+    setUser = (token) => {
+        loginData(token, (user) => {
+            this.setState({ userData : user })
+        })
+    }
 
     saveLoginData() {
         let token = localStorage.getItem('id_token');
@@ -66,6 +66,7 @@ export default class Dashboard extends Component {
     let token = localStorage.getItem('id_token');
     this.savingUserData(token);
    this.setUser(token);
+   //this.saveLoginData();
     // console.log("userData state"+this.state.userData);
     // console.log("token state"+this.state.token);
 
@@ -75,7 +76,8 @@ export default class Dashboard extends Component {
         // let token = localStorage.getItem('id_token');
         // this.savingUserData(token);
         // console.log("token state"+this.state.token);
-        this.saveLoginData();
+        console.log(this.state.userData);
+        //this.saveLoginData();
        
 
     }
