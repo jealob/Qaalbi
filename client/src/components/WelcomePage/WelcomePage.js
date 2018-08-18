@@ -14,7 +14,7 @@ export class Carousel extends React.PureComponent {
  
 <div className="container mt-5 mb-5">
 <div className="row">
-<div className="col">
+<div className="col-6">
       <div id="carouselExampleControls" className="carousel slide " data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -37,11 +37,12 @@ export class Carousel extends React.PureComponent {
         </a>
       </div>
       </div>
-      <div className="col">
-      
+      <div className="col-6">
+      <h2 className="text-center" id="titles">About Us</h2>
+      <div id="abt" className="" role="alert">
+        <p className="text-center">We provide a multitude of services ranging from Day-of to Full Service Event Coordination. Your coordinator will collaborate with you to produce an unforgettable event that will be tailored to you & your vision on your joyous occasion. During a complimentary initial consultation, you will have the opportunity to look through our portfolios, learn more about our services and ask any questions you may have. Once we determine what services are needed through this consultation, a proposal will be created and customized especially for you to best fit your needs. QAALBI IS ALL ABOUT CREATING AN UNFORGETTABLE EXPERIENCE FOR EACH INDIVIDUAL CLIENT. </p>
       </div>
-
-      
+      </div>
     </div>
   </div>
     );
@@ -60,11 +61,7 @@ export const Header = () => (
 );
 
 export const About = () => (
-  <div className="container">
-      <h2 className="text-center" id="titles">About Us</h2>
-      <div id="abt" className=" mt-3" role="alert">
-        <p className="text-uppercase text-center">We provide a multitude of services ranging from Day-of to Full Service Event Coordination. Your coordinator will collaborate with you to produce an unforgettable event that will be tailored to you & your vision on your joyous occasion. During a complimentary initial consultation, you will have the opportunity to look through our portfolios, learn more about our services and ask any questions you may have. Once we determine what services are needed through this consultation, a proposal will be created and customized especially for you to best fit your needs. QAALBI IS ALL ABOUT CREATING AN UNFORGETTABLE EXPERIENCE FOR EACH INDIVIDUAL CLIENT. </p>
-      </div>
+  <div>
     </div>
 );
 
@@ -132,12 +129,10 @@ export const Services = () => (
           </div>
         </div>
    
-         
-           
-          <div className="row">
+         <div className="row">
           <div className="card-body mr-3 ml-3  planning-column">
           <h4 class="mb-0">
-          <div class="alert alert-danger text-center  text-uppercase"   data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
+          <div class="alert alert-danger text-center  text-uppercase"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
           </h4>
           <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
