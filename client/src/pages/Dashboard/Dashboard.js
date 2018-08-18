@@ -57,18 +57,18 @@ export default class Dashboard extends Component {
 
   
 
-//    componentWillMount() {
-//     let token = localStorage.getItem('id_token');
-//     this.savingUserData(token);
-//    this.setUser(token);
-//     // console.log("userData state"+this.state.userData);
-//     // console.log("token state"+this.state.token);
+   componentWillMount() {
+    let token = localStorage.getItem('id_token');
+    this.savingUserData(token);
+   this.setUser(token);
+    // console.log("userData state"+this.state.userData);
+    // console.log("token state"+this.state.token);
 
-//    }
+   }
     
     componentDidMount() {
-        let token = localStorage.getItem('id_token');
-        this.savingUserData(token);
+        // let token = localStorage.getItem('id_token');
+        // this.savingUserData(token);
         // console.log("token state"+this.state.token);
         
        
@@ -91,7 +91,7 @@ export default class Dashboard extends Component {
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
                                     <Profile
-                                   firstName={this.state.userData.firstName}
+                                  
                                      />
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
