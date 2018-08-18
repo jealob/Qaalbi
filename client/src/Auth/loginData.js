@@ -2,7 +2,7 @@ import API from '../utils/API'
 import nJwt from 'njwt';
 
 
-const loginData = (token) => 
+const loginData = (token,callback) => 
      {
    
       API.getUserMetadata()
@@ -27,8 +27,8 @@ const loginData = (token) =>
             user.lastName = verifiedJwt.parsedBody.family_name;
             user.picture =verifiedJwt.parsedBody.picture;
             user.email = verifiedJwt.parsedBody.email;
-            console.log(user);
-            API.saveUser(user);
+            
+            callback(user);
              }
               else {
                console.log(err)
@@ -43,7 +43,7 @@ const loginData = (token) =>
             user.email = verifiedJwt.body.email;
             user.online = true;
             console.log(user);
-            API.saveUser(user);
+            callback(user);(user);
           }
         });
   
