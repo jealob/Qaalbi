@@ -12,21 +12,21 @@ const AddEvent = (props) => {
             <span className="required-field"> *</span>
           </label>
           <input type="text" className="required form-control" id="name" placeholder="Mary Smith"
-           value={props.name}
-           name="name"
-           onChange={props.handleInputChange}
-           required
+            value={props.name}
+            name="name"
+            onChange={props.handleInputChange}
+            required
           />
         </div>
         <div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <label htmlFor="email">Email
              <span className="required-field"> *</span>
           </label>
-          <input type="email" className="form-control" id="email" placeholder="someone@email.com" 
-           value={props.email}
-           name="email"
-           onChange={props.handleInputChange}
-           required
+          <input type="email" className="form-control" id="email" placeholder="someone@email.com"
+            value={props.email}
+            name="email"
+            onChange={props.handleInputChange}
+            required
           />
         </div>
       </div>
@@ -35,11 +35,11 @@ const AddEvent = (props) => {
           <label htmlFor="phone">Phone
               <span className="required-field"> *</span>
           </label>
-          <input type="number" className="form-control" id="phone" placeholder="123-456-7890" 
-           value={props.phone}
-           name="phone"
-           onChange={props.handleInputChange}
-           required
+          <input type="number" className="form-control" id="phone" placeholder="123-456-7890"
+            value={props.phone}
+            name="phone"
+            onChange={props.handleInputChange}
+            required
           />
         </div>
         <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -47,19 +47,19 @@ const AddEvent = (props) => {
               <span className="required-field"> *</span>
           </label>
           <input type="date" className="form-control" id="eventDate"
-           value={props.eventDate}
-           name="eventDate"
-           onChange={props.handleInputChange}
-           required
+            value={props.eventDate}
+            name="eventDate"
+            onChange={props.handleInputChange}
+            required
           />
         </div>
         <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
           <label htmlFor="preferredContact">Method of Contact</label>
           <select id="preferredContact" className="form-control"
-          value = {props.contactOptions}
-          name='contactOptions'
-          onChange={props.handleInputChange}
-          required
+            value={props.contactOptions}
+            name='contactOptions'
+            onChange={props.handleInputChange}
+            required
           >
             <option selected>Please Select</option>
             <option>Phone</option>
@@ -68,59 +68,51 @@ const AddEvent = (props) => {
           </select>
         </div>
       </div>
-      
+
       <div className="form-row border rounded mb-2">
         <div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 checkboxes">
           <div className="checker">
             <label htmlFor="beautyServices">Beauty Services</label>
           </div>
           <div className="checker">
-            <input type="checkbox" id="hairService" 
-              value="hairService"   
+            <input type="checkbox" id="hairService"
+              value="hairService"
               name='hairService'
               checked={props.hairService}
               onChange={props.handleInputChange}
-              />
+            />
             <label for="hairService">Hair Service</label>
           </div>
           <div className="checker">
             <input type="checkbox" id="makeupService" name="feature"
-              value="makeupService" 
+              value="makeupService"
               name='makeupService'
               checked={props.makeupService}
               onChange={props.handleInputChange}
-              />
+            />
             <label for="makeupService">Makeup Service</label>
           </div>
           <div className="checker">
             <input type="checkbox" id="manicurePedicure" name="feature"
-              value="manicurePedicure" 
+              value="manicurePedicure"
               name='manicurePedicure'
               checked={props.manicurePedicure}
               onChange={props.handleInputChange}
-              />
+            />
             <label for="manicurePedicure">Manicure &amp; Pedicure</label>
           </div>
-        </div> </div>
-
- <div className="pull-right">
-      <button
-        onClick={props.handleFormSubmit}
-        type="submit"
-        className="btn btn-lg btn-danger"
-      >
-        Submit
-      </button>
-    </div>
-      
-      
+        </div>
+        <div className="form-group col">
+          <button type="submit" className="btn btn-secondary" onClick={props.handleFormSubmit} data-toggle="modal" data-target="#warningModal" id="submit">Save</button>
+        </div>
+      </div>
     </form>
-   
 
 
-    
 
-     //* End Message */}
+
+
+    //* End Message */}
     // End Form
     // <div className="form-row">
     //     <div className="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
