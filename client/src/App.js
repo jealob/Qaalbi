@@ -2,7 +2,7 @@ import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import AddEvent from "./pages/AddEvent";
-import EventSearch from "./pages/FindEvent";
+import EventSearch from "./pages/EventSearch";
 import Dashboard from "./pages/Dashboard";
 import Auth from './Auth/Auth';
 import history from './history';

@@ -28,7 +28,7 @@ export default {
   },
   getEvent: function (eventData) {
     console.log(eventData);
-    return axios.get("/api/events", eventData);
+    return axios.get(`api/events/${eventData.eventYear}/${eventData.eventMonth}/${eventData.firstName}/${eventData.lastName}`);
   }
 
 };

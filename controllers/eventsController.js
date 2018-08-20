@@ -11,9 +11,13 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByName: function (req, res) {
-    console.log(req.params)
+    let query = req.params
+    console.log( `${query.firstname} ${query.lastname}`)
     db.Events
-      .find({})
+      .find(
+        {name: `${query.firstname} ${query.lastname}`,
+        // eventDate: query.date
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

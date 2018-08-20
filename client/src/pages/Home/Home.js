@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Nav, Footer } from "../../components/Nav";
 // import { FindEvent } from "";
 import { Input, FormBtn, MonthMenu, YearMenu } from "../../components/Form";
+import { ListItem } from "../../components/List";
 import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
-import API from "../../utils/API"
+import API from "../../utils/API";
+const moment = require('moment');
 
 class Home extends Component {
     constructor(props) {
@@ -13,7 +15,8 @@ class Home extends Component {
             firstName: "",
             lastName: "",
             eventMonth: "",
-            eventYear: ""
+            eventYear: "",
+            eventSearch: "",
         }
     }
 
@@ -41,7 +44,13 @@ class Home extends Component {
             lastName: this.state.lastName,
             eventMonth: this.state.eventMonth,
             eventYear: this.state.eventYear
-        }).then(console.log("returned"))
+        }).then(res => {
+            this.setState({ eventSearch: res.data });
+            console.log(this.state.eventSearch);
+        })
+    };
+    componentDidMount() {
+        console.log(this.state.eventSearch.length);
     };
 
     render() {
@@ -89,14 +98,27 @@ class Home extends Component {
                                 </div>
                                 <FormBtn className="text-center d-inline-block" onClick={this.handleEventSearch}>Search</FormBtn>
                             </form>
+                            {typeof this.state.eventSearch == "object" && (
+                                <div className="card">
+                                    <div className="card-header text-center">
+                                        We found {this.state.eventSearch.length} matches for "<strong>{this.state.firstName} {this.state.lastName}</strong>"
+                                </div>
+                                    <div className="my-2">{this.state.eventSearch.length ? (
+                                        <div>
+                                            {this.state.eventSearch.map((event) =>
+                                                <ListItem key={event._id}
+                                                    name={event.name}
+                                                    date={moment(event.eventDate).format('MM-DD-YYYY')}
+                                                // operate={this.handleSaveArticle}
+                                                />
+                                            )
+                                            }
+                                        </div>
+                                    ) : (<h5 className="text-center">There are no event that matches your search at this time</h5>)}
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                        {/* <FindEvent
-                            handleSearchInputChange={this.handleSearchInputChange}
-                            handleEventSearch={this.handleEventSearch}
-                            firstName={this.state.firstName}
-                            lastName={this.state.lastName}
-                            eventMonth={this.state.eventMonth}
-                            eventYear={this.state.eventYear} /> */}
                         <Carousel />
                         <About />
                         <Services />
