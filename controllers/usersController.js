@@ -12,7 +12,6 @@ module.exports = {
     db.User
       .findOne({ email: req.params.email })
       .then(dbModel => {
-        console.log("hello");
         res.json(dbModel)})
       .catch(err => res.status(422).json(err));
   },
