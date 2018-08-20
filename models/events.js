@@ -6,20 +6,7 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a newEventsSchema object
 // This is similar to a Sequelize model
 var EventsSchema = new Schema({
-//   {userData: Array(0), name: "Saad Mourtada", email: "saad.mourtada@gmail.com", phone: "6129908138", eventDate: "2018-08-21", …}
-//   contactOptions
-// :
-// "Phone"
 
-// hairService
-// :
-// true
-// makeupService
-// :
-// true
-// manicurePedicure
-// :
-// false
 name: {
   type: String,
   trim: true,
