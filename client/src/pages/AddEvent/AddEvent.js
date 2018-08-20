@@ -49,14 +49,14 @@ export default class Dashboard extends Component {
         event.preventDefault();
         console.log(this.state);
         API.saveEvent({
-            name: this.state.name,
-            email: this.state.email,
-            phone: this.state.phone,
-            eventDate: this.state.eventDate,
-            contactOptions: this.state.contactOptions,
-            hairService: this.state.hairService,
-            makeupService: this.state.makeupService,
-            manicurePedicure: this.state.manicurePedicure
+            name:this.state.name,
+            email:this.state.email,
+            phone:this.state.phone,
+            eventDate:this.state.eventDate,
+            contactOptions:this.state.contactOptions,
+            hairService:this.state.hairService,
+            makeupService:this.state.makeupService,
+            manicurePedicure:this.state.manicurePedicure
         })
     };
 
