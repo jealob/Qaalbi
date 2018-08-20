@@ -20,6 +20,7 @@ export default class Dashboard extends Component {
 
     savingUserData = (token) => {
         loginData(token, (user) => {
+            user.token = token;
             API.saveUser(user.email, user)
             // I wasn't talking about this line, I was talking about the line
             .then(res => this.getUserData(user.email));

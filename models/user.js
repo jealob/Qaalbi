@@ -6,9 +6,11 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
-  // `username` must be of type String
-  // `username` will trim leading and trailing whitespace before it's saved
-  // `username` is a required field and throws a custom error message if not supplied
+  token: {
+    type: String,
+    trim: true,
+    
+  },
   firstName: {
     type: String,
     trim: true,
