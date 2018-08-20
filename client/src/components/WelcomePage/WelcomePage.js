@@ -1,19 +1,28 @@
 import React from "react";
 import './WelcomePage.css';
 import Instafeed from 'react-instafeed';
-// import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
-//  import "bootstrap/dist/css/bootstrap.css";
-//  import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+ 
+export const Header = () => ( 
+  <div className="text-center banner">
+  <div className="row">
+    <div className=" container nameplate">
 
-
-
+      <img className=" col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-4" src={require("../../images/logo.jpg")} alt="logo" />
+        <p className="subtext  col-xs-12 col-sm-12 col-md-4 col-lg-4 ">Here to serve all your needs</p>
+        <a className="btn btn-dark btn-xl text-uppercase mb-5  col-xs-12 col-sm-12 col-md-4 col-lg-4 " id="getStrt" href="#btnjmp">Get Started</a>
+    </div>
+    </div>
+    </div>
+ 
+);
 
 export class Carousel extends React.PureComponent {
   render() {
     return (
- 
+ <div id="btnjmp">
 <div className="container-fluid mt-3 mb-5 about">
 <h2 className="text-center" id="titles">About Us</h2>
+
 <div className="row" >
   <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
       <div id="carouselExampleControls" className="carousel slide " data-ride="carousel">
@@ -46,20 +55,10 @@ export class Carousel extends React.PureComponent {
       </div>
     </div>
   </div>
+  </div>
     );
   }
 }
-
-
-export const Header = () => ( 
-  <div className="text-center banner">
-    <div className=" container nameplate">
-      <img className="logo" src={require("../../images/logo.jpg")} alt="logo" />
-        <p className="subtext ">Here to serve all your needs</p>
-        <a className="btn btn-dark btn-xl text-uppercase " id="getStrt" href="">Get Started</a>
-    </div>
-  </div>
-);
 
 export const About = () => (
   <div>
@@ -70,7 +69,7 @@ export class InstagramFeed extends React.PureComponent {
   render() {
     const instafeedTarget = 'instafeed'
     return (
-      <div className="text-center mb-5">
+      <div className="text-center mt-5 mb-5">
         <h2 id="titles">View Our Instagram Feed</h2>
         <div id={instafeedTarget}>
           <Instafeed
@@ -100,13 +99,13 @@ export class InstagramFeed extends React.PureComponent {
 export const Services = () => (
 
  
-    <div className="container">
-      <h2 className="text-center mt-5" id="titles">Services</h2>
+    <div className="container" >
+      <h2 className="text-center mb-5" id="titles">Services</h2>
 
       <div className="row">
           <div className="card-body ml-3 mr-3 rounded planning-column">
           <h4 class="mb-0">
-          <div class="alert alert-danger text-center text-uppercase" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Day Planning</div>
+          <div class="btn btn-outline-danger btn-lg btn-block text-center text-uppercase"  type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Day Planning</div>
           </h4>
           <div id="collapseOne" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
@@ -129,11 +128,13 @@ export const Services = () => (
             </div>
           </div>
         </div>
-   
+       
+
+
          <div className="row">
           <div className="card-body mr-3 ml-3  planning-column">
           <h4 class="mb-0">
-          <div class="alert alert-danger text-center  text-uppercase"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
+          <div class="btn btn-outline-danger btn-lg btn-block text-center text-uppercase  " type="button"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
           </h4>
           <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
@@ -160,9 +161,9 @@ export const Services = () => (
         
            
           <div className="row">
-          <div className="card-body planning-column">
+          <div className="card-body ml-3 mr-3 planning-column">
           <h4 class="mb-0">
-          <div class="alert alert-danger text-center  text-uppercase"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree active">Full Planning</div>
+          <div class="btn btn-outline-danger btn-lg btn-block text-center  text-uppercase"  type="button"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree active">Full Planning</div>
           </h4>
           <div id="collapseThree" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
