@@ -1,12 +1,6 @@
 import React from "react";
 import './WelcomePage.css';
 import Instafeed from 'react-instafeed';
-// import { React_Bootstrap_Carousel } from "react-bootstrap-carousel";
-//  import "bootstrap/dist/css/bootstrap.css";
-//  import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-
-
-
 
 export class Carousel extends React.PureComponent {
   render() {

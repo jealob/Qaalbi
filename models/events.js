@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a newEventsSchema object
 // This is similar to a Sequelize model
-var EventsSchema = new Schema({
+var EventSchema = new Schema({
 //   {userData: Array(0), name: "Saad Mourtada", email: "saad.mourtada@gmail.com", phone: "6129908138", eventDate: "2018-08-21", …}
 //   contactOptions
 // :
@@ -99,8 +99,8 @@ manicurePedicure: {
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Events = mongoose.model("Events", EventsSchema);
+var Event = mongoose.model("Event", EventSchema);
 
 // Export the Event model
-module.exports = Events;
+module.exports = Event;
 

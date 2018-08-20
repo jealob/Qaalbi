@@ -22,8 +22,7 @@ export default class Dashboard extends Component {
         loginData(token, (user) => {
             API.saveUser(user.email, user)
             .then(this.getUserData(user.email));
-            this.setState({ userData: user });    
-            
+            this.setState({ userData: user });            
         });
     }
     
