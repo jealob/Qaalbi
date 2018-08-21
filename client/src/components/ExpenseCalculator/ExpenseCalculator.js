@@ -22,7 +22,6 @@ handleChange(event){
     }
   }
 
-  getVenuePrice() {}
   render() {
     return (
       <form
@@ -47,7 +46,7 @@ handleChange(event){
                 id="Venue"
                 name="Venue"
                 class="form-control"
-                onChange={(event) => this.handleClick(event)}
+                onChange={(event) => this.handleChange(event)}
               >
                 <option value="0">Select Venue</option>
                 <option value="1200">Banquet Hall</option>
