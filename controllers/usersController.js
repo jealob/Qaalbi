@@ -11,9 +11,7 @@ module.exports = {
   findByEmail: function (req, res) {
     db.User
       .findOne({ email: req.params.email })
-      .then(dbModel => {
-        console.log("hello");
-        res.json(dbModel)})
+      .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function (req, res) {
@@ -32,6 +30,13 @@ module.exports = {
     //if(req.query.includes("email"))
     db.User
       .findOneAndUpdate({ email: req.params.email }, req.body,{upsert:true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByToken: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOne({ token: req.params.token })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

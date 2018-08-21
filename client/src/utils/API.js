@@ -5,6 +5,10 @@ export default {
   getUserData: function (email) {
     return axios.get("/api/users/" + email);
   },
+  //Gets a user by token
+  getUserByToken: function (token) {
+    return axios.get("/api/users/" + token);
+  },
   // Deletes the user with the given id
   deleteUser: function (email) {
     return axios.delete("/api/users/" + email);
