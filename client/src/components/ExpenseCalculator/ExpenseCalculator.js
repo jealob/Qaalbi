@@ -9,6 +9,8 @@ handleChange(event){
   const price = parseInt(event.target.value);
   if (event.target.value) {
     this.setState ({ price: this.state.price + price});
+    let previousPrice = price;
+    
   } else {
     this.setState({price: this.state.price - price})
   }
