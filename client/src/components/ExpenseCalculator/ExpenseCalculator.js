@@ -7,12 +7,14 @@ class ExpenseCalculator extends React.Component {
   }
 handleChange(event){
   const price = parseInt(event.target.value);
-  if (event.target.value) {
-    this.setState ({ price: this.state.price + price});
-    let previousPrice = price;
-    
-  } else {
-    this.setState({price: this.state.price - price})
+  if (event.target.value == "Venue") {
+    this.setState ({ price: this.state.price + price}); 
+  } else if (event.target.value == "guest_no"){
+    this.setState({price: this.state.price + price});
+  } else if (event.target.value == "catering"){
+      this.setState({price: this.state.price + price});
+  } else { (event.target.value)
+        this.setState({price: this.state.price - price});
   }
 }
   handleClick(event) {
