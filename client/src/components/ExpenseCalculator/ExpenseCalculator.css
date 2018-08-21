@@ -32,6 +32,9 @@ form {
 	font-size:14px;    
     line-height:16px;
 } */
+.form-group {
+    font-display: center;
+}
 legend{
 	font-size:30px;
 	font-family:Georgia, "Times New Roman", Times, serif;
