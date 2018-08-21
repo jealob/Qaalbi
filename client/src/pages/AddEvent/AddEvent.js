@@ -71,6 +71,7 @@ export default class Dashboard extends Component {
     getAllEvents= () => {
         API.getAllEvents().then(res => console.log(res))
     }
+    
 
     
     componentDidMount() {

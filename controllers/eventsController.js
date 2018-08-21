@@ -18,7 +18,7 @@ module.exports = {
         // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
         // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
         //email: dbEvents.email
-        console.log(dbEvents)
+       
         return db.User.findOneAndUpdate({token: dbEvents.token}, { $push: { events: dbEvents._id } }, { new: true });
       })
       .then(dbModel => res.json(dbModel))
