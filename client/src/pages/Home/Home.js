@@ -5,7 +5,8 @@ import { Input, FormBtn, MonthMenu, YearMenu } from "../../components/Form";
 import { ListItem } from "../../components/List";
 import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
 import API from "../../utils/API";
-const moment = require('moment');
+// const moment = require('moment');
+
 
 class Home extends Component {
     constructor(props) {
@@ -108,7 +109,7 @@ class Home extends Component {
                                             {this.state.eventSearch.map((event) =>
                                                 <ListItem key={event._id}
                                                     name={event.name}
-                                                    date={moment(event.eventDate).format('MM-DD-YYYY')}
+                                                    // date={moment(event.eventDate).format('MM-DD-YYYY')}
                                                 // operate={this.handleSaveArticle}
                                                 />
                                             )
