@@ -6,9 +6,10 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var UserSchema = new Schema({
-  // `username` must be of type String
-  // `username` will trim leading and trailing whitespace before it's saved
-  // `username` is a required field and throws a custom error message if not supplied
+  token: {
+    type: String,
+    trim: true,
+  },
   firstName: {
     type: String,
     trim: true,
@@ -47,14 +48,14 @@ var UserSchema = new Schema({
   // `events` is an array that stores ObjectIds
   // The ref property links these ObjectIds to the Events model
   // This allows us to populate the User with any associated Events
-  // events: [
-  //   {
-  //     // Store ObjectIds in the array
-  //     type: Schema.Types.ObjectId,
-  //     // The ObjectIds will refer to the ids in the Note model
-  //     ref: "Events"
-  //   }
-  // ]
+  events: [
+    {
+      // Store ObjectIds in the array
+      type: Schema.Types.ObjectId,
+      // The ObjectIds will refer to the ids in the Note model
+      ref: "Events"
+    }
+  ]
   
 });
 

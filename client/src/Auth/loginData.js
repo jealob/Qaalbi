@@ -22,7 +22,7 @@ const loginData = (token,callback) =>
           if(err){
            
             if (err.message === 'Jwt is expired') {
-             
+           
             user.firstName = err.parsedBody.given_name;
             user.lastName = err.parsedBody.family_name;
             user.picture =err.parsedBody.picture;
@@ -36,7 +36,8 @@ const loginData = (token,callback) =>
           
           }else{
             //console.log(verifiedJwt.parsedBody); // Will contain the header and body
-            
+            console.log(token)
+            user.token = token.toString();
             user.firstName = verifiedJwt.body.given_name;
             user.lastName = verifiedJwt.body.family_name;
             user.picture =verifiedJwt.body.picture;

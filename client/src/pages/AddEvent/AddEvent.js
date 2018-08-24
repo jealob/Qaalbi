@@ -4,13 +4,15 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
-//import token from "../../Auth/token";
+import Callback from "../Callback/Callback";
+
 
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            token:"",
             userData:[],
             eventData: [],
             name:'',
@@ -44,13 +46,20 @@ export default class Dashboard extends Component {
 
     };
 
+    setTokenAndGetUser = (token)=> {
+        
+        this.setState({token:token});
+        API.getUserByToken(token).then(res => this.setState({userData: res.data}));
+    }
+
     handleFormSubmit = event => {
         event.preventDefault();
         API.saveEvent({
+            token:this.state.token,
             name:this.state.name,
             email:this.state.email,
             phone:this.state.phone,
-            eventDate:this.state.eventData,
+            eventDate:this.state.eventDate,
             contactOptions:this.state.contactOptions,
             hairService:this.state.hairService,
             makeupService:this.state.makeupService,
@@ -62,16 +71,19 @@ export default class Dashboard extends Component {
     getAllEvents= () => {
         API.getAllEvents().then(res => console.log(res))
     }
+    
 
-    getUser
+    
     componentDidMount() {
+        let token = localStorage.getItem('id_token');
+        this.setTokenAndGetUser(token)
         this.getAllEvents();
     }
 
     render() {
         const { isAuthenticated } = this.props.auth;
 
-          // if(this.state.userData){
+          if(this.state.userData){
         return (
             <div>
                 <Nav auth={this.props.auth} />
@@ -80,7 +92,9 @@ export default class Dashboard extends Component {
                         isAuthenticated() ? (
                             <div className="row" >
                                 <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
-                                    {/* <Profile/> */}
+                                     <Profile
+                                     userData={this.state.userData}
+                                     /> 
                                 </div>
                                 <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                 <AddEvent id="events" 
@@ -115,9 +129,9 @@ export default class Dashboard extends Component {
             </div>
 
         )
-        // } else {
-        //    return <Callback />
-        // }
+        } else {
+           return <Callback />
+        }
     }
 
 }

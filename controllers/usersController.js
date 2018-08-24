@@ -33,6 +33,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByToken: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOne({ token: req.params.token })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   update: function (req, res) {
     //if(req.query.includes("email"))
     db.User
@@ -50,11 +57,4 @@ module.exports = {
  
 };
 
-// .then(function(dbEvents) {
-//   // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
-//   // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
-//   // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-//   //email: dbEvents.email
-  
-//   return db.User.findOneAndUpdate({email: dbEvents.email}, { $push: { events: dbEvents._id } }, { new: true });
-// })
+
