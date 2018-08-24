@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import { Nav, Footer } from "../../components/Nav";
+<<<<<<< HEAD
 // import { FindEvent } from "";
 import { Input, FormBtn, MonthMenu, YearMenu } from "../../components/Form";
 import { ListItem } from "../../components/List";
+=======
+import Jumbotron from "../../components/Jumbotron";
+
+// import ExpenseCalculator from "../../components/ExpenseCalculator";
+// import { Input, FormBtn } from "../../components/Form";
+
+>>>>>>> 5b471cce6da5312c83868ef6fee94d3bb0726466
 import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
 import API from "../../utils/API";
 // const moment = require('moment');
+
 
 
 class Home extends Component {
