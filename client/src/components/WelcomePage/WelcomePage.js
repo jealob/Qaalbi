@@ -79,10 +79,10 @@ export class InstagramFeed extends React.PureComponent {
             sortBy='most-recent'
             target={instafeedTarget}
             template={ `
-            <div className='insta'>
-              <a href='{{link}}' target='_blank' className='instafeed__item  '>
+            <div class='insta'>
+              <a href='{{link}}' target='_blank' class='instafeed__item  '>
               
-              <img className='instafeed__item__background pics' src='{{image}}' />  
+              <img class='instafeed__item__background pics' src='{{image}}' />  
                
               </a>
             </div>
@@ -104,13 +104,8 @@ export const Services = () => (
 
       <div className="row">
           <div className="card-body ml-3 mr-3 rounded planning-column">
-<<<<<<< HEAD
           <h4 class="mb-0">
           <div class="btn btn-outline-danger btn-lg btn-block text-center text-uppercase"  type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Day Planning</div>
-=======
-          <h4 className="mb-0">
-          <div className="alert alert-danger text-center text-uppercase" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Day Planning</div>
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
           </h4>
           <div id="collapseOne" className="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div className="card-body">
@@ -138,13 +133,8 @@ export const Services = () => (
 
          <div className="row">
           <div className="card-body mr-3 ml-3  planning-column">
-<<<<<<< HEAD
           <h4 class="mb-0">
           <div class="btn btn-outline-danger btn-lg btn-block text-center text-uppercase  " type="button"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
-=======
-          <h4 className="mb-0">
-          <div className="alert alert-danger text-center  text-uppercase"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo active">Month Planning</div>
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
           </h4>
           <div id="collapseTwo" className="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div className="card-body">
@@ -171,15 +161,9 @@ export const Services = () => (
         
            
           <div className="row">
-<<<<<<< HEAD
           <div className="card-body ml-3 mr-3 planning-column">
           <h4 class="mb-0">
           <div class="btn btn-outline-danger btn-lg btn-block text-center  text-uppercase"  type="button"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree active">Full Planning</div>
-=======
-          <div className="card-body planning-column">
-          <h4 className="mb-0">
-          <div className="alert alert-danger text-center  text-uppercase"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree active">Full Planning</div>
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
           </h4>
           <div id="collapseThree" className="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div className="card-body">

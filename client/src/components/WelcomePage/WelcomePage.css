@@ -90,6 +90,10 @@ font-family: 'Bad+Script', cursive;
   margin: 10px;
 }
 
+.instafeed__item__background.pics{
+border: 2px solid black;
+}
+
 /*Card Top of ul*/
 .card-img-top {
   width: 50%;
@@ -108,7 +112,9 @@ font-family: 'Bad+Script', cursive;
 }
 
 .insta {
-  display: inline;
+  display:  inline;
+   
+
 }
 
 
