@@ -8,6 +8,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByEmail: function (req, res) {
+    db.User
+      .findOne({ email: req.params.email })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   findById: function (req, res) {
     db.User
       .findById(req.params.id)
@@ -20,7 +26,22 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByEmailAndUpsert: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOneAndUpdate({ email: req.params.email }, req.body,{upsert:true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByToken: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOne({ token: req.params.token })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   update: function (req, res) {
+    //if(req.query.includes("email"))
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
@@ -32,5 +53,8 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+ 
 };
+
+

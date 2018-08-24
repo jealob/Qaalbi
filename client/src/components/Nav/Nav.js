@@ -24,7 +24,6 @@ export class Nav extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-    console.log(this.props)
     return (
 
       <div>
@@ -39,9 +38,9 @@ export class Nav extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav text-uppercase ml-auto">
-                    <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                    <a className="nav-link js-scroll-trigger" href="/home">Home</a>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#events">Events</a>
+                      <a className="nav-link js-scroll-trigger" href="/addevent">Events</a>
                       <span className="sr-only">(current)</span>
                     </li>
                     <li className="nav-item">
@@ -74,13 +73,13 @@ export class Nav extends Component {
                 <div className="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul className="navbar-nav text-uppercase ml-auto">
                     <li>
-                      <a className="nav-link js-scroll-trigger" href="home">Home</a>
+                      <a className="nav-link js-scroll-trigger" href="/home">Home</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="dashboard">Dashboard</a>
+                      <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#events">Events</a>
+                      <a className="nav-link js-scroll-trigger" href="/addevent">Events</a>
                       <span className="sr-only">(current)</span>
                     </li>
                     <li className="nav-item">
