@@ -99,7 +99,7 @@ class Home extends Component {
                                 </div>
                                 <FormBtn className="text-center d-inline-block" onClick={this.handleEventSearch}>Search</FormBtn>
                             </form>
-                            {typeof this.state.eventSearch == "object" && (
+                            {typeof this.state.eventSearch === "object" && (
                                 <div className="card">
                                     <div className="card-header text-center">
                                         We found {this.state.eventSearch.length} matches for "<strong>{this.state.firstName} {this.state.lastName}</strong>"

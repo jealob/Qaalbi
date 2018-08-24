@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Nav, Footer } from "../../components/Nav";
 // import { FindEvent } from "";
 import { List, ListItem } from "../../components/List";
-import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
-import API from "../../utils/API"
+// import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
+// import API from "../../utils/API"
 
 class EventSearch extends Component {
     constructor(props) {

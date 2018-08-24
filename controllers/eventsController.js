@@ -37,14 +37,3 @@ module.exports = {
   },
 };
 
-<<<<<<< HEAD
-// .then(function(dbEvents) {
-//   // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
-//   // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
-//   // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-//   //email: dbEvents.email
-
-//   return db.User.findOneAndUpdate({email: dbEvents.email}, { $push: { events: dbEvents._id } }, { new: true });
-// })
-=======
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9

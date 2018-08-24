@@ -2,27 +2,18 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
-import Profile from "../../components/Profile";
+// import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
-<<<<<<< HEAD
-// import Callback from "../CallBack";
-//import token from "../../Auth/token";
-=======
 import Callback from "../Callback/Callback";
 
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
 
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-<<<<<<< HEAD
-            userData: [],
-=======
             token:"",
             userData:[],
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
             eventData: [],
             name: '',
             email: '',
@@ -93,8 +84,7 @@ export default class Dashboard extends Component {
     render() {
         const { isAuthenticated } = this.props.auth;
 
-<<<<<<< HEAD
-        // if (this.state.userData) {
+        if (this.state.userData) {
             return (
                 <div>
                     <Nav auth={this.props.auth} />
@@ -118,20 +108,6 @@ export default class Dashboard extends Component {
                                             makeupService={this.state.makeupService}
                                             manicurePedicure={this.state.manicurePedicure} />
                                     </div>
-=======
-          if(this.state.userData){
-        return (
-            <div>
-                <Nav auth={this.props.auth} />
-                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
-                    {
-                        isAuthenticated() ? (
-                            <div className="row" >
-                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
-                                     <Profile
-                                     userData={this.state.userData}
-                                     /> 
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
                                 </div>
                             ) : (
                                     <div className="py-5" style={{ background: 'pink' }}>
@@ -149,17 +125,10 @@ export default class Dashboard extends Component {
                     <Footer />
                 </div>
 
-<<<<<<< HEAD
             )
-        // } else {
-        //     return <Callback />
-        // }
-=======
-        )
         } else {
-           return <Callback />
+            return <Callback />
         }
->>>>>>> d7efd5c1a6c2106a11bc78af31d2743fdf3c2db9
     }
 
 }

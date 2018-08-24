@@ -44,7 +44,7 @@ export class Nav extends Component {
                       <span className="sr-only">(current)</span>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
+                      <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#expensecalculator">Expense Calculator</a>
