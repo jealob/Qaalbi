@@ -19,24 +19,22 @@ export default class Dashboard extends Component {
     }
 
     savingUserData = (token) => {
+
         loginData(token, (user) => {
+            user.token = token;
             API.saveUser(user.email, user)
-            // I wasn't talking about this line, I was talking about the line
-            .then(res => this.getUserData(user.email));
+                .then(res => this.getUserData(user.email));
             this.setState({ userData: user });
-               
-            
         });
     }
-    
+
     getUserData = (email) => {
         //this Api call is not working properly
         API.getUserData(email).then(res => {
-            console.log("This is the user data")
-            console.log(res.data)
+            console.log(res)
         })
     }
-    
+
     login() {
         this.props.auth.login();
     }
