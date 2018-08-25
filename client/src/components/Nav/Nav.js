@@ -9,7 +9,6 @@ export class Nav extends Component {
       events: []
     }
   }
-
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -29,9 +28,9 @@ export class Nav extends Component {
       <div>
         {
           !isAuthenticated() && (
-            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+            <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="/">  <img src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -52,7 +51,7 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
+                    <button id="qsLoginBtn" className="btn btn-lg ml-5" onClick={this.login.bind(this)}>
                       Log In
                       </button>
                   </ul>
@@ -63,9 +62,10 @@ export class Nav extends Component {
         }
         {
           isAuthenticated() && (
-            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+            <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="/" >
+                <img src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
+                     <button  id="qsLogoutBtn" type="button" className="btn btn-lg ml-5"   onClick={this.logout.bind(this)}> 
                       Log Out
                   </button>
                   </ul>

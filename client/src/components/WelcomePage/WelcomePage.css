@@ -114,9 +114,7 @@ border: 2px solid black;
 .insta {
   display:  inline;
    
-
 }
-
 
 /*Carousel-inner*/
 .carousel-inner img{
@@ -124,11 +122,12 @@ border: 2px solid black;
   width: 100%;
   height: 590px;
   margin: auto;
-  border: 2.5px solid #000000;
+  border: 1.5px solid #fd6767;
+
 }
 
  
-  .btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase{
+.btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase{
    font-size: 26px;
    background-color:black;
    text-shadow: .5px 1px rgb(255, 255, 255);
