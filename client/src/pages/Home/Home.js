@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Input, FormBtn } from "../../components/Form";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Nav, Footer } from "../../components/Nav";
 import Jumbotron from "../../components/Jumbotron";
+// import { Input, FormBtn } from "../../components/Form";
 
-
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
 
@@ -14,25 +12,39 @@ export default class Home extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('/api/events')
-            .then((response) => {
-                this.setState({ events: response.data });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+    login() {
+        this.props.auth.login();
     }
-    render() {
 
+    render() {
+        const { isAuthenticated } = this.props.auth;
         return (
             <div>
-                <div className="container text-center">
-                    {this.state.events.hello}
-                    {/* <p><Link to="/About"> About</Link></p> */}
-
+                <Nav auth={this.props.auth} />
+                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                    {
+                        isAuthenticated() ? (
+                            <Jumbotron >
+                                <h4>You are logged in!</h4>
+                            </Jumbotron>
+                        ) : (
+                                <div className="py-5" style={{ background: 'pink' }}>
+                                    <Jumbotron >
+                                        <h4>You are not logged in {' '}</h4>
+                                        <h5>
+                                            <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
+                                            {' '}to continue.
+                                </h5>
+                                    </Jumbotron>
+                                </div>
+                            )
+                    }
                 </div>
+                <Footer />
             </div>
-        )
+
+        );
     }
 }
+
+export default Home;

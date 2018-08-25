@@ -1,1 +1,1 @@
-export { Nav, Footer } from "./Nav";
+export {Nav, Footer } from "./Nav";
