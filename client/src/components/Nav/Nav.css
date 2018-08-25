@@ -6,7 +6,7 @@
 }
 /*Nav Bar*/
 #id {
-  background-color: #000000b3;
+  background-color: #000000a1;
   border-bottom: 3.5px solid #fd6767;
   outline-width: 4px;
   outline-color: #000000;
@@ -40,6 +40,16 @@ nav a:hover {
     background-color: #000000;
     color: #fd6767;
 }
+/*Logo Navbar*/
+#logoImg{
+    border: 0.95px inset #fd6767;
+    padding: 1px;
+    outline-width: 4px;
+    outline-color: #000000;
+    outline-style:inset;
+    
+}
+
 
 
 
