@@ -3,5 +3,5 @@ export const AUTH_CONFIG = {
   clientId: 'MHaIpREd7GZ1UD4qnwgJENDnCraWWsL7',
   
   callbackUrl: 'http://localhost:3000/callback',
-  'https://qaalbievents.herokuapp.com/callback'
+  //'https://qaalbievents.herokuapp.com/callback'
 }
