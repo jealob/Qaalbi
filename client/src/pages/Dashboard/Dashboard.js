@@ -5,6 +5,9 @@ import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
 import ExpenseCalculator from "../../components/ExpenseCalculator";
+import loginData from '../../Auth/loginData';
+import Callback from "../Callback/Callback";
+import "./Dashboard.css"
 
 
 export default class Dashboard extends Component {
