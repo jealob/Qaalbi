@@ -1,4 +1,6 @@
 const db = require("../models");
+const emailer = require("./nodemailer");
+
 
 // Defining methods for the usersController
 module.exports = {
@@ -29,7 +31,7 @@ module.exports = {
   findByEmailAndUpsert: function (req, res) {
     //if(req.query.includes("email"))
     db.User
-      .findOneAndUpdate({ email: req.params.email }, req.body,{upsert:true})
+      .findOneAndUpdate({ email: req.params.email }, req.body, { upsert: true })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -54,7 +56,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
- 
+  nodemailer: function (req, res) {
+    console.log("Hello: ",req.body);
+    emailer.send();
+  }
+
 };
 
 

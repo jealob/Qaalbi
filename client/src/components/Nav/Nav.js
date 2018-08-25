@@ -49,9 +49,6 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#expensecalculator">Expense Calculator</a>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
-                    </li>
                     <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
                       Log In
                       </button>
@@ -78,16 +75,16 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/addevent">Events</a>
                       <span className="sr-only">(current)</span>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
-                    </li>
+                    </li> */}
                     <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
                       Log Out
                   </button>

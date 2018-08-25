@@ -4,7 +4,6 @@ const app = express();
 const routes = require("./routes");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const emailer = require('./controllers/nodemailer');
 
 
 // Define middleware here

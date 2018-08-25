@@ -36,7 +36,7 @@ const loginData = (token,callback) =>
           
           }else{
             //console.log(verifiedJwt.parsedBody); // Will contain the header and body
-            console.log(token)
+            // console.log(token)
             user.token = token.toString();
             user.firstName = verifiedJwt.body.given_name;
             user.lastName = verifiedJwt.body.family_name;
