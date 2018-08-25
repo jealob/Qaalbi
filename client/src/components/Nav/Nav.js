@@ -30,7 +30,7 @@ export class Nav extends Component {
           !isAuthenticated() && (
             <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">  <img id="logoImg" src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
+                <a className="navbar-brand" href="/">  <img id="logoImg" className='mr-5' src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -65,7 +65,7 @@ export class Nav extends Component {
             <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
                 <a className="navbar-brand" href="/" >
-                <img src={require("../../images/logo.jpg")} id="logoImg"  width="150" height="50" alt="logonav"/> </a>
+                <img src={require("../../images/logo.jpg")}  className='mr-5'  id="logoImg"  width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>

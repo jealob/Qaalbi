@@ -50,15 +50,11 @@ nav a:hover {
     
 }
 
-
-
-
 .main-page-footer {
   font-size: 12px;
   color: #ccc;
   background: #fd6767;
   border-top: 5.5px solid #000000;
-
   z-index: 3;
 }
 
