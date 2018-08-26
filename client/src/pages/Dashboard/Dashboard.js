@@ -4,9 +4,14 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
+import ExpenseCalculator from "../../components/ExpenseCalculator";
 import loginData from '../../Auth/loginData';
 import Callback from "../Callback/Callback";
 import "./Dashboard.css"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69a3e6b061ba3f3a1c1c6ff9c574719b8f9db879
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -61,6 +66,8 @@ export default class Dashboard extends Component {
     render() {
         const { isAuthenticated } = this.props.auth;
 
+        console.log(this.state.events);
+
         if (this.state.userData) {
             return (
                 <div>
@@ -77,6 +84,7 @@ export default class Dashboard extends Component {
                                     <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                         <AddEvent id="events" />
                                     </div>
+
                                 </div>
                             ) : (
                                     <div className="py-5" style={{ background: 'pink' }}>
