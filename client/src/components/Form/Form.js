@@ -2,7 +2,7 @@ import React from "react";
 
 export const MonthMenu = props => (
         <select id="eventMonth" className="form-control" name="eventMonth" {...props}>
-            <option selected>Month</option>
+            <option defaultValue>Month</option>
             <option>January</option>
             <option>February</option>
             <option>March</option>
@@ -20,7 +20,7 @@ export const MonthMenu = props => (
 
 export const YearMenu = props => (
     <select id="eventYear" className="form-control" name="eventYear" {...props}>
-        <option selected>Year</option>
+        <option defaultValue>Year</option>
         <option>2018</option>
         <option>2019</option>
         <option>2020</option>
@@ -28,7 +28,7 @@ export const YearMenu = props => (
 );
 
 export const Input = props => (
-    <input type="text" className="form-control" name="firstName" title="First Name"  {...props} />
+    <input type="text" className="form-control" name={props.name} title={props.placeholder} {...props} />
 );
 
 export const FormBtn = (props) => (

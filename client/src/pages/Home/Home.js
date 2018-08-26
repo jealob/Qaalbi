@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Nav, Footer } from "../../components/Nav";
 import { Input, FormBtn, MonthMenu, YearMenu } from "../../components/Form";
 import { ListItem } from "../../components/List";
-import Jumbotron from "../../components/Jumbotron";
 import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
 import API from "../../utils/API";
 // const moment = require('moment');
@@ -26,7 +25,6 @@ class Home extends Component {
 
     handleSearchInputChange = event => {
         // Getting the value and name of the input which triggered the change
-        console.log(event.target)
         const { name, value } = event.target;
 
         // Updating the input's state
@@ -36,9 +34,8 @@ class Home extends Component {
 
     };
 
-    handleEventSearch = event => {
+    handleEventSearch = (event) => {
         event.preventDefault();
-        console.log(this.state);
         API.getEvent({
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -65,7 +62,7 @@ class Home extends Component {
                                 <h4>Find an event place and time</h4>
                                 <p>Going to an event? Search name of event owner</p>
                             </div>
-                            <form className="my-2 text-center">
+                            <form className="my-2 text-center py-2">
                                 <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 my-2 d-inline-block">
                                     <Input
                                         value={this.state.firstName}
@@ -108,6 +105,7 @@ class Home extends Component {
                                             {this.state.eventSearch.map((event) =>
                                                 <ListItem key={event._id}
                                                     name={event.name}
+                                                    date = {event.eventDate}
                                                     // date={moment(event.eventDate).format('MM-DD-YYYY')}
                                                 // operate={this.handleSaveArticle}
                                                 />
