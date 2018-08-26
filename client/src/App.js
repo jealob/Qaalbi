@@ -8,8 +8,6 @@ import Auth from './Auth/Auth';
 import history from './history';
 import Callback from './pages/Callback/Callback';
 
-
-
 const auth = new Auth();
 
 const handleAuthentication = ({ location }) => {
@@ -19,7 +17,6 @@ const handleAuthentication = ({ location }) => {
 }
 
 export const App = () => {
-
   return (
     <div>
       <Router history={history}>

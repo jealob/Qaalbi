@@ -6,19 +6,19 @@ class ExpenseCalculator extends React.Component {
     price:0
   }
 handleChange(event){
-  const price = parseInt(event.target.value);
-  if (event.target.value == "Venue") {
+  const price = parseInt(event.target.value, 0);
+  if (event.target.value === "Venue") {
     this.setState ({ price: this.state.price + price}); 
-  } else if (event.target.value == "guest_no"){
+  } else if (event.target.value === "guest_no"){
     this.setState({price: this.state.price + price});
-  } else if (event.target.value == "catering"){
+  } else if (event.target.value === "catering"){
       this.setState({price: this.state.price + price});
-  } else { (event.target.value)
+  } else { 
         this.setState({price: this.state.price - price});
   }
 }
   handleClick(event) {
-    const price = parseInt (event.target.value);
+    const price = parseInt(event.target.value, 0);
     if(event.target.checked) {
       this.setState({ price: this.state.price + price });
     } else {

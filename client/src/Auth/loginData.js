@@ -44,7 +44,7 @@ const loginData = (token,callback) =>
             user.email = verifiedJwt.body.email;
             user.online = true;
           
-            callback(user);(user);
+            callback(user);
           }
         });
   
