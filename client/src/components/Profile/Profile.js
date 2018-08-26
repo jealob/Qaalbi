@@ -7,7 +7,7 @@ const Profile = (props) => (
     <p>{props.userData.firstName} {props.userData.lastName}</p>
     <p>{props.profileData}</p>
     <p>Count down</p>
-    <p>some other data</p>
+    <p>Some other data</p>
   </div>
 );
 

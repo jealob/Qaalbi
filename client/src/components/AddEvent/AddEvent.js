@@ -4,7 +4,7 @@ import "./AddEvent.css";
 const AddEvent = (props) => {
 
   return (
-    <form className="border rounded px-2 mb-4">
+    <form id="form" className="border rounded px-2 mb-4">
       <h2> Add Event</h2>
       <div className="form-row">
         <div className="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">

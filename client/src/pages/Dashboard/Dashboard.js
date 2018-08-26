@@ -4,8 +4,10 @@ import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
+import ExpenseCalculator from "../../components/ExpenseCalculator";
 import loginData from '../../Auth/loginData';
 import Callback from "../Callback/Callback";
+import "./Dashboard.css"
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -60,15 +62,17 @@ export default class Dashboard extends Component {
     render() {
         const { isAuthenticated } = this.props.auth;
 
+        console.log(this.state.events);
+
         if (this.state.userData) {
             return (
                 <div>
                     <Nav auth={this.props.auth} />
-                    <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                    <div className="container-fluid wrapper" style={{ minHeight: 'calc(100vh - 50px)' }}>
                         {
                             isAuthenticated() ? (
                                 <div className="row" >
-                                    <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
+                                    <div id="bck"  className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile">
                                         <Profile
                                             userData={this.state.userData}
                                         />
@@ -76,6 +80,7 @@ export default class Dashboard extends Component {
                                     <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                         <AddEvent id="events" />
                                     </div>
+
                                 </div>
                             ) : (
                                     <div className="py-5" style={{ background: 'pink' }}>

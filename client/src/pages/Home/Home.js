@@ -3,9 +3,15 @@ import { Nav, Footer } from "../../components/Nav";
 // import { FindEvent } from "";
 import { Input, FormBtn, MonthMenu, YearMenu } from "../../components/Form";
 import { ListItem } from "../../components/List";
+import Jumbotron from "../../components/Jumbotron";
+
+// import ExpenseCalculator from "../../components/ExpenseCalculator";
+// import { Input, FormBtn } from "../../components/Form";
+
 import { Carousel, About, Services, InstagramFeed, Header } from "../../components/WelcomePage";
 import API from "../../utils/API";
 // const moment = require('moment');
+
 
 
 class Home extends Component {
