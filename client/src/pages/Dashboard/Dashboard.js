@@ -8,10 +8,6 @@ import ExpenseCalculator from "../../components/ExpenseCalculator";
 import loginData from '../../Auth/loginData';
 import Callback from "../Callback/Callback";
 import "./Dashboard.css"
-<<<<<<< HEAD
-=======
-
->>>>>>> 69a3e6b061ba3f3a1c1c6ff9c574719b8f9db879
 
 export default class Dashboard extends Component {
     constructor(props) {
