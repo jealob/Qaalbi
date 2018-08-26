@@ -8,6 +8,7 @@ import ExpenseCalculator from "../../components/ExpenseCalculator";
 import loginData from '../../Auth/loginData';
 import Callback from "../Callback/Callback";
 import "./Dashboard.css"
+import AppointmentForm from "../../components/ApptForm"
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -72,13 +73,14 @@ export default class Dashboard extends Component {
                         {
                             isAuthenticated() ? (
                                 <div className="row" >
-                                    <div id="bck"  className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile">
+                                    <div id="bck" className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile">
                                         <Profile
                                             userData={this.state.userData}
                                         />
                                     </div>
                                     <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                         <AddEvent id="events" />
+                                        <AppointmentForm />
                                     </div>
 
                                 </div>
