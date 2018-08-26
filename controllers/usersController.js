@@ -5,15 +5,12 @@ module.exports = {
   findAll: function (req, res) {
     db.User
       .find(req.query)
-<<<<<<< HEAD:controllers/usersController.js
-=======
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function (req, res) {
     db.User
       .findOne({ email: req.params.email })
->>>>>>> b2397c7c125637cf502030ae6bd4f7dedd3a673a:controllers/usersController.js
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -32,7 +29,7 @@ module.exports = {
   findByEmailAndUpsert: function (req, res) {
     //if(req.query.includes("email"))
     db.User
-      .findOneAndUpdate({ email: req.params.email }, req.body,{upsert:true})
+      .findOneAndUpdate({ email: req.params.email }, req.body, { upsert: true })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -56,12 +53,8 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-<<<<<<< HEAD:controllers/usersController.js
-  }
-=======
   },
- 
->>>>>>> b2397c7c125637cf502030ae6bd4f7dedd3a673a:controllers/usersController.js
+
 };
 
 
