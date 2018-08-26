@@ -1,7 +1,7 @@
 /* The sidebar menu */
 .sidenav {
   margin: 100px 0 100px 0;
-  position:fixed; 
+  position: fixed;
   min-width: 250px;
 }
 
@@ -25,37 +25,56 @@
   padding: 0px 10px;
 }
 
+.sidenav img {
+  border: 5px solid #000000;
+  outline-width: 2.5px;
+  outline-color: #fd6767;
+  outline-style: solid;
+}
+/*Paragraph text */
+.sidenav p {
+  text-shadow: 0.5px 1px rgb(255, 255, 255);
+  font-family: "Bad+Script", cursive;
+  color: #fd6767;
+  word-spacing: 2.9px;
+  font-size: 15.5px;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 /* On smaller screens, where width is less than 768px */
 @media screen and (max-width: 768px) {
-  .sidenav{ 
+  .sidenav {
     margin-top: 100px;
-    position:relative; 
+    position: relative;
   }
 }
 
 /* On smaller screens, where width is less than 1080px */
 @media screen and (max-width: 1079px) {
-  .sidenav{ 
+  .sidenav {
     min-width: 230px;
   }
 }
 
 /* On smaller screens, where width is less than 1020px */
 @media screen and (max-width: 1020px) {
-  .sidenav{ 
+  .sidenav {
     min-width: 200px;
   }
 }
 
 /* On smaller screens, where width is less than 870px */
 @media screen and (max-width: 870px) {
-  .sidenav{ 
+  .sidenav {
     min-width: 170px;
   }
 }

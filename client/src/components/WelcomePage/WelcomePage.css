@@ -1,91 +1,143 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant");
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Lily+Script+One");
+@import url("https://fonts.googleapis.com/css?family=Martel");
+@import url("https://fonts.googleapis.com/css?family=Bad+Script");
 
-.banner {
-  height: 250px;
-  width: 100%;
-  bottom: -60px;
-  background-color: black;
-  border-bottom: 3px solid #f2d7d7;
- 
+body {
+  background-image: url("../../images/full-bloom.png");
 }
-.logo {
-  position: absolute;
-  left: 43%;
-  top: -10px;
- 
-}
-
-.subtext {
-  position: relative;
-  top: 120px;
-  font-size: 25px;
-  font: bold;
-   font-family: "Cormorant", serif;
-  color: #f2d7d7;
-  
-}
-
-#getStrt {
-  position: relative;
-  top: 115px;
-  font-size: 18px;
-  font: bold;
-  color: #fff;
-}
-/*Titels*/
-#titles{
-font-family:'Tangerine', serif;
-font-size: 55px;
-text-shadow: 4px 4px 4px #aaa;
+/*Header*/
+.nameplate {
+  background-color: rgb(0, 0, 0);
+  background-position: center;
+  width: 60%;
+  margin-top: 10%;
+  border: 32px solid black;
+  border-image: url("../../images/border.jpg") 12% round;
+  border-image-width: 30px;
+  border-image-slice: 170;
 }
 
 /*Background Image*/
-.hdr {
-background-image: url("../../images/full-bloom.png")
-
+.banner {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../images/henna.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.90;
 }
+
+.about{
+  margin: 0 auto;
+}
+
+.subtext {
+  /* display: inline-block; */
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: "Lily Script One", serif;
+  color: #fd6767;
+}
+
+/*button*/
+#getStrt {
+  font-size: 13px;
+  font: bold;
+  color: #fd6767;
+  background-color: transparent;
+  margin: 30px;
+}
+
+#getStrt:hover {
+  background-color: #fd6767;
+  color: black;
+}
+/*Titles*/
+#titles {
+  font-family: "Tangerine", serif;
+  font-size: 67px;
+  letter-spacing: 4px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+
+/*About Us*/
+#abt {
+background-color: rgb(0, 0, 0);
+background-position: center;
+width: 100%;
+margin: 0 auto;
+padding: 35px;
+border: 18px solid rgb(5, 4, 4);
+color: #fd6767;
+border-image: url("../../images/border.jpg") 12% round;
+border-image-width: 25px;
+border-image-slice: 150;
+font-size: 15.5px;
+word-spacing: 2.9px;
+line-height: 31.5px;
+text-shadow: .5px 1px rgb(255, 255, 255);
+font-family: 'Bad+Script', cursive;
+}
+
 /*Instagram Images control*/
 .pics {
- display: inline;
- border: 3px solid #f2d7d7;
- margin: 10px;
-
-}
-
-.list-group {
-  font-family: "Cormorant", serif;
-
-}
-.list-group-item {
-  color: rgb(0, 0, 0);
-
-}
- 
-.insta{
   display: inline;
+  border: 1px solid #000000;
+  margin: 10px;
 }
 
-body{
-  background-image: url("../../images/full-bloom.png");
+.instafeed__item__background.pics{
+border: 2px solid black;
 }
 
-/* .pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
+/*Card Top of ul*/
+.card-img-top {
+  width: 50%;
+  border: 10px solid black;
+  border-image: url("../../images/border.jpg") 12% round;
+  border-image-width: 20px;
+  border-image-slice: 190;
+  margin-bottom: 20px; 
 }
 
-.pagination a.active {
-  background-color: dodgerblue;
-  color: white;
+.list-group-item {
+  color: #fd6767;
+  text-shadow: 1px 1px rgb(190, 186, 186);
+  font-size: 20px;
+  font-family: "Martel", serif;
 }
 
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-} */
+.insta {
+  display:  inline;
+   
+}
+
+/*Carousel-inner*/
+.carousel-inner img{
+  display: inline-block;
+  width: 100%;
+  height: 590px;
+  margin: auto;
+  border: 1.5px solid #fd6767;
+
+}
+
+ 
+.btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase{
+   font-size: 26px;
+   background-color:black;
+   text-shadow: .5px 1px rgb(255, 255, 255);
+   font-family: 'Bad+Script', cursive;
+}
+
+.btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase:hover {
+  background-color:#fd6767;
+  color:black;
+}
 
 
 

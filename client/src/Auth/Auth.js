@@ -1,8 +1,6 @@
 import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
-import nJwt from 'njwt';
-import axios from 'axios';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -11,7 +9,7 @@ export default class Auth {
     redirectUri: AUTH_CONFIG.callbackUrl,
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
-    scope: 'openid profile'
+    scope: 'openid profile email'
   });
 
   constructor() {
@@ -48,6 +46,7 @@ export default class Auth {
     // https://kratos7.auth0.com/.well-known/jwks.json
     //console.log(expiresAt)
     // navigate to the home route
+    //console.log(authResult.idToken)
     history.replace('/dashboard');
   }
 
@@ -66,34 +65,35 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+    
+  // API.getUserMetadata().then((response) => { 
+    
+  //   let key = response.data.keys[0].x5c[0];
+  //   let alg = response.data.keys[0].alg;
+  //   let idToken = JSON.parse(localStorage.getItem('id_token'));
+  //   console.log(idToken)
+  //   nJwt.verify(idToken,key,alg,function(err,verifiedJwt){
+  //      if(err){
+        
+  //        if (err.message === 'Jwt is expired') {
+  //          console.log(err.message.parsedBody)
+  //         }
+  //          else {
+  //           console.log(err)
+  //         }
+       
+  //      }else{
+  //        console.log(verifiedJwt.parsedBody); // Will contain the header and body
+  //      }
+    //  });
+
 }
 
 
 
 
-//console.log(x)
 
-axios.get('https://kratos7.auth0.com/.well-known/jwks.json')
-    .then(function (response) {
-     var key = response.data.keys[0].x5c[0];
-     let idToken = JSON.parse(localStorage.getItem('id_token'));
-     console.log(idToken)
-     nJwt.verify(idToken,key,function(err,verifiedJwt){
-        if(err){
-          //console.log(err); // <==== Here to see my error message !!
-          console.log(err.parsedBody) // add .given_name if u want to see the given name
-          localStorage.setItem('userData', err.parsedBody);
-        }else{
-          console.log(verifiedJwt); // Will contain the header and body
-        }
-      });
-   
-   //console.log(x.parsedBody.JwtBody)
 
-})
-    .catch(function (error) {
-      console.log(error);
-    });   
 
 
 

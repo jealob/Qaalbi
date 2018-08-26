@@ -1,0 +1,48 @@
+form {
+  background: #f7f7f9;
+  margin-top: 100px;
+}
+
+.header-text {
+  margin: 8%;
+  font-size: 25px;
+  font: bold;
+  color: white;
+}
+.btn {
+  align-content: center;
+}
+
+.required-field { 
+  color: red;
+}
+
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+.output {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+.checkboxes label {
+  margin:  0 0.5rem 0 0.5rem;
+}
+.checker{
+  /* float:left; */
+  display: block;
+}
+label {
+  font-weight: bold;
+}
+
+#form {
+  border: 2px solid black;
+}
+
+/* On smaller screens, where width is less than 768px */
+@media screen and (max-width: 768px) {
+  form {margin-top: 15px;}
+}

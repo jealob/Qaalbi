@@ -1,15 +1,14 @@
 import React from "react";
 import "./Profile.css";
 
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
 const Profile = (props) => (
-    <div className="sidenav">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#clients">Clients</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <div className="sidenav">
+    <img alt="someImage" src={props.userData.picture} height="100px" />
+    <p>{props.userData.firstName} {props.userData.lastName}</p>
+    <p>{props.profileData}</p>
+    <p>Count down</p>
+    <p>Some other data</p>
+  </div>
 );
 
 export default Profile;

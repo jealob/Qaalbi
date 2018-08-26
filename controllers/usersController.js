@@ -5,6 +5,15 @@ module.exports = {
   findAll: function (req, res) {
     db.User
       .find(req.query)
+<<<<<<< HEAD:controllers/usersController.js
+=======
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByEmail: function (req, res) {
+    db.User
+      .findOne({ email: req.params.email })
+>>>>>>> b2397c7c125637cf502030ae6bd4f7dedd3a673a:controllers/usersController.js
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -20,7 +29,22 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByEmailAndUpsert: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOneAndUpdate({ email: req.params.email }, req.body,{upsert:true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findByToken: function (req, res) {
+    //if(req.query.includes("email"))
+    db.User
+      .findOne({ token: req.params.token })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   update: function (req, res) {
+    //if(req.query.includes("email"))
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
@@ -32,5 +56,12 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+<<<<<<< HEAD:controllers/usersController.js
   }
+=======
+  },
+ 
+>>>>>>> b2397c7c125637cf502030ae6bd4f7dedd3a673a:controllers/usersController.js
 };
+
+
