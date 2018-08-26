@@ -9,7 +9,6 @@ export class Nav extends Component {
       events: []
     }
   }
-
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -29,9 +28,9 @@ export class Nav extends Component {
       <div>
         {
           !isAuthenticated() && (
-            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+            <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="/">  <img id="logoImg" className='mr-5' src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -52,7 +51,7 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
+                    <button id="qsLoginBtn" className="btn btn-lg ml-5" onClick={this.login.bind(this)}>
                       Log In
                       </button>
                   </ul>
@@ -63,9 +62,10 @@ export class Nav extends Component {
         }
         {
           isAuthenticated() && (
-            <nav className="navbar navbar-expand-md bg-dark navbar-dark nav-content">
+            <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">QAALBI EVENTS</a>
+                <a className="navbar-brand" href="/" >
+                <img src={require("../../images/logo.jpg")}  className='mr-5'  id="logoImg"  width="150" height="50" alt="logonav"/> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
                     </li>
-                    <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
+                     <button  id="qsLogoutBtn" type="button" className="btn btn-lg ml-5"   onClick={this.logout.bind(this)}> 
                       Log Out
                   </button>
                   </ul>
@@ -104,9 +104,27 @@ export class Nav extends Component {
 
 export const Footer = () => {
   return (
-    <footer className="pt-4 main-page-footer">
-      Copyright &copy; 2018
-      </footer>
+    <footer className="main-page-footer">
+    <div className="row">
+      <h4 className=" pt-3 col text-center"> Follow Us: 
+         <a href="https://www.twitter.com/" target="_blank">  <img className="m-2 " src={require("../../images/tweet.png")} alt="twitter" /></a> 
+         <a href="https://www.instagram.com/" target="_blank">  <img className="m-2 " src={require("../../images/instagram.png")}  alt="instagram" /></a>
+         <a href="https://www.facebook.com/" target="_blank">  <img className="m-2 " src={require("../../images/facebook.png")}  alt="facebook" /></a>
+         <a href="https://www.googleplus.com/" target="_blank">  <img className="m-2" src={require("../../images/googleplus.png")}  alt="googleplus" /></a>
+      </h4>
+    </div>
+    <div className="row">
+    <ul className="col text-center">
+     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Invintation </a></li>
+     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Cakes </a></li>
+     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Photos </a></li>
+    </ul>
+    <br/>
+    </div> 
+    <div className="row"> 
+    <p className="col text-center"> Copyright &copy; 2018</p>
+   </div>
+    </footer>
   )
 }
 

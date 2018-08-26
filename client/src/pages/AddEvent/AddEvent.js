@@ -5,6 +5,7 @@ import { Nav, Footer } from "../../components/Nav";
 import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
 import Callback from "../Callback/Callback";
+import './AddEvent.css';
 
 
 export default class Dashboard extends Component {
@@ -87,11 +88,11 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <Nav auth={this.props.auth} />
-                <div className="container-fluid wrapper" style={{ background: 'pink', minHeight: 'calc(100vh - 50px)' }}>
+                <div className="container-fluid wrapper"   >
                     {
                         isAuthenticated() ? (
                             <div className="row" >
-                                <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" style={{ background: 'wheat' }}>
+                                <div id="bck" className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile" >
                                      <Profile
                                      userData={this.state.userData}
                                      /> 
@@ -113,7 +114,7 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                         ) : (
-                                <div className="py-5" style={{ background: 'pink' }}>
+                                <div className="py-5" style={{ background: 'red' }}>
                                     <Jumbotron >
                                         <h4>You are not logged in {' '}</h4>
                                         <h5>

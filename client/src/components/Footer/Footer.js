@@ -6,7 +6,8 @@ const Footer = () => {
         <footer className="footer">
             <div className="bottom">
                 &copy; Qaalbi Events - Built in React
-        </div>
+                
+             </div>
         </footer >
     )
   }

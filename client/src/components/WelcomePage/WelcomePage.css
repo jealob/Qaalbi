@@ -7,24 +7,19 @@
 body {
   background-image: url("../../images/full-bloom.png");
 }
-
 /*Header*/
 .nameplate {
-  display: inline-block;
-  position: relative;
-  top: 25%;
-  background-color: rgba(0, 0, 0, 0.986);
+  background-color: rgb(0, 0, 0);
   background-position: center;
-  height: 50%;
-  width: 50%;
-  margin: 0 auto;
+  width: 60%;
+  margin-top: 10%;
   border: 32px solid black;
   border-image: url("../../images/border.jpg") 12% round;
   border-image-width: 30px;
   border-image-slice: 170;
 }
 
-
+/*Background Image*/
 .banner {
   height: 100vh;
   width: 100%;
@@ -32,12 +27,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0.75;
-}
-.logo {
-  position: absolute;
-  left: 38%;
-  top: 10px;
+  opacity: 0.90;
 }
 
 .about{
@@ -45,59 +35,63 @@ body {
 }
 
 .subtext {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 auto;
-  font-size: 30px;
+  font-size: 20px;
   font-family: "Lily Script One", serif;
   color: #fd6767;
 }
 
+/*button*/
 #getStrt {
-  display: inline-block;
-  /* position: absolute; */
-  /* top: 75%;
-  left: 43%; */
   font-size: 13px;
   font: bold;
   color: #fd6767;
   background-color: transparent;
+  margin: 30px;
 }
 
+#getStrt:hover {
+  background-color: #fd6767;
+  color: black;
+}
 /*Titles*/
 #titles {
   font-family: "Tangerine", serif;
-  font-size: 55px;
+  font-size: 67px;
+  letter-spacing: 4px;
   text-shadow: 4px 4px 4px #aaa;
 }
 
+
 /*About Us*/
 #abt {
-display: block;
-position: relative;
-/* top: 25%; */
 background-color: rgb(0, 0, 0);
 background-position: center;
 width: 100%;
 margin: 0 auto;
 padding: 35px;
-border: 20px solid rgb(5, 4, 4);
+border: 18px solid rgb(5, 4, 4);
 color: #fd6767;
 border-image: url("../../images/border.jpg") 12% round;
-border-image-width: 30px;
+border-image-width: 25px;
 border-image-slice: 150;
-font-size: 20px;
-word-spacing: 2px;
+font-size: 15.5px;
+word-spacing: 2.9px;
 line-height: 31.5px;
 text-shadow: .5px 1px rgb(255, 255, 255);
 font-family: 'Bad+Script', cursive;
 }
 
-
 /*Instagram Images control*/
 .pics {
   display: inline;
-  border: 3px solid #f2d7d7;
+  border: 1px solid #000000;
   margin: 10px;
+}
+
+.instafeed__item__background.pics{
+border: 2px solid black;
 }
 
 /*Card Top of ul*/
@@ -107,6 +101,7 @@ font-family: 'Bad+Script', cursive;
   border-image: url("../../images/border.jpg") 12% round;
   border-image-width: 20px;
   border-image-slice: 190;
+  margin-bottom: 20px; 
 }
 
 .list-group-item {
@@ -117,34 +112,32 @@ font-family: 'Bad+Script', cursive;
 }
 
 .insta {
-  display: inline;
+  display:  inline;
+   
 }
-
-
-
 
 /*Carousel-inner*/
-
 .carousel-inner img{
   display: inline-block;
-  width: auto;
-  height: 750px;
+  width: 100%;
+  height: 590px;
   margin: auto;
+  border: 1.5px solid #fd6767;
+
 }
 
-/* .pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
+ 
+.btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase{
+   font-size: 26px;
+   background-color:black;
+   text-shadow: .5px 1px rgb(255, 255, 255);
+   font-family: 'Bad+Script', cursive;
 }
 
-.pagination a.active {
-  background-color: dodgerblue;
-  color: white;
+.btn.btn-outline-danger.btn-lg.btn-block.text-center.text-uppercase:hover {
+  background-color:#fd6767;
+  color:black;
 }
 
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-} */
+
+
