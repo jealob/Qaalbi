@@ -20,10 +20,12 @@
 
 nav a {
   color: #fd6767;
+
 }
 
 nav a:hover {
   color: #000000;
+  text-decoration: none;
 }
 
 .btn.btn-lg.ml-5{
