@@ -33,7 +33,10 @@ export default {
   getEvent: function (eventData) {
     console.log(eventData);
     return axios.get(`api/events/${eventData.eventYear}/${eventData.eventMonth}/${eventData.firstName}/${eventData.lastName}`);
-  }
+  },
+  sendMail: function() {
+  console.log("done");
+}
 
 };
 

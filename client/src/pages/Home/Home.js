@@ -66,7 +66,7 @@ class Home extends Component {
                                 <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 my-2 d-inline-block">
                                     <Input
                                         value={this.state.firstName}
-                                        onChange={this.handleSearchInputChange}
+                                        onChange={this.handleSearchIporpnputChange}
                                         name="firstName"
                                         type="text"
                                         placeholder="First Name" />
@@ -95,6 +95,7 @@ class Home extends Component {
                                 </div>
                                 <FormBtn className="text-center d-inline-block" onClick={this.handleEventSearch}>Search</FormBtn>
                             </form>
+                            {/* Display after a search has been made */}
                             {typeof this.state.eventSearch === "object" && (
                                 <div className="card">
                                     <div className="card-header text-center">
@@ -105,8 +106,8 @@ class Home extends Component {
                                             {this.state.eventSearch.map((event) =>
                                                 <ListItem key={event._id}
                                                     name={event.name}
-                                                    date = {event.eventDate}
-                                                    // date={moment(event.eventDate).format('MM-DD-YYYY')}
+                                                    date={event.eventDate}
+                                                // date={moment(event.eventDate).format('MM-DD-YYYY')}
                                                 // operate={this.handleSaveArticle}
                                                 />
                                             )

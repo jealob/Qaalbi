@@ -3,37 +3,33 @@ import "./ExpenseCalculator.css";
 
 class ExpenseCalculator extends React.Component {
   state = {
-    price:0
+    price: 0
   }
-handleChange(event){
-  const price = parseInt(event.target.value, 0);
-  if (event.target.value === "Venue") {
-    this.setState ({ price: this.state.price + price}); 
-  } else if (event.target.value === "guest_no"){
-    this.setState({price: this.state.price + price});
-  } else if (event.target.value === "catering"){
-      this.setState({price: this.state.price + price});
-  } else { 
-        this.setState({price: this.state.price - price});
-  }
-}
-  handleClick(event) {
+  handleChange(event) {
     const price = parseInt(event.target.value, 0);
-    if(event.target.checked) {
+    if (event.target.value === "Venue") {
+      this.setState({ price: this.state.price + price });
+    } else if (event.target.value === "guest_no") {
+      this.setState({ price: this.state.price + price });
+    } else if (event.target.value === "catering") {
       this.setState({ price: this.state.price + price });
     } else {
-      this.setState({ price: this.state.price - price})
+      this.setState({ price: this.state.price - price });
+    }
+  }
+  handleClick(event) {
+    const price = parseInt(event.target.value, 0);
+    if (event.target.checked) {
+      this.setState({ price: this.state.price + price });
+    } else {
+      this.setState({ price: this.state.price - price })
     }
   }
 
   render() {
     return (
-      <form
-        class="form-horizontal"
-        form
-        action=""
-        id="event"
-        onsubmit="return false;"
+      <form className="form-horizontal" action=""        id="event"
+        onSubmit="return false;"
       >
         <fieldset>
           {/* Form Name */}
@@ -41,15 +37,15 @@ handleChange(event){
 
           {/* <!-- Select Basic --> */}
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Venue">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Venue">
               Event Venue
             </label>
-            <div class="col-md-5">
+            <div className="col-md-5">
               <select
                 id="Venue"
                 name="Venue"
-                class="form-control"
+                className="form-control"
                 onChange={(event) => this.handleChange(event)}
               >
                 <option value="0">Select Venue</option>
@@ -70,16 +66,16 @@ handleChange(event){
           </div>
 
           {/* <!-- Select Basic --> */}
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="guest_no">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="guest_no">
               Number of Guests
             </label>
-            <div class="col-md-5">
+            <div className="col-md-5">
               <select
                 id="guest_no"
                 name="guest_no"
-                class="form-control"
-                onChange={(event)=> this.handleChange(event)}
+                className="form-control"
+                onChange={(event) => this.handleChange(event)}
               >
                 <option value="100-200">Please Select</option>
                 <option value="1200">50-100</option>
@@ -93,16 +89,16 @@ handleChange(event){
           </div>
 
           {/* <!-- Select Basic --> */}
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="catering">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="catering">
               Catering
             </label>
-            <div class="col-md-5">
+            <div className="col-md-5">
               <select
                 id="catering"
                 name="catering"
-                class="form-control"
-                onChange={(event)=> this.handleChange(event)}
+                className="form-control"
+                onChange={(event) => this.handleChange(event)}
               >
                 <option value="0">Please Select</option>
                 <option value="2000">Sit-Down Dinner</option>
@@ -114,143 +110,143 @@ handleChange(event){
               </select>
             </div>
           </div>
-          <label class="col-md-4 control-label" id="header" for="rentals">
+          <label className="col-md-4 control-label" id="header" htmlFor="rentals">
             Rentals
           </label>
-          <div class="col-md-5">
-            <label class="checkbox-inline" for="rentals-0">
+          <div className="col-md-5">
+            <label className="checkbox-inline" htmlFor="rentals-0">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-0"
                 value="400"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Event Accessories
             </label>
-            <label class="checkbox-inline" for="rentals-1">
+            <label className="checkbox-inline" htmlFor="rentals-1">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-1"
                 value="700"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Lighting
             </label>
-            <label class="checkbox-inline" for="rentals-2">
+            <label className="checkbox-inline" htmlFor="rentals-2">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-2"
                 value="1000"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Tent
             </label>
-            <label class="checkbox-inline" for="rentals-3">
+            <label className="checkbox-inline" htmlFor="rentals-3">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-3"
                 value="300"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Tables
             </label>
-            <label class="checkbox-inline" for="rentals-4">
+            <label className="checkbox-inline" htmlFor="rentals-4">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-4"
                 value="300"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Chair
             </label>
-            <label class="checkbox-inline" for="rentals-5">
+            <label className="checkbox-inline" htmlFor="rentals-5">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-5"
                 value="500"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Photo Booth
             </label>
-            <label class="checkbox-inline" for="rentals-6">
+            <label className="checkbox-inline" htmlFor="rentals-6">
               <input
                 type="checkbox"
                 name="rentals"
                 id="rentals-6"
                 value="600"
-                onClick={(event)=> this.handleClick(event)}
+                onClick={(event) => this.handleClick(event)}
               />{" "}
               Transportation
             </label>
           </div>
           {/* <!-- Multiple Checkboxes (inline) --> */}
-          <div class="form-group">
-            <label class="col-md-4 control-label" id="header" for="decorations">
+          <div className="form-group">
+            <label className="col-md-4 control-label" id="header" htmlFor="decorations">
               Decorations
             </label>
-            <div class="col-md-5">
-              <label class="checkbox-inline" for="decorations-0">
+            <div className="col-md-5">
+              <label className="checkbox-inline" htmlFor="decorations-0">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-0"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="150"
                 />{" "}
                 Bouquets
               </label>
-              <label class="checkbox-inline" for="decorations-1">
+              <label className="checkbox-inline" htmlFor="decorations-1">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-1"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="20"
                 />{" "}
                 Boutonnieres/ Corsages
               </label>
-              <label class="checkbox-inline" for="decorations-2">
+              <label className="checkbox-inline" htmlFor="decorations-2">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-2"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="2500"
                 />{" "}
                 Wedding Flowers
               </label>
-              <label class="checkbox-inline" for="decorations-3">
+              <label className="checkbox-inline" htmlFor="decorations-3">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-3"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="2000"
                 />{" "}
                 Event Flowers &amp; Arrangements
               </label>
-              <label class="checkbox-inline" for="decorations-4">
+              <label className="checkbox-inline" htmlFor="decorations-4">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-4"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="1400"
                 />{" "}
                 Centerpieces
               </label>
-              <label class="checkbox-inline" for="decorations-5">
+              <label className="checkbox-inline" htmlFor="decorations-5">
                 <input
                   type="checkbox"
                   name="decorations"
                   id="decorations-5"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="500"
                 />{" "}
                 Other Decor
@@ -258,102 +254,102 @@ handleChange(event){
             </div>
           </div>
           {/* <!-- Multiple Checkboxes --> */}
-          <div class="form-group">
-            <label class="col-md-4 control-label" id="header" for="gift_favors">
+          <div className="form-group">
+            <label className="col-md-4 control-label" id="header" htmlFor="gift_favors">
               Gift/Favors
             </label>
-            <div class="col-md-4">
-              <div class="checkbox">
-                <label for="gift_favors-0">
+            <div className="col-md-4">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-0">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-0"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="200"
                   />{" "}
                   Gifts for Attendees
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-1">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-1">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-1"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="100"
                   />{" "}
                   Favors
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-2">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-2">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-2"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="20"
                   />{" "}
                   Programs
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-3">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-3">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-3"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="15"
                   />{" "}
                   Guest Book
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-4">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-4">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-4"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="30"
                   />{" "}
                   Invitations/Reply Cards
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-5">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-5">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-5"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="20"
                   />{" "}
                   Menus
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-6">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-6">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-6"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="15"
                   />{" "}
                   Place Cards
                 </label>
               </div>
-              <div class="checkbox">
-                <label for="gift_favors-7">
+              <div className="checkbox">
+                <label htmlFor="gift_favors-7">
                   <input
                     type="checkbox"
                     name="gift_favors"
                     id="gift_favors-7"
-                    onClick={(event)=> this.handleClick(event)}
+                    onClick={(event) => this.handleClick(event)}
                     value="10"
                   />{" "}
                   Thank You Cards
@@ -362,71 +358,71 @@ handleChange(event){
             </div>
           </div>
           {/* <!-- Multiple Checkboxes (inline) --> */}
-          <div class="form-group">
+          <div className="form-group">
             <label
-              class="col-md-4 control-label"
+              className="col-md-4 control-label"
               id="header"
-              for="entertainment"
+              htmlFor="entertainment"
             >
               Entertainment
             </label>
-            <div class="col-md-4">
-              <label class="checkbox-inline" for="entertainment-0">
+            <div className="col-md-4">
+              <label className="checkbox-inline" htmlFor="entertainment-0">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-0"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="1000"
                 />{" "}
                 DJ
               </label>
-              <label class="checkbox-inline" for="entertainment-1">
+              <label className="checkbox-inline" htmlFor="entertainment-1">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-1"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="700"
                 />{" "}
                 MC
               </label>
-              <label class="checkbox-inline" for="entertainment-2">
+              <label className="checkbox-inline" htmlFor="entertainment-2">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-2"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="700"
                 />{" "}
                 Videographer
               </label>
-              <label class="checkbox-inline" for="entertainment-3">
+              <label className="checkbox-inline" htmlFor="entertainment-3">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-3"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="300"
                 />{" "}
                 Photographer
               </label>
-              <label class="checkbox-inline" for="entertainment-4">
+              <label className="checkbox-inline" htmlFor="entertainment-4">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-4"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="1150"
                 />{" "}
                 Live Band
               </label>
-              <label class="checkbox-inline" for="entertainment-5">
+              <label className="checkbox-inline" htmlFor="entertainment-5">
                 <input
                   type="checkbox"
                   name="entertainment"
                   id="entertainment-5"
-                  onClick={(event)=> this.handleClick(event)}
+                  onClick={(event) => this.handleClick(event)}
                   value="500"
                 />{" "}
                 Musicians
@@ -436,13 +432,13 @@ handleChange(event){
             </div>
 
             {/* <!-- Button --> */}
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="submit_button" />
-              <div class="col-md-4">
+            <div className="form-group">
+              <label className="col-md-4 control-label" htmlFor="submit_button" />
+              <div className="col-md-4">
                 <button
                   id="submit_button"
                   name="submit_button"
-                  class="btn btn-warning"
+                  className="btn btn-warning"
                 >
                   Submit
                 </button>

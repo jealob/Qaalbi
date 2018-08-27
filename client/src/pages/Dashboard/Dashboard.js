@@ -18,11 +18,11 @@ export default class Dashboard extends Component {
             id: "",
             events: [],
             userData: null,
+            appointmentDetails: []
         }
     }
 
     savingUserData = (token) => {
-
         loginData(token, (user) => {
             user.token = token;
             API.saveUser(user.email, user)
@@ -36,7 +36,30 @@ export default class Dashboard extends Component {
         API.getUserData(email).then(res => {
             console.log(res)
         })
-    }
+    };
+
+    handleAppointmentInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        console.log(event.target)
+        const { name, value } = event.target;
+
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
+        console.log()
+    };
+
+    handleBookAppointment = (event) => {
+        event.preventDefault();
+        console.log("clicked")
+        API.sendMail({
+            appointmentDetails: this.state.appointmentDetails
+        }).then(res => {
+            this.setState({ eventSearch: res.data });
+            console.log(this.state.eventSearch);
+        })
+    };
 
     login() {
         this.props.auth.login();
@@ -62,7 +85,6 @@ export default class Dashboard extends Component {
 
     render() {
         const { isAuthenticated } = this.props.auth;
-
         console.log(this.state.events);
 
         if (this.state.userData) {
@@ -80,7 +102,10 @@ export default class Dashboard extends Component {
                                     <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                         <AddEvent id="events" />
                                         <ExpenseCalculator />
-                                        <AppointmentForm />
+                                        <AppointmentForm
+                                            appointmentDetails={this.state.appointmentDetails}
+                                            onChange={this.handleAppointmentInputChange}
+                                            handleBookAppointment={this.handleBookAppointment} />
                                     </div>
 
                                 </div>
