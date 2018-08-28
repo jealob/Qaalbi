@@ -66,7 +66,7 @@ class Home extends Component {
                                 <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2 my-2 d-inline-block">
                                     <Input
                                         value={this.state.firstName}
-                                        onChange={this.handleSearchIporpnputChange}
+                                        onChange={this.handleSearchInputChange}
                                         name="firstName"
                                         type="text"
                                         placeholder="First Name" />

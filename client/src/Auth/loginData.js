@@ -55,6 +55,4 @@ const loginData = (token,callback) =>
 
 }
 
-     
-
 export default loginData;

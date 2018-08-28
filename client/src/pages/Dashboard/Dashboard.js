@@ -18,7 +18,6 @@ export default class Dashboard extends Component {
             id: "",
             events: [],
             userData: null,
-            appointmentDetails: []
         }
     }
 
@@ -40,21 +39,24 @@ export default class Dashboard extends Component {
 
     handleAppointmentInputChange = event => {
         // Getting the value and name of the input which triggered the change
-        console.log(event.target)
         const { name, value } = event.target;
-
         // Updating the input's state
         this.setState({
             [name]: value
         });
-        console.log()
     };
 
     handleBookAppointment = (event) => {
         event.preventDefault();
-        console.log("clicked")
+        let appointmentDetails = {
+            date: this.state.appointmentDate,
+            time: this.state.appointmentTime,
+            type: this.state.appointmentType,
+            message: this.state.appointmentMessage
+        }
+        console.log(appointmentDetails)
         API.sendMail({
-            appointmentDetails: this.state.appointmentDetails
+            appointmentDetails
         }).then(res => {
             this.setState({ eventSearch: res.data });
             console.log(this.state.eventSearch);

@@ -28,9 +28,7 @@ class ExpenseCalculator extends React.Component {
 
   render() {
     return (
-      <form className="form-horizontal" action=""        id="event"
-        onSubmit="return false;"
-      >
+      <form className="form-horizontal" action="" id="event" onSubmit="return false;">
         <fieldset>
           {/* Form Name */}
           <legend>Event Calculator</legend>
