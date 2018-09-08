@@ -61,7 +61,7 @@ const AddEvent = (props) => {
             onChange={props.handleInputChange}
             required
           >
-            <option selected>Please Select</option>
+            <option defaultValue>Please Select</option>
             <option>Phone</option>
             <option>Email</option>
             <option>Text Message</option>
@@ -81,25 +81,25 @@ const AddEvent = (props) => {
               checked={props.hairService}
               onChange={props.handleInputChange}
             />
-            <label for="hairService">Hair Service</label>
+            <label htmlFor="hairService">Hair Service</label>
           </div>
           <div className="checker">
             <input type="checkbox" id="makeupService" name="feature"
               value="makeupService"
-              name='makeupService'
+              // name='makeupService'
               checked={props.makeupService}
               onChange={props.handleInputChange}
             />
-            <label for="makeupService">Makeup Service</label>
+            <label htmlFor="makeupService">Makeup Service</label>
           </div>
           <div className="checker">
             <input type="checkbox" id="manicurePedicure" name="feature"
               value="manicurePedicure"
-              name='manicurePedicure'
+              // name='manicurePedicure'
               checked={props.manicurePedicure}
               onChange={props.handleInputChange}
             />
-            <label for="manicurePedicure">Manicure &amp; Pedicure</label>
+            <label htmlFor="manicurePedicure">Manicure &amp; Pedicure</label>
           </div>
         </div>
         <div className="form-group col">
@@ -107,10 +107,6 @@ const AddEvent = (props) => {
         </div>
       </div>
     </form>
-
-
-
-
 
     //* End Message */}
     // End Form
@@ -168,17 +164,17 @@ const AddEvent = (props) => {
     //       <div className="checker">
     //         <input type="checkbox" id="hairService" name="feature"
     //           value="hairService" />
-    //         <label for="hairService">Hair Service</label>
+    //         <label htmlFor="hairService">Hair Service</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="makeupService" name="feature"
     //           value="makeupService" />
-    //         <label for="makeupService">Makeup Service</label>
+    //         <label htmlFor="makeupService">Makeup Service</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="manicurePedicure" name="feature"
     //           value="manicurePedicure" />
-    //         <label for="manicurePedicure">Manicure &amp; Pedicure</label>
+    //         <label htmlFor="manicurePedicure">Manicure &amp; Pedicure</label>
     //       </div>
     //     </div>{/*End  Beauty */}
 
@@ -190,22 +186,22 @@ const AddEvent = (props) => {
     //         <div className="checker">
     //           <input type="checkbox" id="dj" name="feature"
     //             value="dj" />
-    //           <label for="dj">DJ</label>
+    //           <label htmlFor="dj">DJ</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="mc" name="feature"
     //             value="mc" />
-    //           <label for="mc">MC</label>
+    //           <label htmlFor="mc">MC</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="lighting" name="feature"
     //             value="lighting" />
-    //           <label for="lighting">Entertainment Lighting</label>
+    //           <label htmlFor="lighting">Entertainment Lighting</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="liveBand" name="feature"
     //             value="liveBand" />
-    //           <label for="liveBand">Live Band</label>
+    //           <label htmlFor="liveBand">Live Band</label>
     //         </div>
     //       </div>
     //     </div>{/* End Entertainment */}
@@ -221,27 +217,27 @@ const AddEvent = (props) => {
     //         <div className="checker">
     //           <input type="checkbox" id="attendanceGift" name="feature"
     //             value="attendanceGift" />
-    //           <label for="attendanceGift">Gift for Attendance (Per Person)</label>
+    //           <label htmlFor="attendanceGift">Gift for Attendance (Per Person)</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="favors" name="feature"
     //             value="favors" />
-    //           <label for="favors">Favors (Wedding)</label>
+    //           <label htmlFor="favors">Favors (Wedding)</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="invitations" name="feature"
     //             value="invitations" />
-    //           <label for="invitations">Invitations</label>
+    //           <label htmlFor="invitations">Invitations</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="programs" name="feature"
     //             value="programs" />
-    //           <label for="programs">Ceremony Programs</label>
+    //           <label htmlFor="programs">Ceremony Programs</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="guestBook" name="feature"
     //             value="guestBook" />
-    //           <label for="guestBook">Guest Book</label>
+    //           <label htmlFor="guestBook">Guest Book</label>
     //         </div>
     //       </div>{/* End Gifts */}
 
@@ -249,27 +245,27 @@ const AddEvent = (props) => {
     //         <div className="checker">
     //           <input type="checkbox" id="invitationCards" name="feature"
     //             value="invitationCards" />
-    //           <label for="invitationCards">Invitation &amp; Reply Cards</label>
+    //           <label htmlFor="invitationCards">Invitation &amp; Reply Cards</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="receptionMenu" name="feature"
     //             value="receptionMenu" />
-    //           <label for="receptionMenu">Reception Menus</label>
+    //           <label htmlFor="receptionMenu">Reception Menus</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="dateCards" name="feature"
     //             value="dateCards" />
-    //           <label for="dateCards">Save the Date Cards </label>
+    //           <label htmlFor="dateCards">Save the Date Cards </label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="tableName" name="feature"
     //             value="tableName" />
-    //           <label for="tableName">Table Name &amp; Escort/Place Cards </label>
+    //           <label htmlFor="tableName">Table Name &amp; Escort/Place Cards </label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="thankyouCards" name="feature"
     //             value="thankyouCards" />
-    //           <label for="thankyouCards">Thank You Cards </label>
+    //           <label htmlFor="thankyouCards">Thank You Cards </label>
     //         </div>
     //       </div>
     //     </div>
@@ -285,32 +281,32 @@ const AddEvent = (props) => {
     //       <div className="checker">
     //         <input type="checkbox" id="bouquets" name="feature"
     //           value="bouquets" />
-    //         <label for="bouquets">Bouquets</label>
+    //         <label htmlFor="bouquets">Bouquets</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="boutonnieres" name="feature"
     //           value="boutonnieres" />
-    //         <label for="boutonnieres">Boutonnieres/Corsages</label>
+    //         <label htmlFor="boutonnieres">Boutonnieres/Corsages</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="eventDecoration" name="feature"
     //           value="eventDecoration" />
-    //         <label for="eventDecoration">Event Decoration</label>
+    //         <label htmlFor="eventDecoration">Event Decoration</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="flowers" name="feature"
     //           value="flowers" />
-    //         <label for="flowers">Flowers</label>
+    //         <label htmlFor="flowers">Flowers</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="eventFlowers" name="feature"
     //           value="eventFlowers" />
-    //         <label for="eventFlowers">Event Flowers &amp; Arrangements</label>
+    //         <label htmlFor="eventFlowers">Event Flowers &amp; Arrangements</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="tableCenterpieces" name="feature"
     //           value="tableCenterpieces" />
-    //         <label for="tableCenterpieces">Event Table Centerpieces</label>
+    //         <label htmlFor="tableCenterpieces">Event Table Centerpieces</label>
     //       </div>
     //     </div>  {/* End Flower */}
 
@@ -322,42 +318,42 @@ const AddEvent = (props) => {
     //       <div className="checker">
     //         <input type="checkbox" id="dvd" name="feature"
     //           value="dvd" />
-    //         <label for="dvd">Digital/Photo DVD</label>
+    //         <label htmlFor="dvd">Digital/Photo DVD</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="engagments" name="feature"
     //           value="engagments" />
-    //         <label for="engagments">Engagement Sessions (Wedding)</label>
+    //         <label htmlFor="engagments">Engagement Sessions (Wedding)</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="photoBooth" name="feature"
     //           value="photoBooth" />
-    //         <label for="photoBooth">Photo Booth</label>
+    //         <label htmlFor="photoBooth">Photo Booth</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="prints" name="feature"
     //           value="prints" />
-    //         <label for="prints">Prints &amp; Enlargements</label>
+    //         <label htmlFor="prints">Prints &amp; Enlargements</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="albums" name="feature"
     //           value="albums" />
-    //         <label for="albums">Albums &amp; Photo Books</label>
+    //         <label htmlFor="albums">Albums &amp; Photo Books</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="photographer" name="feature"
     //           value="photographer" />
-    //         <label for="photographer"> Photographer</label>
+    //         <label htmlFor="photographer"> Photographer</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="videographer" name="feature"
     //           value="videographer" />
-    //         <label for="videographer">Videographer</label>
+    //         <label htmlFor="videographer">Videographer</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="planner" name="feature"
     //           value="planner" />
-    //         <label for="planner">Planner &amp; Consultant</label>
+    //         <label htmlFor="planner">Planner &amp; Consultant</label>
     //       </div>
     //     </div> {/*End  PhotoGraphy */}
     //   </div>{/* End Flower and Photography */}
@@ -373,12 +369,12 @@ const AddEvent = (props) => {
     //         <div className="checker">
     //           <input type="checkbox" id="hotel" name="feature"
     //             value="hotel" />
-    //           <label for="hotel">Hotel</label>
+    //           <label htmlFor="hotel">Hotel</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="outdoor" name="feature"
     //             value="outdoor" />
-    //           <label for="outdoor">Outdoor</label>
+    //           <label htmlFor="outdoor">Outdoor</label>
     //         </div>
     //       </div>{/* End Venue */}
 
@@ -390,17 +386,17 @@ const AddEvent = (props) => {
     //         <div className="checker">
     //           <input type="checkbox" id="foodService" name="feature"
     //             value="foodService" />
-    //           <label for="foodService">Event Food Service</label>
+    //           <label htmlFor="foodService">Event Food Service</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="cake" name="feature"
     //             value="cake" />
-    //           <label for="cake">Cake</label>
+    //           <label htmlFor="cake">Cake</label>
     //         </div>
     //         <div className="checker">
     //           <input type="checkbox" id="desert" name="feature"
     //             value="desert" />
-    //           <label for="desert">Desert</label>
+    //           <label htmlFor="desert">Desert</label>
     //         </div>
     //       </div>{/*End Catering */}
     //     </div>
@@ -412,27 +408,27 @@ const AddEvent = (props) => {
     //       <div className="checker">
     //         <input type="checkbox" id="accessories" name="feature"
     //           value="accessories" />
-    //         <label for="accessories">Event Accessories</label>
+    //         <label htmlFor="accessories">Event Accessories</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="lighting" name="feature"
     //           value="lighting" />
-    //         <label for="lighting">Lighting</label>
+    //         <label htmlFor="lighting">Lighting</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="tent" name="feature"
     //           value="tent" />
-    //         <label for="tent">Tent</label>
+    //         <label htmlFor="tent">Tent</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="tablesChairs" name="feature"
     //           value="tablesChairs" />
-    //         <label for="tablesChairs">Tables &amp; Chairs</label>
+    //         <label htmlFor="tablesChairs">Tables &amp; Chairs</label>
     //       </div>
     //       <div className="checker">
     //         <input type="checkbox" id="transportation" name="feature"
     //           value="transportation" />
-    //         <label for="transportation">Transportation</label>
+    //         <label htmlFor="transportation">Transportation</label>
     //       </div>
     //     </div>{/* End Rentals */}
     //   </div>{/* End Venue Catering Rentals */}

@@ -1,4 +1,6 @@
 const db = require("../models");
+// const emailer = require("./nodemailer");
+
 
 // Defining methods for the usersController
 module.exports = {
@@ -54,6 +56,10 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  // bookAppointment: function (req, res) {
+  //   console.log("Hello: ", req.body);
+  //   emailer.send();
+  // }
 
 };
 

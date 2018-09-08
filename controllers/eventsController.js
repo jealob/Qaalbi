@@ -2,14 +2,25 @@ const db = require("../models");
 
 // Defining methods for the usersController
 module.exports = {
- 
+
   //eventsController starts here :
   findAllEvents: function (req, res) {
     db.Events
       .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }, 
+  },
+  findByName: function (req, res) {
+    let query = req.params
+    console.log( `${query.firstname} ${query.lastname}`)
+    db.Events
+      .find(
+        {name: `${query.firstname} ${query.lastname}`,
+        // eventDate: query.date
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   createEvent: function (req, res) {
     db.Events
       .create(req.body)

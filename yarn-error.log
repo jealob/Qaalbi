@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\jealob\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\jealob\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add nodemailer
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jealob\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Calibre2;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Users\jealob\AppData\Local\Microsoft\WindowsApps;C:\Users\jealob\AppData\Local\atom\bin;C:\PYTHON27;C:\Program Files\Heroku\bin;C:\Users\jealob\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\Docker Toolbox;C:\Users\jealob\AppData\Local\Microsoft\WindowsApps;C:\Users\jealob\AppData\Local\Programs\Microsoft VS Code\bin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jealob\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Calibre2;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Users\jealob\AppData\Local\Microsoft\WindowsApps;C:\Users\jealob\AppData\Local\atom\bin;C:\PYTHON27;C:\Program Files\Heroku\bin;C:\Users\jealob\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\Docker Toolbox;C:\Users\jealob\AppData\Local\Microsoft\WindowsApps;C:\Users\jealob\AppData\Local\Programs\Microsoft VS Code\bin
 
 Yarn version: 
   1.7.0
@@ -2136,7 +2136,11 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
+  <<<<<<< HEAD
+  moment@^2.22.2:
+  =======
   moment@2.x, moment@^2.22.2:
+  >>>>>>> cfe84306511cab37642e1b8fc9d94481048a9e18
     version "2.22.2"
     resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   

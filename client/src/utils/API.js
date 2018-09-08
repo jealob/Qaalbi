@@ -27,8 +27,17 @@ export default {
   },
   // Saves an event to the database
   saveEvent: function (eventData) {
+    console.log(eventData);
     return axios.post("/api/events", eventData);
   },
+  getEvent: function (eventData) {
+    console.log(eventData);
+    return axios.get(`api/events/${eventData.eventYear}/${eventData.eventMonth}/${eventData.firstName}/${eventData.lastName}`);
+  },
+  sendMail: function (bookData) {
+    console.log(bookData);
+    return axios.post("/api/appointments", bookData);
+  }
 
 };
 

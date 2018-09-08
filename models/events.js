@@ -88,8 +88,8 @@ var EventsSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-var Events = mongoose.model("Events", EventsSchema);
+var Event = mongoose.model("Event", EventsSchema);
 
 // Export the Event model
-module.exports = Events;
+module.exports = Event;
 
