@@ -16,20 +16,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.get("/api/events", function (req, res) {
-//   res.json({
-//     hello: "Hello World"
-//   });
-//   res.end();
-// });
-
-// app.get("/api/dashboard", function (req, res) {
-//   res.json({
-//     hello: "Hello Dashboard"
-//   });
-//   res.end();
-// });
-
 // Add routes, both API and view
 app.use(routes);
 

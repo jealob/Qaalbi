@@ -8,6 +8,7 @@ import ExpenseCalculator from "../../components/ExpenseCalculator";
 import loginData from '../../Auth/loginData';
 import Callback from "../Callback/Callback";
 import "./Dashboard.css"
+import AppointmentForm from "../../components/ApptForm"
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -21,7 +22,6 @@ export default class Dashboard extends Component {
     }
 
     savingUserData = (token) => {
-
         loginData(token, (user) => {
             user.token = token;
             API.saveUser(user.email, user)
@@ -35,7 +35,37 @@ export default class Dashboard extends Component {
         API.getUserData(email).then(res => {
             console.log(res)
         })
-    }
+    };
+
+    handleAppointmentInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = event.target;
+        // Updating the input's state
+        console.log(name, value)
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleBookAppointment = (event) => {
+        event.preventDefault();
+        console.log(this.state.appointmentDetails)
+        let appointmentDetails = {
+            name: this.state.appointmentName,
+            subject: this.state.appointmentSubject,
+            date: this.state.appointmentDate,
+            time: this.state.appointmentTime,
+            type: this.state.appointmentType,
+            message: this.state.appointmentMessage
+        }
+        console.log(appointmentDetails)
+        API.sendMail({
+            appointmentDetails
+        }).then(res => {         
+            this.setState({ eventSearch: res.data });
+            console.log("Okay");
+        })
+    };
 
     login() {
         this.props.auth.login();
@@ -61,8 +91,7 @@ export default class Dashboard extends Component {
 
     render() {
         const { isAuthenticated } = this.props.auth;
-
-        console.log(this.state.events);
+        // console.log(this.state.events);
 
         if (this.state.userData) {
             return (
@@ -72,13 +101,16 @@ export default class Dashboard extends Component {
                         {
                             isAuthenticated() ? (
                                 <div className="row" >
-                                    <div id="bck"  className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile">
+                                    <div id="bck" className="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center profile">
                                         <Profile
-                                            userData={this.state.userData}
-                                        />
+                                            userData={this.state.userData} />
                                     </div>
                                     <div className=" col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
                                         <AddEvent id="events" />
+                                        <AppointmentForm
+                                            appointmentDetails={this.state.appointmentDetails}
+                                            onChange={this.handleAppointmentInputChange}
+                                            handleBookAppointment={this.handleBookAppointment} />
                                     </div>
 
                                 </div>

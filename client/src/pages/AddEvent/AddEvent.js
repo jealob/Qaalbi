@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import AddEvent from "../../components/AddEvent";
 import { Nav, Footer } from "../../components/Nav";
-import Profile from "../../components/Profile";
+// import Profile from "../../components/Profile";
 import Jumbotron from "../../components/Jumbotron";
 import Callback from "../Callback/Callback";
 import './AddEvent.css';
@@ -16,14 +16,14 @@ export default class Dashboard extends Component {
             token:"",
             userData:[],
             eventData: [],
-            name:'',
-            email:'',
-            phone:'',
-            eventDate:'',
-            contactOptions:'',
-            hairService:false,
-            makeupService:false,
-            manicurePedicure:false
+            name: '',
+            email: '',
+            phone: '',
+            eventDate: '',
+            contactOptions: '',
+            hairService: false,
+            makeupService: false,
+            manicurePedicure: false
         }
     }
 
@@ -31,13 +31,13 @@ export default class Dashboard extends Component {
         this.props.auth.login();
     }
 
-   
+
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
 
 
         // Updating the input's state
@@ -55,6 +55,7 @@ export default class Dashboard extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        console.log(this.state);
         API.saveEvent({
             token:this.state.token,
             name:this.state.name,
@@ -66,11 +67,11 @@ export default class Dashboard extends Component {
             makeupService:this.state.makeupService,
             manicurePedicure:this.state.manicurePedicure
         })
-      };
+    };
 
 
-    getAllEvents= () => {
-        API.getAllEvents().then(res => console.log(res))
+    getAllEvents = () => {
+        API.getAllEvents().then(res => console.log(res.data))
     }
     
 
@@ -121,17 +122,17 @@ export default class Dashboard extends Component {
                                             <button className=" btn btn-success" style={{ cursor: 'pointer' }} onClick={this.login.bind(this)}>Log In</button>
                                             {' '}to continue.
                                         </h5>
-                                    </Jumbotron>
-                                </div>
-                            )
-                    }
+                                        </Jumbotron>
+                                    </div>
+                                )
+                        }
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
 
-        )
+            )
         } else {
-           return <Callback />
+            return <Callback />
         }
     }
 

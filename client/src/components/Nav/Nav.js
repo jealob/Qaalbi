@@ -30,7 +30,7 @@ export class Nav extends Component {
           !isAuthenticated() && (
             <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
-                <a className="navbar-brand" href="/">  <img id="logoImg" className='mr-5' src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav"/> </a>
+                <a className="navbar-brand" href="/">  <img id="logoImg" className='mr-5' src={require("../../images/logo.jpg")} width="150" height="50" alt="logonav" /> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -43,15 +43,12 @@ export class Nav extends Component {
                       <span className="sr-only">(current)</span>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
+                      <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#expensecalculator">Expense Calculator</a>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
-                    </li>
-                    <button id="qsLoginBtn" className="btn btn-lg ml-5" onClick={this.login.bind(this)}>
+                    <button id="qsLoginBtn" className="primary" className="btn-margin" onClick={this.login.bind(this)}>
                       Log In
                       </button>
                   </ul>
@@ -65,7 +62,7 @@ export class Nav extends Component {
             <nav id="id" className="navbar navbar-expand nav-content">
               <div className="container">
                 <a className="navbar-brand" href="/" >
-                <img src={require("../../images/logo.jpg")}  className='mr-5'  id="logoImg"  width="150" height="50" alt="logonav"/> </a>
+                  <img src={require("../../images/logo.jpg")} className='mr-5' id="logoImg" width="150" height="50" alt="logonav" /> </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarNav"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -78,17 +75,17 @@ export class Nav extends Component {
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/addevent">Events</a>
                       <span className="sr-only">(current)</span>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#todolist">To Do List</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="#bookappointment">Book Appointment</a>
-                    </li>
-                     <button  id="qsLogoutBtn" type="button" className="btn btn-lg ml-5"   onClick={this.logout.bind(this)}> 
+                    </li> */}
+                    <button id="qsLogoutBtn" className="primary" className="btn-margin" onClick={this.logout.bind(this)}>
                       Log Out
                   </button>
                   </ul>
