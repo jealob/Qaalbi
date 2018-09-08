@@ -108,10 +108,6 @@ const AddEvent = (props) => {
       </div>
     </form>
 
-
-
-
-
     //* End Message */}
     // End Form
     // <div className="form-row">

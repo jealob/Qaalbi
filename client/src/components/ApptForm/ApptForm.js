@@ -7,12 +7,32 @@ const AppointmentForm = (props) => {
       {/* Form start */}
       <p>Questions? Book an Appointment</p>
       <div className="row">
+      <div className="col-xs-12 col-4">
+          <div className="form-group px-2">
+            <label className="control-label" htmlFor="name">Name</label>
+            <input id="appt-name"
+              name="appointmentName"
+              type="text"
+              className="form-control"
+              onChange={props.onChange}/>
+          </div>
+        </div>
         <div className="col-xs-12 col-4">
           <div className="form-group px-2">
             <label className="control-label" htmlFor="name">Date</label>
             <input id="appt-date"
               name="appointmentDate"
               type="date"
+              className="form-control"
+              onChange={props.onChange}/>
+          </div>
+        </div>
+        <div className="col-xs-12 col-4">
+          <div className="form-group px-2">
+            <label className="control-label" htmlFor="name">Subject</label>
+            <input id="appt-subject"
+              name="appointmentSubject"
+              type="text"
               className="form-control"
               onChange={props.onChange}/>
           </div>

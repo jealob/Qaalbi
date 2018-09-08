@@ -1,7 +1,9 @@
 const nodemailer = require('nodemailer');
 
 module.exports = {
-  send: function (req, res) {
+  bookAppointment: function (req, res) {
+
+    let mailDetails = req.body.appointmentDetails;
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -12,13 +14,13 @@ module.exports = {
 
     const mailOptions = {
       from: 'Qaalbi Event Booking',
-      to: 'jealob@yahoo.com',
-      subject: 'Sending Email using Node.js',
-      text: 'That was easy!'
+      to: mailDetails.email,
+      subject: mailDetails.subject,
+      text: `Hello, \n You have been scheduled a ${mailDetails.type} appointment for ${mailDetails.date} by ${mailDetails.time}. \n Thank You, \n Qaalbi Events. `
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
-      // console.log(mailOptions)
+      console.log(mailOptions);
       if (error) {
         console.log(error);
 

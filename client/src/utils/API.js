@@ -34,9 +34,10 @@ export default {
     console.log(eventData);
     return axios.get(`api/events/${eventData.eventYear}/${eventData.eventMonth}/${eventData.firstName}/${eventData.lastName}`);
   },
-  sendMail: function(bookData) {
-return axios.post("/api/users/book-appointment", bookData);
-}
+  sendMail: function (bookData) {
+    console.log(bookData);
+    return axios.post("/api/appointments", bookData);
+  }
 
 };
 
