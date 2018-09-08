@@ -107,17 +107,17 @@ export const Footer = () => {
     <footer className="main-page-footer">
     <div className="row">
       <h4 className=" pt-3 col text-center"> Follow Us: 
-         <a href="https://www.twitter.com/" target="_blank">  <img className="m-2 " src={require("../../images/tweet.png")} alt="twitter" /></a> 
-         <a href="https://www.instagram.com/" target="_blank">  <img className="m-2 " src={require("../../images/instagram.png")}  alt="instagram" /></a>
-         <a href="https://www.facebook.com/" target="_blank">  <img className="m-2 " src={require("../../images/facebook.png")}  alt="facebook" /></a>
-         <a href="https://www.googleplus.com/" target="_blank">  <img className="m-2" src={require("../../images/googleplus.png")}  alt="googleplus" /></a>
+         <a href="https://www.twitter.com/" >  <img className="m-2 " src={require("../../images/tweet.png")} alt="twitter" /></a> 
+         <a href="https://www.instagram.com/" >  <img className="m-2 " src={require("../../images/instagram.png")}  alt="instagram" /></a>
+         <a href="https://www.facebook.com/" >  <img className="m-2 " src={require("../../images/facebook.png")}  alt="facebook" /></a>
+         <a href="https://www.googleplus.com/" >  <img className="m-2" src={require("../../images/googleplus.png")}  alt="googleplus" /></a>
       </h4>
     </div>
     <div className="row">
     <ul className="col text-center">
-     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Invintation </a></li>
-     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Cakes </a></li>
-     <li  className="items mr-3"><a href="https://www.theknot.com/" target="_blank">Wedding Photos </a></li>
+     <li  className="items mr-3"><a href="https://www.theknot.com/" >Wedding Invintation </a></li>
+     <li  className="items mr-3"><a href="https://www.theknot.com/" >Wedding Cakes </a></li>
+     <li  className="items mr-3"><a href="https://www.theknot.com/" >Wedding Photos </a></li>
     </ul>
     <br/>
     </div> 
